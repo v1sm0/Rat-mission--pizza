@@ -1,4 +1,4 @@
-res://lobby.tscn
 res://scenes/lobby.tscn
-res://resources/MarginBoxTheme.tres
 res://scenes/lobby.gd
+res://scripts/debug.gd
+res://scripts/lobby.gd
