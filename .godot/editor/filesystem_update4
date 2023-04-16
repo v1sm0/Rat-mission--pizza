@@ -1,4 +1,5 @@
 res://menu.tscn
-res://InterfazDeConexión.gd
+res://MenuTheme.tres
+res://playMenu.tscn
 res://menu_backgound.tscn
 res://menu_backgound.gd

@@ -1,11 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bdlbudsupcfhc"]
+[gd_scene load_steps=4 format=3 uid="uid://bdlbudsupcfhc"]
 
 [ext_resource type="Script" path="res://InterfazDeConexión.gd" id="1_jgd1d"]
-[ext_resource type="FontFile" uid="uid://7xxqdq58d5p4" path="res://Fonts/TrueType (.ttf)/Kaph-Regular.ttf" id="1_jq3q2"]
+[ext_resource type="Theme" uid="uid://5ccxd10jvfld" path="res://MenuTheme.tres" id="2_7t54k"]
 [ext_resource type="PackedScene" uid="uid://ra2cxww5lyny" path="res://menu_backgound.tscn" id="3_qsktg"]
-
-[sub_resource type="FontVariation" id="FontVariation_c8nec"]
-base_font = ExtResource("1_jq3q2")
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -14,61 +11,53 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
 script = ExtResource("1_jgd1d")
 
-[node name="VBoxMenu" type="VBoxContainer" parent="."]
+[node name="VBoxButtons" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -108.0
-offset_top = -113.5
-offset_right = 108.0
-offset_bottom = 113.5
+offset_left = -215.0
+offset_top = -155.5
+offset_right = 215.0
+offset_bottom = 155.5
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="TextureRect" type="TextureRect" parent="VBoxMenu"]
-visible = false
-layout_mode = 2
-
-[node name="VBoxButtons" type="VBoxContainer" parent="VBoxMenu"]
-layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_constants/separation = 25
 
-[node name="host" type="Button" parent="VBoxMenu/VBoxButtons"]
+[node name="Titulo" type="Label" parent="VBoxButtons"]
 layout_mode = 2
-theme_override_fonts/font = SubResource("FontVariation_c8nec")
-theme_override_font_sizes/font_size = 25
-text = "Host"
+theme = ExtResource("2_7t54k")
+text = "Rat mission:
+Pizza"
+horizontal_alignment = 1
+
+[node name="Play" type="Button" parent="VBoxButtons"]
+layout_mode = 2
+theme = ExtResource("2_7t54k")
+text = "Play"
 flat = true
 
-[node name="join" type="Button" parent="VBoxMenu/VBoxButtons"]
+[node name="options" type="Button" parent="VBoxButtons"]
 layout_mode = 2
-theme_override_fonts/font = SubResource("FontVariation_c8nec")
-theme_override_font_sizes/font_size = 25
-text = "Join"
-flat = true
-
-[node name="options" type="Button" parent="VBoxMenu/VBoxButtons"]
-layout_mode = 2
-theme_override_fonts/font = SubResource("FontVariation_c8nec")
-theme_override_font_sizes/font_size = 25
+theme = ExtResource("2_7t54k")
 text = "options"
 flat = true
 
-[node name="exit" type="Button" parent="VBoxMenu/VBoxButtons"]
+[node name="exit" type="Button" parent="VBoxButtons"]
 layout_mode = 2
-theme_override_fonts/font = SubResource("FontVariation_c8nec")
-theme_override_font_sizes/font_size = 25
+theme = ExtResource("2_7t54k")
 text = "Exit"
 flat = true
 
 [node name="MenuBackgound" parent="." instance=ExtResource("3_qsktg")]
 
-[connection signal="pressed" from="VBoxMenu/VBoxButtons/host" to="." method="_on_host_pressed"]
-[connection signal="pressed" from="VBoxMenu/VBoxButtons/join" to="." method="_on_join_pressed"]
-[connection signal="pressed" from="VBoxMenu/VBoxButtons/options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="VBoxMenu/VBoxButtons/exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="VBoxButtons/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxButtons/options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxButtons/exit" to="." method="_on_exit_pressed"]

@@ -1,0 +1,21 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://5ccxd10jvfld"]
+
+[ext_resource type="FontFile" uid="uid://xrbt5txxyeaj" path="res://Fonts/Fibberish v1.0/fibberish.ttf" id="1_wmyou"]
+
+[resource]
+default_font = ExtResource("1_wmyou")
+Button/colors/font_color = Color(0.87451, 0.87451, 0.87451, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/constants/outline_size = 8
+Button/font_sizes/font_size = 50
+Button/fonts/font = ExtResource("1_wmyou")
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 1)
+Label/constants/shadow_offset_y = 6
+Label/constants/shadow_outline_size = 8
+Label/font_sizes/font_size = 75
+Label/fonts/font = ExtResource("1_wmyou")
+MarginContainer/constants/margin_bottom = 25
+MarginContainer/constants/margin_left = 25
+MarginContainer/constants/margin_right = 25
+MarginContainer/constants/margin_top = 25
