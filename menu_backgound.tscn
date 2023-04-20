@@ -34,3 +34,29 @@ texture = ExtResource("1_ykfvp")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="obj2"]
 shape = SubResource("RectangleShape2D_m33dp")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="obj3" type="RigidBody2D" parent="."]
+position = Vector2(158, 72)
+gravity_scale = 0.0
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="obj3"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_ykfvp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="obj3"]
+shape = SubResource("RectangleShape2D_m33dp")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="obj4" type="RigidBody2D" parent="."]
+position = Vector2(158, 72)
+gravity_scale = 0.0
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="obj4"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_ykfvp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="obj4"]
+shape = SubResource("RectangleShape2D_m33dp")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
