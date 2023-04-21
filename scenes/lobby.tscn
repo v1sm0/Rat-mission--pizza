@@ -68,6 +68,9 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "Join"
 
+[node name="Info" type="Label" parent="PanelContainer/MarginContainer/Lobby"]
+layout_mode = 2
+
 [node name="ReadyScreen" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
 unique_name_in_owner = true
 visible = false
@@ -84,6 +87,7 @@ text = "Players:
 layout_mode = 2
 
 [node name="Players" type="VBoxContainer" parent="PanelContainer/MarginContainer/ReadyScreen/PanelContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/ReadyScreen/PanelContainer/Players"]
