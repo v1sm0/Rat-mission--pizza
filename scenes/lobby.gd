@@ -101,3 +101,20 @@ func _on_peer_disconnected(id: int) -> void:
 	
 func _on_server_disconnected() -> void:
 	pass
+
+@rpc("reliable", "any_peer", "call_local")
+func player_ready():
+	var id = multiplayer.get_remote_sender_id()
+	_paint_ready(id)
+	if multiplayer.is_server():
+		status[id] = true
+		var all_ok = true
+		for ok in status.values():
+			all_ok = all_ok and ok
+		if all_ok:
+			rpc("start_game")
+
+@rpc("any_peer", "call_local", "reliable")
+func start_game() -> void:
+	#get_tree().change_scene_to_file("res://scenes/main.tscn")
+	pass
