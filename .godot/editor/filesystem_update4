@@ -1,4 +1,3 @@
 res://scenes/lobby.tscn
-res://scenes/lobby.gd
-res://scripts/debug.gd
 res://scripts/lobby.gd
+res://scenes/lobby.gd

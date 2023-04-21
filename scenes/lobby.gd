@@ -1,12 +1,13 @@
 extends MarginContainer
 
 const MAX_PLAYER = 2
-const PORT = 3002
+const PORT = 5409
+
 
 @onready var nameInput = %NameInput
 @onready var ipInput = %IPInput
 @onready var host = %Host
-@onready var join = %Join
+@onready var join = %Join	
 
 @onready var lobby = %Lobby
 @onready var readyScreen = %ReadyScreen
@@ -27,9 +28,10 @@ func _ready():
 	multiplayer.server_disconnected.connect(_on_server_disconnected)
 	lobby.show()
 	readyScreen.hide()
-	pass
+	nameInput.text = OS.get_environment("USERNAME")
 
 func _on_host_pressed() -> void:
+	Debug.print("host")
 	var peer = ENetMultiplayerPeer.new()
 	peer.create_server(PORT, MAX_PLAYER)
 	multiplayer.multiplayer_peer = peer
@@ -38,6 +40,7 @@ func _on_host_pressed() -> void:
 	print("host")
 	
 func _on_join_pressed() -> void:
+	Debug.print("join")
 	var peer = ENetMultiplayerPeer.new()
 	peer.create_client(ipInput.text, PORT)
 	multiplayer.multiplayer_peer = peer	

@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://ctl5u5btev7bj"]
+[gd_scene load_steps=3 format=3 uid="uid://7pxjb7tvnbqe"]
 
 [ext_resource type="Theme" uid="uid://bcwto7oiak400" path="res://resources/MarginBoxTheme.tres" id="1_748g5"]
-[ext_resource type="Script" path="res://scripts/lobby.gd" id="2_ate5v"]
+[ext_resource type="Script" path="res://scenes/lobby.gd" id="2_fvd8b"]
 
 [node name="Lobby" type="MarginContainer"]
 anchors_preset = 15
@@ -10,7 +10,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_748g5")
-script = ExtResource("2_ate5v")
+script = ExtResource("2_fvd8b")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 2
@@ -24,7 +24,6 @@ size_flags_vertical = 4
 
 [node name="Lobby" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
 unique_name_in_owner = true
-visible = false
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 theme_override_constants/separation = 6
@@ -43,6 +42,7 @@ text = "Name:"
 [node name="NameInput" type="LineEdit" parent="PanelContainer/MarginContainer/Lobby"]
 unique_name_in_owner = true
 layout_mode = 2
+text = "Vicente"
 
 [node name="IP" type="Label" parent="PanelContainer/MarginContainer/Lobby"]
 layout_mode = 2
@@ -51,6 +51,7 @@ text = "IP:"
 [node name="IPInput" type="LineEdit" parent="PanelContainer/MarginContainer/Lobby"]
 unique_name_in_owner = true
 layout_mode = 2
+text = "127.0.0.1"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/Lobby"]
 layout_mode = 2
@@ -69,6 +70,7 @@ text = "Join"
 
 [node name="ReadyScreen" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
 unique_name_in_owner = true
+visible = false
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 theme_override_constants/separation = 6
