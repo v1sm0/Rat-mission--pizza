@@ -1,3 +1,5 @@
+res://menu.tscn
+res://MenuTheme.tres
+res://playMenu.tscn
+res://menu_backgound.tscn
 res://scenes/lobby.tscn
-res://scripts/game.gd
-res://scenes/lobby.gd
