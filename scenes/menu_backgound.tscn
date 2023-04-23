@@ -1,0 +1,62 @@
+[gd_scene load_steps=4 format=3 uid="uid://ra2cxww5lyny"]
+
+[ext_resource type="Script" path="res://menu_backgound.gd" id="1_cxmxb"]
+[ext_resource type="Texture2D" uid="uid://bitmw1m5kcy8v" path="res://icon.svg" id="1_ykfvp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m33dp"]
+size = Vector2(64, 64)
+
+[node name="MenuBackgound" type="Node2D"]
+script = ExtResource("1_cxmxb")
+
+[node name="obj1" type="RigidBody2D" parent="."]
+position = Vector2(158, 72)
+gravity_scale = 0.0
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="obj1"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_ykfvp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="obj1"]
+shape = SubResource("RectangleShape2D_m33dp")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="obj2" type="RigidBody2D" parent="."]
+position = Vector2(158, 72)
+gravity_scale = 0.0
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="obj2"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_ykfvp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="obj2"]
+shape = SubResource("RectangleShape2D_m33dp")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="obj3" type="RigidBody2D" parent="."]
+position = Vector2(158, 72)
+gravity_scale = 0.0
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="obj3"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_ykfvp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="obj3"]
+shape = SubResource("RectangleShape2D_m33dp")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="obj4" type="RigidBody2D" parent="."]
+position = Vector2(158, 72)
+gravity_scale = 0.0
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="obj4"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_ykfvp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="obj4"]
+shape = SubResource("RectangleShape2D_m33dp")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
