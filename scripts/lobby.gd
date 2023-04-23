@@ -34,7 +34,16 @@ func _ready():
 	nameInput.text = OS.get_environment("USERNAME")
 	go.pressed.connect(_on_go_pressed)
 	info.hide()
+	Game.upnp_completed.connect(_on_upunp_completed)
 
+
+func _on_upunp_completed(status) -> void:
+	print(status)
+	if status == OK:
+		info.text = "Port Opened"
+	else:
+		info.text = "Error"
+	info.show()	
 
 func _on_go_pressed() -> void:
 	rpc("player_ready")
