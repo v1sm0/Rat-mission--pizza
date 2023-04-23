@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bfhur8attqs4a"
-path="res://.godot/imported/rata-salto-1.png-3f109eb22aa62cb4ee9373976c17f733.ctex"
+path="res://.godot/imported/rata-salto-1.png-4dc4e030be29959bbb248eab554b06c7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/Sprites/Ratas/Salto/rata-salto-1.png"
-dest_files=["res://.godot/imported/rata-salto-1.png-3f109eb22aa62cb4ee9373976c17f733.ctex"]
+source_file="res://resources/assets/Ratas/Salto/rata-salto-1.png"
+dest_files=["res://.godot/imported/rata-salto-1.png-4dc4e030be29959bbb248eab554b06c7.ctex"]
 
 [params]
 
