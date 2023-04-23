@@ -1,5 +1,3 @@
-res://menu.tscn
+res://Nivel1.tscn
 res://MenuTheme.tres
-res://playMenu.tscn
-res://menu_backgound.tscn
-res://scenes/lobby.tscn
+res://pantalla_victoria.tscn
