@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bbnohbqdm6jyu"]
+[gd_scene load_steps=3 format=3 uid="uid://bcm7qu606yio8"]
 
 [ext_resource type="Theme" uid="uid://bcwto7oiak400" path="res://resources/MarginBoxTheme.tres" id="1_748g5"]
-[ext_resource type="Script" path="res://scripts/lobby.gd" id="2_8aa3s"]
+[ext_resource type="Script" path="res://scripts/Menu/lobby.gd" id="2_song4"]
 
 [node name="Lobby" type="MarginContainer"]
 anchors_preset = 15
@@ -10,7 +10,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_748g5")
-script = ExtResource("2_8aa3s")
+script = ExtResource("2_song4")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 2
