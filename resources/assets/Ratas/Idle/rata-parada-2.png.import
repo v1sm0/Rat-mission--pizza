@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://flsu5pb08d4k"
-path="res://.godot/imported/rata-parada-2.png-fef991c40de6479bdd6968c43cb31ceb.ctex"
+path="res://.godot/imported/rata-parada-2.png-c7b490bd612db368fa55c21d6e3ffc1d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/Sprites/Ratas/Idle/rata-parada-2.png"
-dest_files=["res://.godot/imported/rata-parada-2.png-fef991c40de6479bdd6968c43cb31ceb.ctex"]
+source_file="res://resources/assets/Ratas/Idle/rata-parada-2.png"
+dest_files=["res://.godot/imported/rata-parada-2.png-c7b490bd612db368fa55c21d6e3ffc1d.ctex"]
 
 [params]
 

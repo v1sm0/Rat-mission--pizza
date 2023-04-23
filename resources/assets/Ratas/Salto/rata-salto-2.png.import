@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cw34ogcslrv"
-path="res://.godot/imported/rata-caminando-2.png-9d8dc73b4812d1f0935d3062284dbe2e.ctex"
+uid="uid://db6chskc8q1vx"
+path="res://.godot/imported/rata-salto-2.png-ad272ffde2ddbe0ad82466d178316696.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/Sprites/Ratas/Caminata/rata-caminando-2.png"
-dest_files=["res://.godot/imported/rata-caminando-2.png-9d8dc73b4812d1f0935d3062284dbe2e.ctex"]
+source_file="res://resources/assets/Ratas/Salto/rata-salto-2.png"
+dest_files=["res://.godot/imported/rata-salto-2.png-ad272ffde2ddbe0ad82466d178316696.ctex"]
 
 [params]
 
