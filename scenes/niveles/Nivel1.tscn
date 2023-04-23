@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=3]
+[gd_scene load_steps=9 format=3 uid="uid://cgovmomh7t7j8"]
 
 [ext_resource type="Texture2D" uid="uid://bvj70grhld2xd" path="res://resources/Sprites/8-Tile-Sets/Tile-Sets (64-64).png" id="1_ab13a"]
 [ext_resource type="PackedScene" path="res://scenes/players/Giovanni.tscn" id="4_2wt3v"]
 [ext_resource type="Script" path="res://scripts/Niveles/Area.gd" id="4_qmec3"]
 [ext_resource type="Texture2D" uid="uid://dbo7kh6xv5l4s" path="res://Textures/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Cheese.png" id="5_qcwnh"]
-
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qsacf"]
 texture = ExtResource("1_ab13a")
@@ -12,106 +11,126 @@ texture = ExtResource("1_ab13a")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15.5, -16, 16.5, -16, 16.5, 17, -15.5, 17)
 2:0/size_in_atlas = Vector2i(2, 2)
 2:0/0 = 0
 2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:0/0/physics_layer_0/angular_velocity = 0.0
-2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 8, 8, -8, -8, -8)
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.5, -16.5, 17.5, -16.5, 17.5, 16.5, -16.5, 16.5)
 4:0/size_in_atlas = Vector2i(2, 2)
 4:0/0 = 0
 4:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:0/0/physics_layer_0/angular_velocity = 0.0
-4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 8, 8, -8, -8, -8)
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.5, -16.5, 17.5, -16.5, 17.5, 16.5, -16.5, 16.5)
 6:0/size_in_atlas = Vector2i(2, 2)
 6:0/0 = 0
 6:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 6:0/0/physics_layer_0/angular_velocity = 0.0
-6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 8, 8, -8, -8, -8)
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.5, -16.5, 17.5, -16.5, 17.5, 16.5, -16.5, 16.5)
 8:0/size_in_atlas = Vector2i(2, 2)
 8:0/0 = 0
 8:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 8:0/0/physics_layer_0/angular_velocity = 0.0
-8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 8, 8, -8, -8, -8)
+8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.5, -16.5, 17.5, -16.5, 17.5, 16.5, -16.5, 16.5)
 10:0/size_in_atlas = Vector2i(2, 2)
 10:0/0 = 0
 10:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 10:0/0/physics_layer_0/angular_velocity = 0.0
-10:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 8, 8, -8, -8, -8)
+10:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.5, -16.5, 15.5, -16.5, 15.5, 17, -16.5, 17)
 0:2/size_in_atlas = Vector2i(2, 2)
 0:2/0 = 0
 0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:2/0/physics_layer_0/angular_velocity = 0.0
-0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 8, 8, -8, -8, -8)
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15.5, -17, 16, -17, 16, 16.5, -15.5, 16.5)
 2:2/size_in_atlas = Vector2i(2, 2)
 2:2/0 = 0
 2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:2/0/physics_layer_0/angular_velocity = 0.0
-2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 8, 8, -8, -8, -8)
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.5, -16.5, 17.5, -16.5, 17.5, 16.5, -16.5, 16.5)
 4:2/size_in_atlas = Vector2i(2, 2)
 4:2/0 = 0
 4:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:2/0/physics_layer_0/angular_velocity = 0.0
-4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 8, 8, -8, -8, -8)
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.5, -16.5, 17.5, -16.5, 17.5, 16.5, -16.5, 16.5)
 6:2/size_in_atlas = Vector2i(2, 2)
 6:2/0 = 0
 6:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 6:2/0/physics_layer_0/angular_velocity = 0.0
-6:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 8, 8, -8, -8, -8)
+6:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.5, -16.5, 17.5, -16.5, 17.5, 16.5, -16.5, 16.5)
 8:2/size_in_atlas = Vector2i(2, 2)
 8:2/0 = 0
 8:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 8:2/0/physics_layer_0/angular_velocity = 0.0
-8:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 8, 8, -8, -8, -8)
+8:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.5, -16.5, 17.5, -16.5, 17.5, 16.5, -16.5, 16.5)
 10:2/size_in_atlas = Vector2i(2, 2)
 10:2/0 = 0
 10:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 10:2/0/physics_layer_0/angular_velocity = 0.0
-10:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 8, 8, -8, -8, -8)
-16:12/size_in_atlas = Vector2i(2, 1)
+10:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.5, -16.5, 15.5, -16.5, 15.5, 17, -16.5, 17)
 16:12/0 = 0
 16:12/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 16:12/0/physics_layer_0/angular_velocity = 0.0
-16:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 8, 8, -8, -8, -8)
-18:12/size_in_atlas = Vector2i(2, 1)
+16:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7, -8, 8, -8, 8, 8, -7, 8)
+17:12/0 = 0
+17:12/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+17:12/0/physics_layer_0/angular_velocity = 0.0
+17:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 18:12/0 = 0
 18:12/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 18:12/0/physics_layer_0/angular_velocity = 0.0
-18:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 8, 8, -8, -8, -8)
-20:12/size_in_atlas = Vector2i(2, 1)
+18:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+19:12/0 = 0
+19:12/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+19:12/0/physics_layer_0/angular_velocity = 0.0
+19:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 7, -8, 7, 8, -8, 8)
 20:12/0 = 0
 20:12/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 20:12/0/physics_layer_0/angular_velocity = 0.0
-20:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 8, 8, -8, -8, -8)
-22:12/size_in_atlas = Vector2i(2, 1)
+20:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+21:12/0 = 0
+21:12/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+21:12/0/physics_layer_0/angular_velocity = 0.0
+21:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 7, -8, 7, 8, -8, 8)
 22:12/0 = 0
 22:12/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 22:12/0/physics_layer_0/angular_velocity = 0.0
-22:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 8, 8, -8, -8, -8)
+22:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+23:12/0 = 0
+23:12/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+23:12/0/physics_layer_0/angular_velocity = 0.0
+23:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 16:16/0 = 0
 16:16/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 16:16/0/physics_layer_0/angular_velocity = 0.0
-16:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 8, 8, -8, -8, -8)
+16:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 17:16/0 = 0
 17:16/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 17:16/0/physics_layer_0/angular_velocity = 0.0
-17:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 8, 8, -8, -8, -8)
+17:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 18:16/0 = 0
 18:16/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 18:16/0/physics_layer_0/angular_velocity = 0.0
-18:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 8, 8, -8, -8, -8)
+18:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 19:16/0 = 0
 19:16/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 19:16/0/physics_layer_0/angular_velocity = 0.0
-19:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 8, 8, -8, -8, -8)
+19:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 7, -8, 7, 8, -8, 8)
 20:16/0 = 0
 20:16/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 20:16/0/physics_layer_0/angular_velocity = 0.0
-20:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 8, 8, -8, -8, -8)
+20:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+21:16/0 = 0
+21:16/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+21:16/0/physics_layer_0/angular_velocity = 0.0
+21:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+22:16/0 = 0
+22:16/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+22:16/0/physics_layer_0/angular_velocity = 0.0
+22:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 23:16/0 = 0
 23:16/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 23:16/0/physics_layer_0/angular_velocity = 0.0
-23:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 8, 8, -8, -8, -8)
+23:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSet" id="TileSet_eux04"]
 physics_layer_0/collision_layer = 1
@@ -121,15 +140,16 @@ sources/0 = SubResource("TileSetAtlasSource_qsacf")
 size = Vector2(16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v7gxm"]
-size = Vector2(768, 20)
+size = Vector2(867.5, 20)
 
 [node name="Node2D" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2(2, 2)
 tile_set = SubResource("TileSet_eux04")
+cell_quadrant_size = 64
 format = 2
-layer_0/tile_data = PackedInt32Array(917505, 0, 0, 917507, 131072, 0, 917509, 262144, 0, 917511, 393216, 0, 917513, 524288, 0, 917515, 655360, 0, 1048577, 0, 2, 1048579, 131072, 2, 1048581, 262144, 2, 1048583, 393216, 2, 1048585, 524288, 2, 1048587, 655360, 2, 851983, 0, 0, 851985, 131072, 0, 851987, 524288, 0, 851989, 655360, 0, 983055, 0, 2, 983057, 131072, 2, 983059, 524288, 2, 983061, 655360, 2, 1114136, 0, 0, 1114138, 131072, 0, 1114140, 262144, 0, 1114142, 393216, 0, 1114144, 393216, 0, 1114146, 393216, 0, 1114148, 524288, 0, 1114150, 655360, 0, 1245208, 0, 2, 1245210, 131072, 2, 1245212, 262144, 2, 1245214, 393216, 2, 1245216, 393216, 2, 1245218, 393216, 2, 1245220, 524288, 2, 1245222, 655360, 2, 655390, 1441792, 12, 655391, 1048576, 16, 655392, 1114112, 16, 655393, 1179648, 16, 655394, 1245184, 16, 458772, 1245184, 16, 458771, 1179648, 16, 458770, 1114112, 16, 458769, 1048576, 16, 458768, 1441792, 12, 458766, 1048576, 12, 917527, 1310720, 16, 917528, 1507328, 16, 655388, 1048576, 12)
+layer_0/tile_data = PackedInt32Array(917505, 0, 0, 917507, 131072, 0, 917509, 262144, 0, 917511, 393216, 0, 917513, 524288, 0, 917515, 655360, 0, 1048577, 0, 2, 1048579, 131072, 2, 1048581, 262144, 2, 1048583, 393216, 2, 1048585, 524288, 2, 1048587, 655360, 2, 851983, 0, 0, 851985, 131072, 0, 851987, 524288, 0, 851989, 655360, 0, 983055, 0, 2, 983057, 131072, 2, 983059, 524288, 2, 983061, 655360, 2, 1114136, 0, 0, 1114138, 131072, 0, 1114140, 262144, 0, 1114142, 393216, 0, 1114144, 393216, 0, 1114146, 393216, 0, 1114148, 524288, 0, 1114150, 655360, 0, 1245208, 0, 2, 1245210, 131072, 2, 1245212, 262144, 2, 1245214, 393216, 2, 1245216, 393216, 2, 1245218, 393216, 2, 1245220, 524288, 2, 1245222, 655360, 2, 655390, 1441792, 12, 655391, 1048576, 16, 655392, 1114112, 16, 655393, 1179648, 16, 655394, 1245184, 16, 458769, 1048576, 16, 458768, 1441792, 12, 458766, 1048576, 12, 917527, 1310720, 16, 917528, 1507328, 16, 655388, 1048576, 12, 458770, 1048576, 16, 458771, 1048576, 16, 458772, 1114112, 16, 458773, 1179648, 16, 458774, 1245184, 16, 655389, 1114112, 12, 458767, 1114112, 12)
 metadata/_edit_group_ = true
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -153,7 +173,7 @@ script = ExtResource("4_qmec3")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
-position = Vector2(-32, 0)
+position = Vector2(17.75, 0)
 shape = SubResource("RectangleShape2D_v7gxm")
 
 [node name="Giovanni" parent="." instance=ExtResource("4_2wt3v")]
@@ -162,4 +182,5 @@ scale = Vector2(2.49724, 2.84531)
 metadata/_edit_group_ = true
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
 [connection signal="body_entered" from="Area2D2" to="Area2D" method="_on_area_2d_2_body_entered"]
