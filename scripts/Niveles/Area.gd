@@ -15,7 +15,7 @@ func _on_area_2d_2_body_entered(body):
 		get_tree().reload_current_scene()
 		
 func _physics_process(delta):
-	if win_condition == 2:
+	if win_condition == Game.N_players:
 		get_tree().change_scene_to_file("res://scenes/niveles/Pantalla_victoria.tscn")
 
 

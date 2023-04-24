@@ -1,6 +1,7 @@
 extends MarginContainer
 
-const MAX_PLAYERS = 2
+
+const MAX_PLAYERS = 4
 const PORT = 5409
 
 @onready var info = $PanelContainer/MarginContainer/Lobby/Info
@@ -80,6 +81,7 @@ func _add_player(name: String, id: int):
 	label.text = name
 	players.add_child(label)
 	Game.players.append(id)
+	Game.N_players += 1
 
 
 @rpc("any_peer", "reliable")
