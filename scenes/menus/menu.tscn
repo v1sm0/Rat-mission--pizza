@@ -1,7 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://dgk5camcssikm"]
 
 [ext_resource type="Script" path="res://scripts/Menu/menu.gd" id="1_4tcqw"]
-
 [ext_resource type="Theme" uid="uid://5ccxd10jvfld" path="res://MenuTheme.tres" id="2_7t54k"]
 [ext_resource type="Texture2D" uid="uid://dbo7kh6xv5l4s" path="res://Textures/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Cheese.png" id="2_ygkod"]
 [ext_resource type="Texture2D" uid="uid://etineyfsipw2" path="res://Textures/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Tomato.png" id="3_81wgt"]
@@ -31,9 +30,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
-
 script = ExtResource("1_4tcqw")
-
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 texture_filter = 1

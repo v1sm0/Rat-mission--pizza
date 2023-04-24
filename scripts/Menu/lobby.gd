@@ -109,20 +109,6 @@ func _on_peer_disconnected(id: int) -> void:
 func _on_server_disconnected() -> void:
 	print("server_disconnected")
 
-func _add_player(name: String, id: int):
-	var label = Label.new()
-	label.name = str(id)
-	label.text = name
-	players.add_child(label)
-	Game.players.append(id)
-
-
-@rpc("any_peer", "reliable")
-func send_info(info: Dictionary) -> void:
-	var name = info.name
-	var id = multiplayer.get_remote_sender_id()
-	_add_player(name, id)
-
 
 func _paint_ready(id: int) -> void:
 	for child in players.get_children():
