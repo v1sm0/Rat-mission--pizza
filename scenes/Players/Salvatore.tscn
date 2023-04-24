@@ -1,11 +1,10 @@
-[gd_scene load_steps=13 format=3]
+[gd_scene load_steps=13 format=3 uid="uid://d3kmgej5366e1"]
 
 [ext_resource type="Script" path="res://scripts/Player/player.gd" id="1_eimmf"]
 [ext_resource type="Texture2D" uid="uid://djn3kudctiw1x" path="res://resources/assets/Ratas/Idle/rata-parada-1.png" id="2_blfo2"]
 [ext_resource type="Texture2D" uid="uid://cmjiyr1dss0us" path="res://resources/assets/Ratas/Caminata/rata-caminando-4.png" id="3_7mfji"]
 [ext_resource type="Texture2D" uid="uid://cwfv7is28rcho" path="res://resources/assets/Ratas/Idle/rata-parada-4.png" id="4_a3itc"]
 [ext_resource type="Texture2D" uid="uid://do1j6k42d3qo3" path="res://resources/assets/Ratas/Salto/rata-salto-4.png" id="5_3h48x"]
-
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3ga5l"]
 radius = 7.0
