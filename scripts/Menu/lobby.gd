@@ -2,6 +2,7 @@ extends MarginContainer
 
 
 const MAX_PLAYERS = 4
+
 const PORT = 5409
 
 @onready var info = $PanelContainer/MarginContainer/Lobby/Info
@@ -32,9 +33,13 @@ func _ready():
 	multiplayer.server_disconnected.connect(_on_server_disconnected)
 	lobby.show()
 	readyScreen.hide()
+	
 	nameInput.text = OS.get_environment("USERNAME")
+	
 	go.pressed.connect(_on_go_pressed)
+	
 	info.hide()
+	
 	Game.upnp_completed.connect(_on_upunp_completed)
 
 
@@ -44,16 +49,9 @@ func _on_upunp_completed(status) -> void:
 		info.text = "Port Opened"
 	else:
 		info.text = "Error"
-	info.show()	
+	info.show()
 
-func _on_go_pressed() -> void:
-	rpc("player_ready")
-	_paint_ready(multiplayer.get_unique_id())
 
-func _paint_ready(id: int) -> void:
-	for child in players.get_children():
-		if child.name == str(id):
-			child.modulate = Color.GREEN_YELLOW
 
 func _on_host_pressed() -> void:
 	Debug.print("host")
@@ -91,14 +89,13 @@ func send_info(info: Dictionary) -> void:
 	_add_player(name, id)
 
 
+
 func _on_connected_to_server() -> void:
 	Debug.print("connected_to_server")
-	pass
 	
 func _on_connection_failed() -> void:
 	Debug.print("connection_failed")
-	
-	pass
+
 
 func _on_peer_connected(id: int) -> void:
 	Debug.print("peer_connected %d" % id)
@@ -108,10 +105,35 @@ func _on_peer_connected(id: int) -> void:
 	
 func _on_peer_disconnected(id: int) -> void:
 	Debug.print("peer_disconnected %d" % id)	
-	pass
-	
+		
 func _on_server_disconnected() -> void:
-	pass
+	print("server_disconnected")
+
+func _add_player(name: String, id: int):
+	var label = Label.new()
+	label.name = str(id)
+	label.text = name
+	players.add_child(label)
+	Game.players.append(id)
+
+
+@rpc("any_peer", "reliable")
+func send_info(info: Dictionary) -> void:
+	var name = info.name
+	var id = multiplayer.get_remote_sender_id()
+	_add_player(name, id)
+
+
+func _paint_ready(id: int) -> void:
+	for child in players.get_children():
+		if child.name == str(id):
+			child.modulate = Color.GREEN_YELLOW
+
+
+func _on_go_pressed() -> void:
+	rpc("player_ready")
+	_paint_ready(multiplayer.get_unique_id())
+
 
 @rpc("reliable", "any_peer", "call_local")
 func player_ready():
@@ -124,6 +146,7 @@ func player_ready():
 			all_ok = all_ok and ok
 		if all_ok:
 			rpc("start_game")
+
 
 @rpc("any_peer", "call_local", "reliable")
 func start_game() -> void:

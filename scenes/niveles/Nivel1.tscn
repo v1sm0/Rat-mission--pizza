@@ -1,7 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://cgovmomh7t7j8"]
+[gd_scene load_steps=10 format=3 uid="uid://cacoxw1qe8t3b"]
 
 [ext_resource type="Texture2D" uid="uid://bvj70grhld2xd" path="res://resources/Sprites/8-Tile-Sets/Tile-Sets (64-64).png" id="1_ab13a"]
-[ext_resource type="PackedScene" uid="uid://c8ybsv3sioo3y" path="res://scenes/players/Giovanni.tscn" id="4_2wt3v"]
+[ext_resource type="Script" path="res://scenes/niveles/Nivel1.gd" id="1_o1ow6"]
+[ext_resource type="PackedScene" path="res://scenes/Players/Giovanni_bueno.tscn" id="2_gynl3"]
+
 [ext_resource type="Script" path="res://scripts/Niveles/Area.gd" id="4_qmec3"]
 [ext_resource type="Texture2D" uid="uid://dbo7kh6xv5l4s" path="res://Textures/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Cheese.png" id="5_qcwnh"]
 
@@ -143,6 +145,8 @@ size = Vector2(16, 16)
 size = Vector2(867.5, 20)
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_o1ow6")
+player_scene = ExtResource("2_gynl3")
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2(2, 2)
@@ -176,10 +180,21 @@ metadata/_edit_group_ = true
 position = Vector2(17.75, 0)
 shape = SubResource("RectangleShape2D_v7gxm")
 
-[node name="Giovanni" parent="." instance=ExtResource("4_2wt3v")]
-position = Vector2(32, 181)
-scale = Vector2(2.49724, 2.84531)
-metadata/_edit_group_ = true
+[node name="Players" type="Node2D" parent="."]
+
+[node name="Markers" type="Node2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="Markers"]
+position = Vector2(988, 464)
+gizmo_extents = 50.0
+
+[node name="Marker2D2" type="Marker2D" parent="Markers"]
+position = Vector2(70, 377)
+gizmo_extents = 50.0
+
+[node name="Marker2D3" type="Marker2D" parent="Markers"]
+position = Vector2(70, 377)
+gizmo_extents = 50.0
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

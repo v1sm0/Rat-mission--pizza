@@ -1,10 +1,9 @@
-[gd_scene load_steps=22 format=3 uid="uid://biklxu8hg61dc"]
+[gd_scene load_steps=22 format=3 uid="uid://b4ip1utf0olap"]
 
-
-[ext_resource type="Script" path="res://scripts/Player/player.gd" id="1_qjaw8"]
-[ext_resource type="Texture2D" uid="uid://djn3kudctiw1x" path="res://resources/assets/Ratas/Idle/rata-parada-1.png" id="2_kpoih"]
-[ext_resource type="Texture2D" uid="uid://dfqyc70gt7spi" path="res://resources/assets/Ratas/Caminata/rata-caminando-1.png" id="3_iwo8x"]
-[ext_resource type="Texture2D" uid="uid://bfhur8attqs4a" path="res://resources/assets/Ratas/Salto/rata-salto-1.png" id="4_nf461"]
+[ext_resource type="Script" path="res://scripts/Player/player.gd" id="1_nih8t"]
+[ext_resource type="Texture2D" uid="uid://dfqyc70gt7spi" path="res://resources/assets/Ratas/Caminata/rata-caminando-1.png" id="2_7nfes"]
+[ext_resource type="Texture2D" uid="uid://djn3kudctiw1x" path="res://resources/assets/Ratas/Idle/rata-parada-1.png" id="3_717yr"]
+[ext_resource type="Texture2D" uid="uid://bfhur8attqs4a" path="res://resources/assets/Ratas/Salto/rata-salto-1.png" id="4_ygyck"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3ga5l"]
 radius = 7.0
@@ -60,7 +59,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ExtResource("3_iwo8x")]
+"values": [ExtResource("2_7nfes")]
 }
 
 [sub_resource type="Animation" id="Animation_5f8km"]
@@ -90,7 +89,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ExtResource("2_kpoih")]
+"values": [ExtResource("3_717yr")]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -141,7 +140,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ExtResource("2_kpoih")]
+"values": [ExtResource("3_717yr")]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -219,7 +218,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ExtResource("4_nf461")]
+"values": [ExtResource("4_ygyck")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_w2prx"]
@@ -262,17 +261,17 @@ states/Saltar/position = Vector2(466, 144)
 states/Start/position = Vector2(28, 27)
 transitions = ["Start", "IDLE 2", SubResource("AnimationNodeStateMachineTransition_36qux"), "IDLE 2", "Caminar", SubResource("AnimationNodeStateMachineTransition_005l6"), "Caminar", "IDLE 2", SubResource("AnimationNodeStateMachineTransition_cvhg5"), "Caminar", "End", SubResource("AnimationNodeStateMachineTransition_bgunv"), "IDLE 2", "Saltar", SubResource("AnimationNodeStateMachineTransition_yjh0l"), "Saltar", "IDLE 2", SubResource("AnimationNodeStateMachineTransition_qd7a3")]
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_dpls4"]
+[sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_njsk4"]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 position = Vector2(2, -1)
 scale = Vector2(-1, 1)
-script = ExtResource("1_qjaw8")
+script = ExtResource("1_nih8t")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("2_kpoih")
+texture = ExtResource("3_717yr")
 hframes = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -287,4 +286,4 @@ libraries = {
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_2uy7d")
 anim_player = NodePath("../AnimationPlayer")
-parameters/playback = SubResource("AnimationNodeStateMachinePlayback_dpls4")
+parameters/playback = SubResource("AnimationNodeStateMachinePlayback_njsk4")
