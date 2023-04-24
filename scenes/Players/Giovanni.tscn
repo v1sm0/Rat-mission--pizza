@@ -1,4 +1,5 @@
-[gd_scene load_steps=22 format=3 uid="uid://dcb2in7mldw7r"]
+[gd_scene load_steps=22 format=3 uid="uid://biklxu8hg61dc"]
+
 
 [ext_resource type="Script" path="res://scripts/Player/player.gd" id="1_qjaw8"]
 [ext_resource type="Texture2D" uid="uid://djn3kudctiw1x" path="res://resources/assets/Ratas/Idle/rata-parada-1.png" id="2_kpoih"]
@@ -261,31 +262,29 @@ states/Saltar/position = Vector2(466, 144)
 states/Start/position = Vector2(28, 27)
 transitions = ["Start", "IDLE 2", SubResource("AnimationNodeStateMachineTransition_36qux"), "IDLE 2", "Caminar", SubResource("AnimationNodeStateMachineTransition_005l6"), "Caminar", "IDLE 2", SubResource("AnimationNodeStateMachineTransition_cvhg5"), "Caminar", "End", SubResource("AnimationNodeStateMachineTransition_bgunv"), "IDLE 2", "Saltar", SubResource("AnimationNodeStateMachineTransition_yjh0l"), "Saltar", "IDLE 2", SubResource("AnimationNodeStateMachineTransition_qd7a3")]
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_8loax"]
+[sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_dpls4"]
 
-[node name="Giovanni" type="Node2D" groups=["player"]]
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="CharacterBody2D" type="CharacterBody2D"]
 position = Vector2(2, -1)
 scale = Vector2(-1, 1)
 script = ExtResource("1_qjaw8")
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 texture = ExtResource("2_kpoih")
 hframes = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2, 1)
 shape = SubResource("CapsuleShape2D_3ga5l")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_w2prx")
 }
 
-[node name="AnimationTree" type="AnimationTree" parent="CharacterBody2D"]
+[node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_2uy7d")
 anim_player = NodePath("../AnimationPlayer")
-parameters/playback = SubResource("AnimationNodeStateMachinePlayback_8loax")
+parameters/playback = SubResource("AnimationNodeStateMachinePlayback_dpls4")

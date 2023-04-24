@@ -1,5 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://dybjal4oujngt"]
 
+
 [ext_resource type="Texture2D" uid="uid://bvj70grhld2xd" path="res://resources/Sprites/8-Tile-Sets/Tile-Sets (64-64).png" id="1_ab13a"]
 [ext_resource type="Script" path="res://scenes/niveles/Nivel1.gd" id="1_o1ow6"]
 [ext_resource type="PackedScene" uid="uid://b4ip1utf0olap" path="res://scenes/Players/Giovanni_bueno.tscn" id="2_gynl3"]
@@ -158,6 +159,7 @@ metadata/_edit_group_ = true
 position = Vector2(-32, 0)
 shape = SubResource("RectangleShape2D_v7gxm")
 
+
 [node name="Players" type="Node2D" parent="."]
 
 [node name="Markers" type="Node2D" parent="."]
@@ -173,6 +175,7 @@ gizmo_extents = 50.0
 [node name="Marker2D3" type="Marker2D" parent="Markers"]
 position = Vector2(70, 377)
 gizmo_extents = 50.0
+
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_entered" from="Area2D2" to="Area2D" method="_on_area_2d_2_body_entered"]
