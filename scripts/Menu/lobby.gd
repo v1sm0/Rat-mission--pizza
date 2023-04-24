@@ -1,6 +1,8 @@
 extends MarginContainer
 
-const MAX_PLAYERS = 3
+
+const MAX_PLAYERS = 4
+
 const PORT = 5409
 
 @onready var info = $PanelContainer/MarginContainer/Lobby/Info
@@ -70,6 +72,22 @@ func _on_join_pressed() -> void:
 	lobby.hide()
 	_add_player(nameInput.text, multiplayer.get_unique_id())
 	readyScreen.show()
+
+func _add_player(name: String, id: int):
+	var label = Label.new()
+	label.name = str(id)
+	label.text = name
+	players.add_child(label)
+	Game.players.append(id)
+	Game.N_players += 1
+
+
+@rpc("any_peer", "reliable")
+func send_info(info: Dictionary) -> void:
+	var name = info.name
+	var id = multiplayer.get_remote_sender_id()
+	_add_player(name, id)
+
 
 
 func _on_connected_to_server() -> void:

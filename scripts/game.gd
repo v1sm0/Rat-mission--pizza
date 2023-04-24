@@ -3,6 +3,8 @@ extends Node
 # [ id ]
 var players: Array = []
 
+# Number of players in a game
+var N_players = 0
 
 # Emitted when UPnP port mapping setup is completed (regardless of success or failure).
 signal upnp_completed(error)

@@ -1,5 +1,6 @@
 [gd_scene load_steps=22 format=3 uid="uid://biklxu8hg61dc"]
 
+
 [ext_resource type="Script" path="res://scripts/Player/player.gd" id="1_qjaw8"]
 [ext_resource type="Texture2D" uid="uid://djn3kudctiw1x" path="res://resources/assets/Ratas/Idle/rata-parada-1.png" id="2_kpoih"]
 [ext_resource type="Texture2D" uid="uid://dfqyc70gt7spi" path="res://resources/assets/Ratas/Caminata/rata-caminando-1.png" id="3_iwo8x"]

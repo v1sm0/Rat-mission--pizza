@@ -2,7 +2,7 @@ class_name Player
 extends CharacterBody2D
 
 const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+const JUMP_VELOCITY = -450.0
 const ACCELERATION = 1000
 
 var FACING_RIGHT = true
