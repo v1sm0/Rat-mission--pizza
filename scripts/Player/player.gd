@@ -5,8 +5,7 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 const ACCELERATION = 1000
 
-
-var FACING_RIGHT = false
+var FACING_RIGHT = true
 
 @onready var animation_tree = $AnimationTree
 @onready var character = $"."
@@ -45,8 +44,9 @@ func _physics_process(delta):
 		# Get the input direction and handle the movement/deceleration.
 		# As good practice, you should replace UI actions with custom gameplay actions.
 		if Input.is_action_just_pressed("Left") or Input.is_action_just_pressed("Right"):
-			if move_input>0.5:
-				character.scale.x = move_input
+			if (FACING_RIGHT and move_input<0) or ((not FACING_RIGHT) and move_input>0):
+				character.scale.x = -1 * abs(character.scale.x)
+				FACING_RIGHT = not FACING_RIGHT
 		velocity.x = move_toward(velocity.x, move_input * SPEED, ACCELERATION * delta)
 		
 		
@@ -69,8 +69,5 @@ func send_data(pos: Vector2, vel: Vector2, mi: float) -> void:
 			FACING_RIGHT = not FACING_RIGHT
 			
 			
-	velocity.x = move_toward(velocity.x, move_input * SPEED, ACCELERATION * delta)
-	
-	
-	move_and_slide()
+
 
