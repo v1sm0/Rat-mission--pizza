@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://cacoxw1qe8t3b"]
+[gd_scene load_steps=11 format=3 uid="uid://cacoxw1qe8t3b"]
 
 [ext_resource type="Texture2D" uid="uid://bvj70grhld2xd" path="res://resources/Sprites/8-Tile-Sets/Tile-Sets (64-64).png" id="1_ab13a"]
 [ext_resource type="Script" path="res://scenes/niveles/Nivel1.gd" id="1_o1ow6"]
-[ext_resource type="PackedScene" path="res://scenes/Players/Giovanni_bueno.tscn" id="2_gynl3"]
+[ext_resource type="PackedScene" uid="uid://b4ip1utf0olap" path="res://scenes/Players/Giovanni_bueno.tscn" id="2_gynl3"]
+[ext_resource type="PackedScene" uid="uid://b4qt0ciayhfec" path="res://scenes/niveles/boton.tscn" id="3_gkq3j"]
 [ext_resource type="Script" path="res://scripts/Niveles/Area.gd" id="4_qmec3"]
 [ext_resource type="Texture2D" uid="uid://dbo7kh6xv5l4s" path="res://Textures/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Cheese.png" id="5_qcwnh"]
 
@@ -146,6 +147,9 @@ size = Vector2(867.5, 20)
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_o1ow6")
 player_scene = ExtResource("2_gynl3")
+
+[node name="Boton" parent="." instance=ExtResource("3_gkq3j")]
+position = Vector2(617, 391)
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2(2, 2)

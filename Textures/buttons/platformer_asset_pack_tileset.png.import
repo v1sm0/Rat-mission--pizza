@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bows57p0xhohk"
-path="res://.godot/imported/platformer_asset_pack_tileset.png-bbd3c78b18579bee00852c485cbb70e6.ctex"
+path="res://.godot/imported/platformer_asset_pack_tileset.png-7b25285f2b33aa989b7e2d9ab1b7718a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/platformer_asset_pack_tileset.png"
-dest_files=["res://.godot/imported/platformer_asset_pack_tileset.png-bbd3c78b18579bee00852c485cbb70e6.ctex"]
+source_file="res://Textures/buttons/platformer_asset_pack_tileset.png"
+dest_files=["res://.godot/imported/platformer_asset_pack_tileset.png-7b25285f2b33aa989b7e2d9ab1b7718a.ctex"]
 
 [params]
 
