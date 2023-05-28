@@ -9,6 +9,8 @@
 [ext_resource type="Script" path="res://scenes/niveles/ResetArea.gd" id="6_r4nit"]
 [ext_resource type="Texture2D" uid="uid://be1nc88yb2i2n" path="res://resources/Sprites/2-Door/1-Closed/1.png" id="7_8cnrk"]
 [ext_resource type="Texture2D" uid="uid://dsi1ial8s80p8" path="res://resources/Sprites/2-Door/2-Opening/2.png" id="8_4ljem"]
+[ext_resource type="PackedScene" uid="uid://b4qt0ciayhfec" path="res://scenes/niveles/boton.tscn" id="3_gkq3j"]
+[ext_resource type="Script" path="res://scripts/Niveles/Area.gd" id="4_qmec3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o5lhx"]
 size = Vector2(13, 15.6667)
@@ -188,6 +190,9 @@ texture_filter = 1
 position = Vector2(0.333435, 0.166664)
 scale = Vector2(0.179487, 0.177083)
 texture = ExtResource("7_8cnrk")
+
+[node name="Boton" parent="." instance=ExtResource("3_gkq3j")]
+position = Vector2(617, 391)
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2(2, 2)

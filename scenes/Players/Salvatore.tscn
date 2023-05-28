@@ -232,7 +232,7 @@ _data = {
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_r1moa"]
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="CharacterBody2D" type="CharacterBody2D" groups=["Negro", "Player"]]
 scale = Vector2(-1, 1)
 script = ExtResource("1_p1flo")
 metadata/_edit_group_ = true
@@ -243,6 +243,7 @@ texture = ExtResource("4_tqslp")
 hframes = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(-2, 1)
 shape = SubResource("CapsuleShape2D_3ga5l")
 
