@@ -3,8 +3,17 @@ extends Node
 # [ id ]
 var players: Array = []
 
+# Level
+var level_Number = 1
+
 # Number of players in a game
 var N_players = 0
+
+# Condition to open the doors
+var win_condition = false
+
+# Door condition
+var door_condition = 0
 
 # Emitted when UPnP port mapping setup is completed (regardless of success or failure).
 signal upnp_completed(error)

@@ -5,18 +5,20 @@ extends Node2D
 @onready var markers = $Markers
 @onready var closed_door = $ClosedDoor
 @onready var open_door = $OpenDoor
-@onready var cheese = $Cheese
+@onready var tomato = $Tomato
 
 func _physics_process(delta):
 	if Game.win_condition == true:
 		open_door.show()
 		closed_door.hide()
 
+
 func _ready():
 	Game.win_condition = false
 	open_door.hide()
 	closed_door.show()
 	Game.players.sort()
+	print(Game.players)
 	for i in Game.players.size():
 		var id = Game.players[i]
 		var player: Player = player_scene.instantiate()
@@ -27,4 +29,4 @@ func _ready():
 		player.scale.x = -2
 		player.scale.y = 2
 		player.init(id)
-		
+

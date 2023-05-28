@@ -1,0 +1,390 @@
+[gd_scene load_steps=16 format=3 uid="uid://by3hdp1sirauf"]
+
+[ext_resource type="Script" path="res://scenes/niveles/nivel3.gd" id="1_0rqg1"]
+[ext_resource type="Script" path="res://scripts/Niveles/Food.gd" id="2_e74ey"]
+[ext_resource type="PackedScene" uid="uid://b4ip1utf0olap" path="res://scenes/Players/Giovanni_bueno.tscn" id="2_mdrpm"]
+[ext_resource type="Texture2D" uid="uid://bitmw1m5kcy8v" path="res://icon.svg" id="2_nmnkt"]
+[ext_resource type="Texture2D" uid="uid://bvj70grhld2xd" path="res://resources/Sprites/8-Tile-Sets/Tile-Sets (64-64).png" id="3_1546s"]
+[ext_resource type="Texture2D" uid="uid://be1nc88yb2i2n" path="res://resources/Sprites/2-Door/1-Closed/1.png" id="4_lqn1p"]
+[ext_resource type="Texture2D" uid="uid://cdml8ieny6iva" path="res://Textures/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Pepperoni.png" id="4_r478r"]
+[ext_resource type="Texture2D" uid="uid://dsi1ial8s80p8" path="res://resources/Sprites/2-Door/2-Opening/2.png" id="5_g7v11"]
+[ext_resource type="Script" path="res://scenes/niveles/Door.gd" id="6_b5r82"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xjo8u"]
+size = Vector2(20, 17.3333)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qsacf"]
+texture = ExtResource("3_1546s")
+0:0/size_in_atlas = Vector2i(2, 2)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15.5, -16, 16.5, -16, 16.5, 17, -15.5, 17)
+2:0/size_in_atlas = Vector2i(2, 2)
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.5, -16.5, 17.5, -16.5, 17.5, 16.5, -16.5, 16.5)
+4:0/size_in_atlas = Vector2i(2, 2)
+4:0/0 = 0
+4:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:0/0/physics_layer_0/angular_velocity = 0.0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.5, -16.5, 17.5, -16.5, 17.5, 16.5, -16.5, 16.5)
+6:0/size_in_atlas = Vector2i(2, 2)
+6:0/0 = 0
+6:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+6:0/0/physics_layer_0/angular_velocity = 0.0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.5, -16.5, 17.5, -16.5, 17.5, 16.5, -16.5, 16.5)
+8:0/size_in_atlas = Vector2i(2, 2)
+8:0/0 = 0
+8:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+8:0/0/physics_layer_0/angular_velocity = 0.0
+8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.5, -16.5, 17.5, -16.5, 17.5, 16.5, -16.5, 16.5)
+10:0/size_in_atlas = Vector2i(2, 2)
+10:0/0 = 0
+10:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+10:0/0/physics_layer_0/angular_velocity = 0.0
+10:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.5, -16.5, 15.5, -16.5, 15.5, 17, -16.5, 17)
+0:2/size_in_atlas = Vector2i(2, 2)
+0:2/0 = 0
+0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:2/0/physics_layer_0/angular_velocity = 0.0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15.5, -17, 16, -17, 16, 16.5, -15.5, 16.5)
+2:2/size_in_atlas = Vector2i(2, 2)
+2:2/0 = 0
+2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:2/0/physics_layer_0/angular_velocity = 0.0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.5, -16.5, 17.5, -16.5, 17.5, 16.5, -16.5, 16.5)
+4:2/size_in_atlas = Vector2i(2, 2)
+4:2/0 = 0
+4:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:2/0/physics_layer_0/angular_velocity = 0.0
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.5, -16.5, 17.5, -16.5, 17.5, 16.5, -16.5, 16.5)
+6:2/size_in_atlas = Vector2i(2, 2)
+6:2/0 = 0
+6:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+6:2/0/physics_layer_0/angular_velocity = 0.0
+6:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.5, -16.5, 17.5, -16.5, 17.5, 16.5, -16.5, 16.5)
+8:2/size_in_atlas = Vector2i(2, 2)
+8:2/0 = 0
+8:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+8:2/0/physics_layer_0/angular_velocity = 0.0
+8:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.5, -16.5, 17.5, -16.5, 17.5, 16.5, -16.5, 16.5)
+10:2/size_in_atlas = Vector2i(2, 2)
+10:2/0 = 0
+10:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+10:2/0/physics_layer_0/angular_velocity = 0.0
+10:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.5, -16.5, 15.5, -16.5, 15.5, 17, -16.5, 17)
+16:12/0 = 0
+16:12/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+16:12/0/physics_layer_0/angular_velocity = 0.0
+16:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7, -8, 8, -8, 8, 8, -7, 8)
+17:12/0 = 0
+17:12/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+17:12/0/physics_layer_0/angular_velocity = 0.0
+17:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+18:12/0 = 0
+18:12/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+18:12/0/physics_layer_0/angular_velocity = 0.0
+18:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+19:12/0 = 0
+19:12/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+19:12/0/physics_layer_0/angular_velocity = 0.0
+19:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 7, -8, 7, 8, -8, 8)
+20:12/0 = 0
+20:12/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+20:12/0/physics_layer_0/angular_velocity = 0.0
+20:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+21:12/0 = 0
+21:12/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+21:12/0/physics_layer_0/angular_velocity = 0.0
+21:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 7, -8, 7, 8, -8, 8)
+22:12/0 = 0
+22:12/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+22:12/0/physics_layer_0/angular_velocity = 0.0
+22:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+23:12/0 = 0
+23:12/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+23:12/0/physics_layer_0/angular_velocity = 0.0
+23:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+16:16/0 = 0
+16:16/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+16:16/0/physics_layer_0/angular_velocity = 0.0
+16:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+17:16/0 = 0
+17:16/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+17:16/0/physics_layer_0/angular_velocity = 0.0
+17:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+18:16/0 = 0
+18:16/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+18:16/0/physics_layer_0/angular_velocity = 0.0
+18:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+19:16/0 = 0
+19:16/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+19:16/0/physics_layer_0/angular_velocity = 0.0
+19:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 7, -8, 7, 8, -8, 8)
+20:16/0 = 0
+20:16/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+20:16/0/physics_layer_0/angular_velocity = 0.0
+20:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+21:16/0 = 0
+21:16/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+21:16/0/physics_layer_0/angular_velocity = 0.0
+21:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+22:16/0 = 0
+22:16/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+22:16/0/physics_layer_0/angular_velocity = 0.0
+22:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+23:16/0 = 0
+23:16/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+23:16/0/physics_layer_0/angular_velocity = 0.0
+23:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_om7r7"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_qsacf")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8fo3b"]
+size = Vector2(35.3333, 24.3333)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n50u7"]
+size = Vector2(13, 15.6667)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oqy6n"]
+size = Vector2(13, 15.6667)
+
+[node name="Nivel 3" type="Node2D"]
+script = ExtResource("1_0rqg1")
+player_scene = ExtResource("2_mdrpm")
+
+[node name="Button3" type="Area2D" parent="."]
+texture_filter = 1
+position = Vector2(368, 694)
+scale = Vector2(2, 2)
+script = ExtResource("2_e74ey")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Button3"]
+shape = SubResource("RectangleShape2D_xjo8u")
+
+[node name="Sprite2D" type="Sprite2D" parent="Button3"]
+texture_filter = 1
+scale = Vector2(0.182292, 0.144531)
+texture = ExtResource("2_nmnkt")
+
+[node name="Button4" type="Area2D" parent="."]
+texture_filter = 1
+position = Vector2(454, 695)
+scale = Vector2(2, 2)
+script = ExtResource("2_e74ey")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Button4"]
+shape = SubResource("RectangleShape2D_xjo8u")
+
+[node name="Sprite2D" type="Sprite2D" parent="Button4"]
+texture_filter = 1
+scale = Vector2(0.182292, 0.144531)
+texture = ExtResource("2_nmnkt")
+
+[node name="Button5" type="Area2D" parent="."]
+texture_filter = 1
+position = Vector2(539, 694)
+scale = Vector2(2, 2)
+script = ExtResource("2_e74ey")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Button5"]
+shape = SubResource("RectangleShape2D_xjo8u")
+
+[node name="Sprite2D" type="Sprite2D" parent="Button5"]
+texture_filter = 1
+scale = Vector2(0.182292, 0.144531)
+texture = ExtResource("2_nmnkt")
+
+[node name="Button6" type="Area2D" parent="."]
+texture_filter = 1
+position = Vector2(619, 693)
+scale = Vector2(2, 2)
+script = ExtResource("2_e74ey")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Button6"]
+shape = SubResource("RectangleShape2D_xjo8u")
+
+[node name="Sprite2D" type="Sprite2D" parent="Button6"]
+texture_filter = 1
+scale = Vector2(0.182292, 0.144531)
+texture = ExtResource("2_nmnkt")
+
+[node name="UpButton" type="Area2D" parent="."]
+texture_filter = 1
+position = Vector2(641, 419)
+scale = Vector2(2, 2)
+script = ExtResource("2_e74ey")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UpButton"]
+shape = SubResource("RectangleShape2D_xjo8u")
+
+[node name="Sprite2D" type="Sprite2D" parent="UpButton"]
+texture_filter = 1
+scale = Vector2(0.182292, 0.144531)
+texture = ExtResource("2_nmnkt")
+
+[node name="TileMap3" type="TileMap" parent="."]
+scale = Vector2(2, 2)
+tile_set = SubResource("TileSet_om7r7")
+cell_quadrant_size = 64
+format = 2
+layer_0/tile_data = PackedInt32Array(1441793, 131072, 0, 1441795, 131072, 0, 1441797, 262144, 0, 1441799, 393216, 0, 1441801, 524288, 0, 1441803, 131072, 0, 1441805, 131072, 0, 1441807, 262144, 0, 1441809, 393216, 0, 1441811, 524288, 0, 1441813, 131072, 0, 1441815, 131072, 0, 1441817, 262144, 0, 1441819, 393216, 0, 1441821, 524288, 0, 1441823, 131072, 0, 1441825, 655360, 0, 1507327, 0, 0, 851978, 1048576, 12, 851979, 1114112, 12, 851980, 1179648, 12, 851981, 1245184, 12, 851982, 1310720, 12, 851983, 1376256, 12, 851984, 1441792, 12, 851985, 1507328, 12, 851986, 1048576, 16, 851987, 1114112, 16, 851988, 1179648, 16, 851989, 1245184, 16)
+metadata/_edit_group_ = true
+
+[node name="Box3" type="Area2D" parent="."]
+texture_filter = 1
+position = Vector2(260, 586)
+scale = Vector2(2, 2)
+script = ExtResource("2_e74ey")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Box3"]
+position = Vector2(0, -0.166672)
+shape = SubResource("RectangleShape2D_8fo3b")
+
+[node name="Sprite2D" type="Sprite2D" parent="Box3"]
+texture_filter = 1
+scale = Vector2(0.28125, 0.195313)
+texture = ExtResource("2_nmnkt")
+
+[node name="TileMap5" type="TileMap" parent="."]
+scale = Vector2(2, 2)
+tile_set = SubResource("TileSet_om7r7")
+cell_quadrant_size = 64
+format = 2
+layer_0/tile_data = PackedInt32Array(196630, 1310720, 16, 196631, 1376256, 16, 196632, 1441792, 16, 196633, 1507328, 16)
+metadata/_edit_group_ = true
+
+[node name="TileMap4" type="TileMap" parent="."]
+scale = Vector2(2, 2)
+tile_set = SubResource("TileSet_om7r7")
+cell_quadrant_size = 64
+format = 2
+layer_0/tile_data = PackedInt32Array(655386, 1310720, 16, 655387, 1507328, 16)
+metadata/_edit_group_ = true
+
+[node name="Pepperoni" type="Area2D" parent="TileMap4"]
+texture_filter = 1
+position = Vector2(431, 147)
+scale = Vector2(1.5, 1.5)
+script = ExtResource("2_e74ey")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap4/Pepperoni"]
+shape = SubResource("RectangleShape2D_n50u7")
+
+[node name="Sprite2D" type="Sprite2D" parent="TileMap4/Pepperoni"]
+texture_filter = 1
+texture = ExtResource("4_r478r")
+
+[node name="Box2" type="Area2D" parent="."]
+texture_filter = 1
+position = Vector2(234, 651)
+scale = Vector2(3, 3)
+script = ExtResource("2_e74ey")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Box2"]
+position = Vector2(0, -0.166672)
+shape = SubResource("RectangleShape2D_8fo3b")
+
+[node name="Sprite2D" type="Sprite2D" parent="Box2"]
+texture_filter = 1
+scale = Vector2(0.28125, 0.195313)
+texture = ExtResource("2_nmnkt")
+
+[node name="DroppingBox" type="Area2D" parent="."]
+texture_filter = 1
+position = Vector2(769, 71)
+scale = Vector2(2, 2)
+script = ExtResource("2_e74ey")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DroppingBox"]
+position = Vector2(0, -0.166672)
+shape = SubResource("RectangleShape2D_8fo3b")
+
+[node name="Sprite2D" type="Sprite2D" parent="DroppingBox"]
+texture_filter = 1
+scale = Vector2(0.28125, 0.195313)
+texture = ExtResource("2_nmnkt")
+
+[node name="ClosedDoor" type="Area2D" parent="."]
+texture_filter = 1
+position = Vector2(1013, 629)
+scale = Vector2(7, 7)
+script = ExtResource("6_b5r82")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClosedDoor"]
+position = Vector2(0.166687, 0.166656)
+shape = SubResource("RectangleShape2D_oqy6n")
+
+[node name="Sprite2D" type="Sprite2D" parent="ClosedDoor"]
+texture_filter = 1
+position = Vector2(0.333435, 0.166664)
+scale = Vector2(0.179487, 0.177083)
+texture = ExtResource("4_lqn1p")
+
+[node name="OpenDoor" type="Area2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(1013, 629)
+scale = Vector2(7, 7)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OpenDoor"]
+position = Vector2(0.166687, 0.166664)
+shape = SubResource("RectangleShape2D_oqy6n")
+
+[node name="Sprite2D" type="Sprite2D" parent="OpenDoor"]
+texture_filter = 1
+position = Vector2(0.333435, 0.166664)
+scale = Vector2(0.179487, 0.177083)
+texture = ExtResource("5_g7v11")
+
+[node name="Players" type="Node2D" parent="."]
+position = Vector2(6.10352e-05, 0)
+scale = Vector2(1, 1)
+
+[node name="Markers" type="Node2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="Markers"]
+position = Vector2(127, 597)
+gizmo_extents = 50.0
+
+[node name="Marker2D2" type="Marker2D" parent="Markers"]
+position = Vector2(51, 635)
+gizmo_extents = 50.0
+
+[connection signal="body_entered" from="Button3" to="Button3" method="_on_body_entered"]
+[connection signal="body_exited" from="Button3" to="Button3" method="_on_body_exited"]
+[connection signal="body_entered" from="Button4" to="Button4" method="_on_body_entered"]
+[connection signal="body_exited" from="Button4" to="Button4" method="_on_body_exited"]
+[connection signal="body_entered" from="Button5" to="Button5" method="_on_body_entered"]
+[connection signal="body_exited" from="Button5" to="Button5" method="_on_body_exited"]
+[connection signal="body_entered" from="Button6" to="Button6" method="_on_body_entered"]
+[connection signal="body_exited" from="Button6" to="Button6" method="_on_body_exited"]
+[connection signal="body_entered" from="UpButton" to="UpButton" method="_on_body_entered"]
+[connection signal="body_exited" from="UpButton" to="UpButton" method="_on_body_exited"]
+[connection signal="body_entered" from="Box3" to="Box3" method="_on_body_entered"]
+[connection signal="body_exited" from="Box3" to="Box3" method="_on_body_exited"]
+[connection signal="body_entered" from="TileMap4/Pepperoni" to="TileMap4/Pepperoni" method="_on_body_entered"]
+[connection signal="body_exited" from="TileMap4/Pepperoni" to="TileMap4/Pepperoni" method="_on_body_exited"]
+[connection signal="body_entered" from="Box2" to="Box2" method="_on_body_entered"]
+[connection signal="body_exited" from="Box2" to="Box2" method="_on_body_exited"]
+[connection signal="body_entered" from="DroppingBox" to="DroppingBox" method="_on_body_entered"]
+[connection signal="body_exited" from="DroppingBox" to="DroppingBox" method="_on_body_exited"]
+[connection signal="body_entered" from="ClosedDoor" to="ClosedDoor" method="_on_body_entered"]
+[connection signal="body_exited" from="ClosedDoor" to="ClosedDoor" method="_on_body_exited"]
+[connection signal="body_entered" from="OpenDoor" to="OpenDoor" method="_on_body_entered"]
+[connection signal="body_exited" from="OpenDoor" to="OpenDoor" method="_on_body_exited"]
