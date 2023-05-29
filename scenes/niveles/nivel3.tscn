@@ -181,19 +181,18 @@ format = 2
 layer_0/tile_data = PackedInt32Array(1441793, 131072, 0, 1441795, 131072, 0, 1441797, 262144, 0, 1441799, 393216, 0, 1441801, 524288, 0, 1441803, 131072, 0, 1441805, 131072, 0, 1441807, 262144, 0, 1441809, 393216, 0, 1441811, 524288, 0, 1441813, 131072, 0, 1441817, 262144, 0, 1441821, 524288, 0, 1441823, 131072, 0, 1441825, 655360, 0, 1507327, 0, 0, 851978, 1048576, 12, 851979, 1114112, 12, 851980, 1179648, 12, 851981, 1245184, 12, 851982, 1310720, 12, 851983, 1376256, 12, 851984, 1441792, 12, 851985, 1507328, 12, 851986, 1048576, 16, 851987, 1114112, 16, 851988, 1179648, 16, 851989, 1245184, 16, 1441815, 131072, 0)
 metadata/_edit_group_ = true
 
-[node name="CajaCantidad" parent="." groups=["CajaCantidad"] instance=ExtResource("5_qkkpj")]
-position = Vector2(772, 49)
-center_of_mass_mode = 1
-center_of_mass = Vector2(-3.06, 0)
-can_sleep = false
-
 [node name="CajaCantidad2" parent="." groups=["CajaCantidad"] instance=ExtResource("5_qkkpj")]
 position = Vector2(288, 556)
+
+[node name="CajaCantidad4" parent="." groups=["CajaCantidad"] instance=ExtResource("5_qkkpj")]
+visible = false
+position = Vector2(769, 640)
 
 [node name="CajaCantidad3" parent="." groups=["CajaCantidad"] instance=ExtResource("5_qkkpj")]
 position = Vector2(265, 644)
 
 [node name="TileMap5" type="TileMap" parent="."]
+visible = false
 scale = Vector2(2, 2)
 tile_set = SubResource("TileSet_om7r7")
 cell_quadrant_size = 64
