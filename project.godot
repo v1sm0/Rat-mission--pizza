@@ -13,6 +13,7 @@ config_version=5
 config/name="Rat mission: pizza"
 run/main_scene="res://scenes/menus/menu.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
+boot_splash/bg_color=Color(0.141176, 0.141176, 0.141176, 1)
 config/icon="res://resources/rat-mission--pizza.png"
 config/macos_native_icon="res://resources/azhpl-9mu2u.icns"
 config/windows_native_icon="res://resources/rat-mission--pizza.ico"

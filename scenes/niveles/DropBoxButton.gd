@@ -12,7 +12,7 @@ func _on_area_2d_body_entered(body):
 		$AnimationPlayer.play("ButtonDown")
 
 
-func _on_area_2d_body_exited(body):
-	if body.is_in_group("Player"):
-		drop_box_condition = false
-		$AnimationPlayer.play("ButtonUp")
+#func _on_area_2d_body_exited(body):
+#	if body.is_in_group("Player"):
+#		drop_box_condition = false
+#		$AnimationPlayer.play("ButtonUp")

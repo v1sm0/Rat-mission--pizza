@@ -1,10 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://qsdprouxd7yi"]
+[gd_scene load_steps=18 format=3 uid="uid://qsdprouxd7yi"]
 
 [ext_resource type="Texture2D" uid="uid://bvj70grhld2xd" path="res://resources/Sprites/8-Tile-Sets/Tile-Sets (64-64).png" id="1_55n03"]
 [ext_resource type="Script" path="res://scenes/niveles/nivel2.gd" id="1_064ph"]
 [ext_resource type="Script" path="res://scripts/Niveles/Food.gd" id="2_4ciyt"]
 [ext_resource type="Texture2D" uid="uid://bitmw1m5kcy8v" path="res://icon.svg" id="2_7bwhd"]
 [ext_resource type="PackedScene" uid="uid://b4ip1utf0olap" path="res://scenes/Players/Giovanni_bueno.tscn" id="2_bpfmn"]
+[ext_resource type="Texture2D" uid="uid://ch83parrqxh5o" path="res://resources/bgnd.png" id="3_0xsf5"]
 [ext_resource type="Texture2D" uid="uid://etineyfsipw2" path="res://Textures/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Tomato.png" id="3_ty227"]
 [ext_resource type="Script" path="res://scenes/niveles/ResetArea.gd" id="5_ui2jf"]
 [ext_resource type="Texture2D" uid="uid://be1nc88yb2i2n" path="res://resources/Sprites/2-Door/1-Closed/1.png" id="5_vd7w1"]
@@ -156,6 +157,21 @@ size = Vector2(35.3333, 24.3333)
 script = ExtResource("1_064ph")
 player_scene = ExtResource("2_bpfmn")
 
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(541.5, 154.625)
+scale = Vector2(0.463153, 0.59261)
+texture = ExtResource("3_0xsf5")
+
+[node name="background2" type="Sprite2D" parent="."]
+position = Vector2(540.25, 464)
+scale = Vector2(0.464653, 0.59261)
+texture = ExtResource("3_0xsf5")
+
+[node name="background3" type="Sprite2D" parent="."]
+position = Vector2(540.25, 772)
+scale = Vector2(0.464653, 0.59261)
+texture = ExtResource("3_0xsf5")
+
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2(2, 2)
 tile_set = SubResource("TileSet_wrdpj")
@@ -174,7 +190,7 @@ layer_0/tile_data = PackedInt32Array(655372, 1310720, 16, 655373, 1376256, 16, 6
 metadata/_edit_group_ = true
 
 [node name="ResetArea" type="Area2D" parent="."]
-position = Vector2(524, 758)
+position = Vector2(527, 774)
 scale = Vector2(2, 5)
 script = ExtResource("5_ui2jf")
 metadata/_edit_group_ = true
@@ -190,10 +206,14 @@ scale = Vector2(3, 3)
 script = ExtResource("2_4ciyt")
 metadata/_edit_group_ = true
 
+[node name="CatchedTomato" type="Sprite2D" parent="Tomato"]
+texture_filter = 1
+texture = ExtResource("3_ty227")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tomato"]
 shape = SubResource("RectangleShape2D_l1wi4")
 
-[node name="Sprite2D" type="Sprite2D" parent="Tomato"]
+[node name="Tomato" type="Sprite2D" parent="Tomato"]
 texture_filter = 1
 texture = ExtResource("3_ty227")
 
@@ -206,10 +226,12 @@ script = ExtResource("6_irafq")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ClosedDoor"]
+visible = false
 position = Vector2(0.166687, 0.166656)
 shape = SubResource("RectangleShape2D_l1wi4")
 
 [node name="Sprite2D" type="Sprite2D" parent="ClosedDoor"]
+visible = false
 texture_filter = 1
 position = Vector2(0.333435, 0.166664)
 scale = Vector2(0.179487, 0.177083)
@@ -223,10 +245,12 @@ scale = Vector2(7, 7)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="OpenDoor"]
+visible = false
 position = Vector2(0.166687, 0.166664)
 shape = SubResource("RectangleShape2D_l1wi4")
 
 [node name="Sprite2D" type="Sprite2D" parent="OpenDoor"]
+visible = false
 texture_filter = 1
 position = Vector2(0.333435, 0.166664)
 scale = Vector2(0.179487, 0.177083)
@@ -266,12 +290,10 @@ position = Vector2(684, 680)
 [node name="Boton2" parent="." instance=ExtResource("11_fxiba")]
 position = Vector2(795, 679)
 
-[connection signal="area_entered" from="ResetArea" to="ResetArea" method="_on_area_2d_2_body_entered"]
+[connection signal="body_entered" from="ResetArea" to="ResetArea" method="_on_area_2d_2_body_entered"]
 [connection signal="body_entered" from="Tomato" to="Tomato" method="_on_body_entered"]
 [connection signal="body_exited" from="Tomato" to="Tomato" method="_on_body_exited"]
 [connection signal="body_entered" from="ClosedDoor" to="ClosedDoor" method="_on_body_entered"]
 [connection signal="body_exited" from="ClosedDoor" to="ClosedDoor" method="_on_body_exited"]
-[connection signal="body_entered" from="OpenDoor" to="OpenDoor" method="_on_body_entered"]
-[connection signal="body_exited" from="OpenDoor" to="OpenDoor" method="_on_body_exited"]
 [connection signal="body_entered" from="Box" to="Box" method="_on_body_entered"]
 [connection signal="body_exited" from="Box" to="Box" method="_on_body_exited"]
