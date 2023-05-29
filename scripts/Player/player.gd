@@ -57,7 +57,7 @@ func _physics_process(delta):
 				FACING_RIGHT = not FACING_RIGHT
 				
 		if Input.is_action_just_pressed("Left") or Input.is_action_just_pressed("Right") or Input.is_action_pressed("Left") or Input.is_action_pressed("Right"):
-			emit_signal("empujando", self)
+			emit_signal("empujando", self, move_input)
 			
 			
 		velocity.x = move_toward(velocity.x, move_input * SPEED, ACCELERATION * delta)
