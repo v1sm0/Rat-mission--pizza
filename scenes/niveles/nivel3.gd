@@ -8,18 +8,19 @@ extends Node2D
 @onready var pepperoni = $TileMap4/Pepperoni
 @onready var tile_map_4 = $TileMap4
 @onready var tile_map_5 = $TileMap5
-@onready var drop_box_condition = false
+@onready var drop_box_button = $DropBoxButton
+
 
 func _physics_process(delta):
 	if Game.buttton_counter == Game.button_max:
 		tile_map_4.show()
-	elif drop_box_condition == false:
+	elif drop_box_button.drop_box_condition == true:
 		tile_map_5.show()
 	elif Game.win_condition == true && Game.buttton_counter == Game.button_max:
 		open_door.show()
 		closed_door.hide()
 	else:
-		tile_map_5.show()		
+		tile_map_5.show()
 		tile_map_4.hide()
 		open_door.hide()
 		closed_door.show()

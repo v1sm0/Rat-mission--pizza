@@ -166,7 +166,7 @@ metadata/_edit_group_ = true
 
 [node name="Box3" type="Area2D" parent="."]
 texture_filter = 1
-position = Vector2(260, 586)
+position = Vector2(269, 590)
 scale = Vector2(2, 2)
 script = ExtResource("2_e74ey")
 metadata/_edit_group_ = true
@@ -212,7 +212,7 @@ texture = ExtResource("4_r478r")
 
 [node name="Box2" type="Area2D" parent="."]
 texture_filter = 1
-position = Vector2(234, 651)
+position = Vector2(261, 651)
 scale = Vector2(3, 3)
 script = ExtResource("2_e74ey")
 metadata/_edit_group_ = true
@@ -299,7 +299,7 @@ script = ExtResource("11_8hcdd")
 [node name="Markers" type="Node2D" parent="."]
 
 [node name="Marker2D" type="Marker2D" parent="Markers"]
-position = Vector2(127, 597)
+position = Vector2(155, 632)
 gizmo_extents = 50.0
 
 [node name="Marker2D2" type="Marker2D" parent="Markers"]

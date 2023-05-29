@@ -12,6 +12,7 @@ func _physics_process(delta):
 		open_door.show()
 		closed_door.hide()
 
+
 func _ready():
 	Game.win_condition = false
 	open_door.hide()
@@ -21,7 +22,7 @@ func _ready():
 		var id = Game.players[i]
 		var player: Player = player_scene.instantiate()
 		players.add_child(player)
-		#player.name = str(id)
+#		player.name = str(id)
 		var marker = markers.get_child(i)
 		player.global_position = marker.global_position
 		player.scale.x = -2
