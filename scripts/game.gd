@@ -12,6 +12,12 @@ var N_players = 0
 # Condition to open the doors
 var win_condition = false
 
+# Contador de botones activados
+var buttton_counter = 0
+
+# Máximo de botones
+var button_max = 0
+
 # Door condition
 var door_condition = 0
 

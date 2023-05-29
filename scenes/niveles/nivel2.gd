@@ -6,19 +6,26 @@ extends Node2D
 @onready var closed_door = $ClosedDoor
 @onready var open_door = $OpenDoor
 @onready var tomato = $Tomato
+@onready var tile_map_2 = $TileMap2
 
 func _physics_process(delta):
-	if Game.win_condition == true:
+	if Game.buttton_counter == Game.button_max:
+		tile_map_2.show()
+	elif Game.win_condition == true && Game.buttton_counter == Game.button_max:
 		open_door.show()
 		closed_door.hide()
-
+	else:
+		tile_map_2.hide()		
+		open_door.hide()
+		closed_door.show()
 
 func _ready():
+	Game.buttton_counter = 0
+	Game.button_max = 2
 	Game.win_condition = false
 	open_door.hide()
 	closed_door.show()
 	Game.players.sort()
-	print(Game.players)
 	for i in Game.players.size():
 		var id = Game.players[i]
 		var player: Player = player_scene.instantiate()

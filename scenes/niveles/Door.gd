@@ -14,7 +14,7 @@ func _on_body_exited(body):
 #		get_tree().reload_current_scene()
 
 func _physics_process(delta):
-	if Game.door_condition == Game.N_players:
+	if Game.door_condition == Game.N_players && Game.win_condition == true:
 		Game.level_Number += 1 
 		var level_directory = "res://scenes/niveles/nivel%d.tscn" % Game.level_Number
 		if Game.level_Number >= 4:
