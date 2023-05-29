@@ -20,4 +20,6 @@ func _physics_process(delta):
 		if Game.level_Number >= 4:
 			get_tree().change_scene_to_file("res://scenes/niveles/Pantalla_victoria.tscn")
 		else:
+			Game.win_condition = false
+			Game.door_condition = 0
 			get_tree().change_scene_to_file(level_directory) 

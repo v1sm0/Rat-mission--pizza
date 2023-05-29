@@ -20,14 +20,14 @@ func _physics_process(delta):
 		closed_door.hide()
 	else:
 		tile_map_2.hide()
+		open_door.hide()
+		closed_door.show()
 
 func _ready():
 	Game.win_condition = false
-	Game.door_condition = 0
 	Game.buttton_counter = 0
 	Game.button_max = 2
-	open_door.hide()
-	closed_door.show()
+	
 	catched_tomato.hide()
 	tomato.show()
 	Game.players.sort()

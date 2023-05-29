@@ -263,7 +263,6 @@ scale = Vector2(0.28125, 0.195313)
 texture = ExtResource("2_nmnkt")
 
 [node name="ClosedDoor" type="Area2D" parent="."]
-visible = false
 texture_filter = 1
 position = Vector2(1013, 629)
 scale = Vector2(7, 7)
@@ -271,12 +270,10 @@ script = ExtResource("6_b5r82")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ClosedDoor"]
-visible = false
 position = Vector2(0.166687, 0.166656)
 shape = SubResource("RectangleShape2D_oqy6n")
 
 [node name="Sprite2D" type="Sprite2D" parent="ClosedDoor"]
-visible = false
 texture_filter = 1
 position = Vector2(0.333435, 0.166664)
 scale = Vector2(0.179487, 0.177083)
@@ -290,12 +287,10 @@ scale = Vector2(7, 7)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="OpenDoor"]
-visible = false
 position = Vector2(0.166687, 0.166664)
 shape = SubResource("RectangleShape2D_oqy6n")
 
 [node name="Sprite2D" type="Sprite2D" parent="OpenDoor"]
-visible = false
 texture_filter = 1
 position = Vector2(0.333435, 0.166664)
 scale = Vector2(0.179487, 0.177083)

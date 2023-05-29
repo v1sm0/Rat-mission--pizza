@@ -29,7 +29,6 @@ func _physics_process(delta):
 		closed_door.show()
 
 func _ready():
-	Game.door_condition = 0
 	Game.buttton_counter = 0
 	Game.button_max = 2
 	Game.win_condition = false

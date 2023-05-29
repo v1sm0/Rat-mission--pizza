@@ -18,7 +18,6 @@ func _physics_process(delta):
 
 func _ready():
 	Game.win_condition = false
-	Game.door_condition
 	open_door.hide()
 	closed_door.show()
 	cheese.show()
