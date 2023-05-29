@@ -8,12 +8,13 @@
 size = Vector2(68, 86)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0rn07"]
-size = Vector2(10, 86)
+size = Vector2(10, 74)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m2i4i"]
-size = Vector2(10, 86)
+size = Vector2(10, 74)
 
 [node name="CajaCantidad" type="RigidBody2D"]
+collision_mask = 3
 freeze_mode = 1
 script = ExtResource("1_m7dhg")
 

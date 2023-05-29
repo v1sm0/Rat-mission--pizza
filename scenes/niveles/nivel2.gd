@@ -10,24 +10,21 @@ extends Node2D
 @onready var tomato = $Tomato/Tomato
 
 func _physics_process(delta):
+	if Game.buttton_counter == Game.button_max:
+		tile_map_2.show()
+	if Game.buttton_counter != Game.button_max:
+		tile_map_2.hide()
 	if Game.win_condition == true:
 		catched_tomato.show()
 		tomato.hide()
-	if Game.buttton_counter == Game.button_max:
-		tile_map_2.show()
-	elif Game.win_condition == true && Game.buttton_counter == Game.button_max:
 		open_door.show()
 		closed_door.hide()
-	else:
-		tile_map_2.hide()
-		open_door.hide()
-		closed_door.show()
 
 func _ready():
 	Game.win_condition = false
 	Game.buttton_counter = 0
 	Game.button_max = 2
-	
+	Game.door_condition = 0	
 	catched_tomato.hide()
 	tomato.show()
 	Game.players.sort()

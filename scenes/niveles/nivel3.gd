@@ -15,22 +15,17 @@ func _physics_process(delta):
 	if Game.win_condition == true:
 		catched_pepperoni.show()
 		pepperoni.hide()
-	if Game.buttton_counter == Game.button_max:
-		tile_map_4.show()
-	elif drop_box_button.drop_box_condition == true:
-		tile_map_5.show()
-	elif Game.win_condition == true && Game.buttton_counter == Game.button_max:
 		open_door.show()
 		closed_door.hide()
-	else:
-		tile_map_5.show()
-		tile_map_4.hide()
-		open_door.hide()
-		closed_door.show()
-
+	if Game.buttton_counter == Game.button_max:
+		tile_map_4.show()
+	if drop_box_button.drop_box_condition == true:
+		tile_map_5.hide()
+		
 func _ready():
+	tile_map_4.hide()
 	Game.buttton_counter = 0
-	Game.button_max = 2
+	Game.button_max = 4
 	Game.win_condition = false
 	open_door.hide()
 	closed_door.show()

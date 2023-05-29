@@ -1,9 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://qsdprouxd7yi"]
+[gd_scene load_steps=17 format=3 uid="uid://qsdprouxd7yi"]
 
 [ext_resource type="Texture2D" uid="uid://bvj70grhld2xd" path="res://resources/Sprites/8-Tile-Sets/Tile-Sets (64-64).png" id="1_55n03"]
 [ext_resource type="Script" path="res://scenes/niveles/nivel2.gd" id="1_064ph"]
 [ext_resource type="Script" path="res://scripts/Niveles/Food.gd" id="2_4ciyt"]
-[ext_resource type="Texture2D" uid="uid://bitmw1m5kcy8v" path="res://icon.svg" id="2_7bwhd"]
 [ext_resource type="PackedScene" uid="uid://b4ip1utf0olap" path="res://scenes/Players/Giovanni_bueno.tscn" id="2_bpfmn"]
 [ext_resource type="Texture2D" uid="uid://ch83parrqxh5o" path="res://resources/bgnd.png" id="3_0xsf5"]
 [ext_resource type="Texture2D" uid="uid://etineyfsipw2" path="res://Textures/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Tomato.png" id="3_ty227"]
@@ -11,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://be1nc88yb2i2n" path="res://resources/Sprites/2-Door/1-Closed/1.png" id="5_vd7w1"]
 [ext_resource type="Texture2D" uid="uid://dsi1ial8s80p8" path="res://resources/Sprites/2-Door/2-Opening/2.png" id="6_gv8sx"]
 [ext_resource type="Script" path="res://scenes/niveles/Door.gd" id="6_irafq"]
+[ext_resource type="PackedScene" uid="uid://b4t2i54mvekqj" path="res://scenes/objetos/caja-cantidad.tscn" id="11_3xvh8"]
 [ext_resource type="PackedScene" uid="uid://csgjga35r2h6" path="res://scenes/niveles/boton.tscn" id="11_fxiba"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qsacf"]
@@ -150,9 +150,6 @@ size = Vector2(867.5, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l1wi4"]
 size = Vector2(13, 15.6667)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mdcci"]
-size = Vector2(35.3333, 24.3333)
-
 [node name="Nivel 2" type="Node2D"]
 script = ExtResource("1_064ph")
 player_scene = ExtResource("2_bpfmn")
@@ -201,20 +198,22 @@ shape = SubResource("RectangleShape2D_25nhu")
 
 [node name="Tomato" type="Area2D" parent="."]
 texture_filter = 1
-position = Vector2(78, 190)
+position = Vector2(75, 194)
 scale = Vector2(3, 3)
 script = ExtResource("2_4ciyt")
 metadata/_edit_group_ = true
-
-[node name="CatchedTomato" type="Sprite2D" parent="Tomato"]
-texture_filter = 1
-texture = ExtResource("3_ty227")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tomato"]
 shape = SubResource("RectangleShape2D_l1wi4")
 
 [node name="Tomato" type="Sprite2D" parent="Tomato"]
 texture_filter = 1
+texture = ExtResource("3_ty227")
+
+[node name="CatchedTomato" type="Sprite2D" parent="Tomato"]
+visible = false
+texture_filter = 1
+position = Vector2(-13.6667, -52)
 texture = ExtResource("3_ty227")
 
 [node name="ClosedDoor" type="Area2D" parent="."]
@@ -251,21 +250,9 @@ position = Vector2(0.333435, 0.166664)
 scale = Vector2(0.179487, 0.177083)
 texture = ExtResource("6_gv8sx")
 
-[node name="Box" type="Area2D" parent="."]
-texture_filter = 1
-position = Vector2(575, 650)
-scale = Vector2(3, 3)
-script = ExtResource("2_4ciyt")
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Box"]
-position = Vector2(0, -0.166672)
-shape = SubResource("RectangleShape2D_mdcci")
-
-[node name="Sprite2D" type="Sprite2D" parent="Box"]
-texture_filter = 1
-scale = Vector2(0.28125, 0.195313)
-texture = ExtResource("2_7bwhd")
+[node name="CajaCantidad" parent="." groups=["CajaCantidad"] instance=ExtResource("11_3xvh8")]
+position = Vector2(564, 636)
+collision_mask = 1
 
 [node name="Players" type="Node2D" parent="."]
 
@@ -290,5 +277,3 @@ position = Vector2(795, 679)
 [connection signal="body_exited" from="Tomato" to="Tomato" method="_on_body_exited"]
 [connection signal="body_entered" from="ClosedDoor" to="ClosedDoor" method="_on_body_entered"]
 [connection signal="body_exited" from="ClosedDoor" to="ClosedDoor" method="_on_body_exited"]
-[connection signal="body_entered" from="Box" to="Box" method="_on_body_entered"]
-[connection signal="body_exited" from="Box" to="Box" method="_on_body_exited"]
