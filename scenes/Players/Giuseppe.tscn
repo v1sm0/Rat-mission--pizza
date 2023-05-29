@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://pqxr0o5flhe0"]
+[gd_scene load_steps=28 format=3 uid="uid://pqxr0o5flhe0"]
 
 [ext_resource type="Script" path="res://scripts/Player/player.gd" id="1_jxb7r"]
 [ext_resource type="Texture2D" uid="uid://djn3kudctiw1x" path="res://resources/assets/Ratas/Idle/rata-parada-1.png" id="2_xxyur"]
@@ -57,10 +57,10 @@ tracks/3/path = NodePath("Sprite2D:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.9),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2, 3, 4, 0]
+"values": [0, 1, 2, 3, 4]
 }
 
 [sub_resource type="Animation" id="Animation_5f8km"]
@@ -170,9 +170,8 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_725gj"]
 resource_name = "Saltar"
-length = 0.6
-loop_mode = 1
-step = 0.15
+length = 0.55
+step = 3.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -216,10 +215,10 @@ tracks/3/path = NodePath("Sprite2D:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.15, 0.3, 0.45),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.15, 0.45),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [0, 1, 2, 3]
+"values": [0, 2, 3]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_w2prx"]
@@ -230,7 +229,51 @@ _data = {
 "Saltar": SubResource("Animation_725gj")
 }
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_r1moa"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jsbhr"]
+animation = &"Caminar"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ot5f6"]
+animation = &"IDLE"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_06lqn"]
+animation = &"Saltar"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4la34"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ar27r"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_nbidc"]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_e0qj5"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ucw7m"]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_cdm52"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_kl37u"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_j8dwi"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tftes"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_lnpkj"]
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_w6387"]
+states/Caminar/node = SubResource("AnimationNodeAnimation_jsbhr")
+states/Caminar/position = Vector2(605, 21)
+states/IDLE/node = SubResource("AnimationNodeAnimation_ot5f6")
+states/IDLE/position = Vector2(338, 95)
+states/Saltar/node = SubResource("AnimationNodeAnimation_06lqn")
+states/Saltar/position = Vector2(605, 228)
+transitions = ["Saltar", "End", SubResource("AnimationNodeStateMachineTransition_4la34"), "Caminar", "End", SubResource("AnimationNodeStateMachineTransition_ar27r"), "Saltar", "Caminar", SubResource("AnimationNodeStateMachineTransition_nbidc"), "IDLE", "End", SubResource("AnimationNodeStateMachineTransition_e0qj5"), "Saltar", "IDLE", SubResource("AnimationNodeStateMachineTransition_ucw7m"), "IDLE", "Caminar", SubResource("AnimationNodeStateMachineTransition_cdm52"), "Caminar", "IDLE", SubResource("AnimationNodeStateMachineTransition_kl37u"), "Caminar", "Saltar", SubResource("AnimationNodeStateMachineTransition_j8dwi"), "IDLE", "Saltar", SubResource("AnimationNodeStateMachineTransition_tftes"), "Start", "IDLE", SubResource("AnimationNodeStateMachineTransition_lnpkj")]
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_kkjtv"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1ah1q"]
+radius = 3.23232
+height = 12.5
 
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["Cafe", "Player"]]
 position = Vector2(2, -1)
@@ -254,5 +297,15 @@ libraries = {
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource("AnimationNodeAnimation_r1moa")
+tree_root = SubResource("AnimationNodeStateMachine_w6387")
 anim_player = NodePath("../AnimationPlayer")
+parameters/playback = SubResource("AnimationNodeStateMachinePlayback_kkjtv")
+
+[node name="AreaRata" type="Area2D" parent="."]
+
+[node name="ColisionRata" type="CollisionShape2D" parent="AreaRata"]
+position = Vector2(-2, 1)
+scale = Vector2(-2.475, 2.08)
+shape = SubResource("CapsuleShape2D_1ah1q")
+
+[connection signal="body_exited" from="AreaRata" to="." method="_on_area_rata_body_exited"]
