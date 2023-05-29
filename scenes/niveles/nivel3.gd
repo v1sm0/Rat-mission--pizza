@@ -10,6 +10,9 @@ extends Node2D
 @onready var drop_box_button = $DropBoxButton
 @onready var catched_pepperoni = $TileMap4/Pepperoni/CatchedPepperoni
 @onready var pepperoni = $TileMap4/Pepperoni/Pepperoni
+@onready var caja_cantidad = $CajaCantidad
+@onready var caja_cantidad_4 = $CajaCantidad4
+
 
 func _physics_process(delta):
 	if Game.win_condition == true:
@@ -21,6 +24,9 @@ func _physics_process(delta):
 		tile_map_4.show()
 	if drop_box_button.drop_box_condition == true:
 		tile_map_5.hide()
+		caja_cantidad_4.show()
+		
+		
 		
 func _ready():
 	tile_map_4.hide()
@@ -40,3 +46,4 @@ func _ready():
 		player.scale.x = -2
 		player.scale.y = 2
 		player.init(id)
+	

@@ -136,5 +136,5 @@ func player_ready():
 
 @rpc("any_peer", "call_local", "reliable")
 func start_game() -> void:
-	get_tree().change_scene_to_file("res://scenes/niveles/nivel1.tscn")
+	get_tree().change_scene_to_file("res://scenes/niveles/nivel3.tscn")
 	

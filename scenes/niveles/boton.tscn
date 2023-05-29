@@ -8,7 +8,7 @@
 size = Vector2(17, 2.40001)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vgh5v"]
-size = Vector2(13, 3.60001)
+size = Vector2(13, 3.6)
 
 [sub_resource type="Animation" id="Animation_cyqs2"]
 resource_name = "ButtonDown"
@@ -63,7 +63,7 @@ _data = {
 }
 
 [node name="Boton" type="Node2D"]
-position = Vector2(513, 350)
+position = Vector2(512, 351)
 scale = Vector2(2.5, 2.5)
 script = ExtResource("1_w0q1j")
 metadata/_edit_group_ = true
@@ -84,7 +84,8 @@ shape = SubResource("RectangleShape2D_6t435")
 collision_layer = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
-position = Vector2(0.5, -2.2)
+position = Vector2(0.5, 1.79999)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_vgh5v")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
