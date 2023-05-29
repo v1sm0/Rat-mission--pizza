@@ -234,6 +234,8 @@ _data = {
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 scale = Vector2(-1, 1)
+collision_layer = 9
+collision_mask = 9
 script = ExtResource("1_p1flo")
 metadata/_edit_group_ = true
 

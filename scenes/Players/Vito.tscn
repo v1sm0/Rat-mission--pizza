@@ -235,6 +235,8 @@ _data = {
 [node name="CharacterBody2D" type="CharacterBody2D"]
 position = Vector2(2, -1)
 scale = Vector2(-1, 1)
+collision_layer = 17
+collision_mask = 17
 script = ExtResource("1_cbegn")
 metadata/_edit_group_ = true
 
