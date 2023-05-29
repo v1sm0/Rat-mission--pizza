@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://cacoxw1qe8t3b"]
+[gd_scene load_steps=11 format=3 uid="uid://cacoxw1qe8t3b"]
 
 [ext_resource type="Texture2D" uid="uid://bvj70grhld2xd" path="res://resources/Sprites/8-Tile-Sets/Tile-Sets (64-64).png" id="1_ab13a"]
 [ext_resource type="Script" path="res://scenes/niveles/Nivel1.gd" id="1_o1ow6"]
-[ext_resource type="PackedScene" path="res://scenes/Players/Giovanni_bueno.tscn" id="2_gynl3"]
+[ext_resource type="PackedScene" uid="uid://pqxr0o5flhe0" path="res://scenes/Players/Giuseppe.tscn" id="2_h5ori"]
 [ext_resource type="Script" path="res://scripts/Niveles/Area.gd" id="4_qmec3"]
 [ext_resource type="Texture2D" uid="uid://dbo7kh6xv5l4s" path="res://Textures/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Cheese.png" id="5_qcwnh"]
+[ext_resource type="PackedScene" uid="uid://b4t2i54mvekqj" path="res://scenes/objetos/caja-cantidad.tscn" id="6_obyqx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qsacf"]
 texture = ExtResource("1_ab13a")
@@ -145,7 +146,7 @@ size = Vector2(867.5, 20)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_o1ow6")
-player_scene = ExtResource("2_gynl3")
+player_scene = ExtResource("2_h5ori")
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2(2, 2)
@@ -194,6 +195,10 @@ gizmo_extents = 50.0
 [node name="Marker2D3" type="Marker2D" parent="Markers"]
 position = Vector2(70, 377)
 gizmo_extents = 50.0
+
+[node name="CajaCantidad" parent="." instance=ExtResource("6_obyqx")]
+position = Vector2(236, 206)
+mass = 0.5
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

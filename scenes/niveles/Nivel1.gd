@@ -17,3 +17,4 @@ func _ready():
 		player.scale.y = 2
 		player.init(id)
 		
+
