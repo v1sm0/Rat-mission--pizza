@@ -10,7 +10,7 @@
 radius = 7.0
 height = 26.0
 
-[sub_resource type="Animation" id="Animation_rfx48"]
+[sub_resource type="Animation" id="Animation_qpp43"]
 resource_name = "Caminar"
 length = 0.5
 loop_mode = 1
@@ -63,7 +63,7 @@ tracks/3/keys = {
 "values": [0, 1, 2, 3, 4]
 }
 
-[sub_resource type="Animation" id="Animation_5f8km"]
+[sub_resource type="Animation" id="Animation_4pxvb"]
 resource_name = "IDLE"
 length = 0.8
 loop_mode = 1
@@ -117,7 +117,7 @@ tracks/3/keys = {
 "values": [0, 1, 2, 3]
 }
 
-[sub_resource type="Animation" id="Animation_xlkut"]
+[sub_resource type="Animation" id="Animation_gimrp"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -168,7 +168,7 @@ tracks/3/keys = {
 "values": [0]
 }
 
-[sub_resource type="Animation" id="Animation_725gj"]
+[sub_resource type="Animation" id="Animation_huojq"]
 resource_name = "Saltar"
 length = 0.55
 step = 0.15
@@ -221,12 +221,12 @@ tracks/3/keys = {
 "values": [0, 2, 3]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_w2prx"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bjs1y"]
 _data = {
-"Caminar": SubResource("Animation_rfx48"),
-"IDLE": SubResource("Animation_5f8km"),
-"RESET": SubResource("Animation_xlkut"),
-"Saltar": SubResource("Animation_725gj")
+"Caminar": SubResource("Animation_qpp43"),
+"IDLE": SubResource("Animation_4pxvb"),
+"RESET": SubResource("Animation_gimrp"),
+"Saltar": SubResource("Animation_huojq")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_h0fb4"]
@@ -292,7 +292,7 @@ shape = SubResource("CapsuleShape2D_3ga5l")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." groups=["Negro", "Player"]]
 libraries = {
-"": SubResource("AnimationLibrary_w2prx")
+"": SubResource("AnimationLibrary_bjs1y")
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="."]

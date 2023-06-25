@@ -15,7 +15,10 @@ const PORT = 5409
 
 @onready var lobby = %Lobby
 @onready var readyScreen = %ReadyScreen
-
+@onready var giovanni = $PanelContainer/MarginContainer/ReadyScreen/HBoxContainer2/Giovanni
+@onready var giuseppe = $PanelContainer/MarginContainer/ReadyScreen/HBoxContainer2/Giuseppe
+@onready var salvatore = $PanelContainer/MarginContainer/ReadyScreen/HBoxContainer2/salvatore
+@onready var vito = $PanelContainer/MarginContainer/ReadyScreen/HBoxContainer2/Vito
 @onready var cancel = $PanelContainer/MarginContainer/ReadyScreen/HBoxContainer/Cancel
 @onready var go = $PanelContainer/MarginContainer/ReadyScreen/HBoxContainer/Go
 
@@ -33,12 +36,13 @@ func _ready():
 	multiplayer.server_disconnected.connect(_on_server_disconnected)
 	lobby.show()
 	readyScreen.hide()
+	giovanni.animationPlayer.play("IDLE")
 	
 	nameInput.text = OS.get_environment("USERNAME")
 	
 	go.pressed.connect(_on_go_pressed)
 	
-	info.hide()
+#	info.hide()
 	
 	Game.upnp_completed.connect(_on_upunp_completed)
 
