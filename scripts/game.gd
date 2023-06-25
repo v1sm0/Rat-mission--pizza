@@ -3,6 +3,9 @@ extends Node
 # [ id ]
 var players: Array = []
 
+# [player character]
+var player_character: Array = []
+
 # Level
 var level_Number = 1
 

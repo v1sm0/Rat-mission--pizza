@@ -25,7 +25,7 @@ func _ready():
 	Game.players.sort()
 	for i in Game.players.size():
 		var id = Game.players[i]
-		var player: Player = player_scene.instantiate()
+		var player = Game.player_character[i]
 		players.add_child(player)
 #		player.name = str(id)
 		var marker = markers.get_child(i)
