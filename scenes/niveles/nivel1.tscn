@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cacoxw1qe8t3b"]
+[gd_scene load_steps=18 format=3 uid="uid://cacoxw1qe8t3b"]
 
 [ext_resource type="Script" path="res://scenes/niveles/nivel1.gd" id="1_q1fmk"]
 [ext_resource type="PackedScene" uid="uid://b4ip1utf0olap" path="res://scenes/Players/Giovanni_bueno.tscn" id="2_uxrv1"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://be1nc88yb2i2n" path="res://resources/Sprites/2-Door/1-Closed/1.png" id="7_8cnrk"]
 [ext_resource type="Texture2D" uid="uid://dsi1ial8s80p8" path="res://resources/Sprites/2-Door/2-Opening/2.png" id="8_4ljem"]
 [ext_resource type="PackedScene" uid="uid://xjc305hvxkml" path="res://scenes/objetos/caja-azul.tscn" id="11_esjxj"]
+[ext_resource type="PackedScene" uid="uid://ny7ijx46elep" path="res://scenes/objetos/caja-gris.tscn" id="12_l2q86"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o5lhx"]
 size = Vector2(13, 15.6667)
@@ -406,7 +407,11 @@ shape = SubResource("RectangleShape2D_v7gxm")
 [node name="Players" type="Node2D" parent="."]
 
 [node name="caja-azul" parent="." instance=ExtResource("11_esjxj")]
-position = Vector2(584, 354)
+position = Vector2(199, 378)
+scale = Vector2(3, 3)
+
+[node name="caja-gris" parent="." instance=ExtResource("12_l2q86")]
+position = Vector2(573, 348)
 scale = Vector2(3, 3)
 
 [node name="Markers" type="Node2D" parent="."]

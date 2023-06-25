@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://xjc305hvxkml"]
+[gd_scene load_steps=5 format=3 uid="uid://dfypvvcpktuw7"]
 
-[ext_resource type="Script" path="res://scripts/objetos/caja-azul.gd" id="1_f0iat"]
-[ext_resource type="Texture2D" uid="uid://ccpga6mqi4a31" path="res://resources/Sprites/cajas/Sprite-caja-azul32X32.png" id="2_y0kwc"]
+[ext_resource type="Script" path="res://scripts/objetos/caja_cafe.gd" id="1_1utmg"]
+[ext_resource type="Texture2D" uid="uid://dhstq5dcy4lo" path="res://resources/Sprites/cajas/Sprite-caja-cafe32X32.png" id="2_jh4y6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1yav6"]
 size = Vector2(26, 32)
@@ -9,8 +9,8 @@ size = Vector2(26, 32)
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_ixs6b"]
 b = Vector2(0, 32)
 
-[node name="caja-azul" type="CharacterBody2D"]
-script = ExtResource("1_f0iat")
+[node name="caja-cafe" type="CharacterBody2D"]
+script = ExtResource("1_1utmg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_1yav6")
@@ -19,7 +19,7 @@ shape = SubResource("RectangleShape2D_1yav6")
 texture_filter = 1
 position = Vector2(7.7486e-07, 1.90735e-06)
 scale = Vector2(0.75, 1)
-texture = ExtResource("2_y0kwc")
+texture = ExtResource("2_jh4y6")
 
 [node name="LadoIzquierdo" type="Area2D" parent="CollisionShape2D"]
 
@@ -33,7 +33,7 @@ shape = SubResource("SegmentShape2D_ixs6b")
 position = Vector2(14, -16)
 shape = SubResource("SegmentShape2D_ixs6b")
 
-[connection signal="body_entered" from="CollisionShape2D/LadoIzquierdo" to="." method="_on_lado_izquierdo_body_entered"]
-[connection signal="body_exited" from="CollisionShape2D/LadoIzquierdo" to="." method="_on_lado_izquierdo_body_exited"]
-[connection signal="body_entered" from="CollisionShape2D/LadoDerecho" to="." method="_on_lado_derecho_body_entered"]
-[connection signal="body_exited" from="CollisionShape2D/LadoDerecho" to="." method="_on_lado_derecho_body_exited"]
+[connection signal="body_entered" from="CollisionShape2D/LadoIzquierdo" to="." method="_on_lado_izquierdo_body_entered" flags=18]
+[connection signal="body_exited" from="CollisionShape2D/LadoIzquierdo" to="." method="_on_lado_izquierdo_body_exited" flags=18]
+[connection signal="body_entered" from="CollisionShape2D/LadoDerecho" to="." method="_on_lado_derecho_body_entered" flags=18]
+[connection signal="body_exited" from="CollisionShape2D/LadoDerecho" to="." method="_on_lado_derecho_body_exited" flags=18]
