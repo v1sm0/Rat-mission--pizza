@@ -1,13 +1,20 @@
-[gd_scene load_steps=10 format=3 uid="uid://cacoxw1qe8t3b"]
+[gd_scene load_steps=17 format=3 uid="uid://qsdprouxd7yi"]
 
-[ext_resource type="Texture2D" uid="uid://bvj70grhld2xd" path="res://resources/Sprites/8-Tile-Sets/Tile-Sets (64-64).png" id="1_ab13a"]
-[ext_resource type="Script" path="res://scenes/niveles/Nivel1.gd" id="1_o1ow6"]
-[ext_resource type="PackedScene" path="res://scenes/Players/Giovanni_bueno.tscn" id="2_gynl3"]
-[ext_resource type="Script" path="res://scripts/Niveles/Area.gd" id="4_qmec3"]
-[ext_resource type="Texture2D" uid="uid://dbo7kh6xv5l4s" path="res://Textures/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Cheese.png" id="5_qcwnh"]
+[ext_resource type="Texture2D" uid="uid://bvj70grhld2xd" path="res://resources/Sprites/8-Tile-Sets/Tile-Sets (64-64).png" id="1_55n03"]
+[ext_resource type="Script" path="res://scenes/niveles/nivel2.gd" id="1_064ph"]
+[ext_resource type="Script" path="res://scripts/Niveles/Food.gd" id="2_4ciyt"]
+[ext_resource type="PackedScene" uid="uid://b4ip1utf0olap" path="res://scenes/Players/Giovanni_bueno.tscn" id="2_bpfmn"]
+[ext_resource type="Texture2D" uid="uid://ch83parrqxh5o" path="res://resources/bgnd.png" id="3_0xsf5"]
+[ext_resource type="Texture2D" uid="uid://etineyfsipw2" path="res://Textures/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Tomato.png" id="3_ty227"]
+[ext_resource type="Script" path="res://scenes/niveles/ResetArea.gd" id="5_ui2jf"]
+[ext_resource type="Texture2D" uid="uid://be1nc88yb2i2n" path="res://resources/Sprites/2-Door/1-Closed/1.png" id="5_vd7w1"]
+[ext_resource type="Texture2D" uid="uid://dsi1ial8s80p8" path="res://resources/Sprites/2-Door/2-Opening/2.png" id="6_gv8sx"]
+[ext_resource type="Script" path="res://scenes/niveles/Door.gd" id="6_irafq"]
+[ext_resource type="PackedScene" uid="uid://b4t2i54mvekqj" path="res://scenes/objetos/caja-cantidad.tscn" id="11_3xvh8"]
+[ext_resource type="PackedScene" uid="uid://csgjga35r2h6" path="res://scenes/niveles/boton.tscn" id="11_fxiba"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qsacf"]
-texture = ExtResource("1_ab13a")
+texture = ExtResource("1_55n03")
 0:0/size_in_atlas = Vector2i(2, 2)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -133,68 +140,140 @@ texture = ExtResource("1_ab13a")
 23:16/0/physics_layer_0/angular_velocity = 0.0
 23:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
-[sub_resource type="TileSet" id="TileSet_eux04"]
+[sub_resource type="TileSet" id="TileSet_wrdpj"]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_qsacf")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_i1v2g"]
-size = Vector2(16, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_v7gxm"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_25nhu"]
 size = Vector2(867.5, 20)
 
-[node name="Node2D" type="Node2D"]
-script = ExtResource("1_o1ow6")
-player_scene = ExtResource("2_gynl3")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l1wi4"]
+size = Vector2(13, 15.6667)
+
+[node name="Nivel 2" type="Node2D"]
+script = ExtResource("1_064ph")
+player_scene = ExtResource("2_bpfmn")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(541.5, 154.625)
+scale = Vector2(0.463153, 0.59261)
+texture = ExtResource("3_0xsf5")
+
+[node name="background2" type="Sprite2D" parent="."]
+position = Vector2(540.25, 464)
+scale = Vector2(0.464653, 0.59261)
+texture = ExtResource("3_0xsf5")
+
+[node name="background3" type="Sprite2D" parent="."]
+position = Vector2(540.25, 772)
+scale = Vector2(0.464653, 0.59261)
+texture = ExtResource("3_0xsf5")
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2(2, 2)
-tile_set = SubResource("TileSet_eux04")
+tile_set = SubResource("TileSet_wrdpj")
 cell_quadrant_size = 64
 format = 2
-layer_0/tile_data = PackedInt32Array(917505, 0, 0, 917507, 131072, 0, 917509, 262144, 0, 917511, 393216, 0, 917513, 524288, 0, 917515, 655360, 0, 1048577, 0, 2, 1048579, 131072, 2, 1048581, 262144, 2, 1048583, 393216, 2, 1048585, 524288, 2, 1048587, 655360, 2, 851983, 0, 0, 851985, 131072, 0, 851987, 524288, 0, 851989, 655360, 0, 983055, 0, 2, 983057, 131072, 2, 983059, 524288, 2, 983061, 655360, 2, 1114136, 0, 0, 1114138, 131072, 0, 1114140, 262144, 0, 1114142, 393216, 0, 1114144, 393216, 0, 1114146, 393216, 0, 1114148, 524288, 0, 1114150, 655360, 0, 1245208, 0, 2, 1245210, 131072, 2, 1245212, 262144, 2, 1245214, 393216, 2, 1245216, 393216, 2, 1245218, 393216, 2, 1245220, 524288, 2, 1245222, 655360, 2, 655390, 1441792, 12, 655391, 1048576, 16, 655392, 1114112, 16, 655393, 1179648, 16, 655394, 1245184, 16, 458769, 1048576, 16, 458768, 1441792, 12, 458766, 1048576, 12, 917527, 1310720, 16, 917528, 1507328, 16, 655388, 1048576, 12, 458770, 1048576, 16, 458771, 1048576, 16, 458772, 1114112, 16, 458773, 1179648, 16, 458774, 1245184, 16, 655389, 1114112, 12, 458767, 1114112, 12)
+layer_0/tile_data = PackedInt32Array(1048586, 1048576, 12, 1048587, 1114112, 12, 1048588, 1179648, 12, 1048589, 1245184, 12, 1048590, 1310720, 12, 1048591, 1376256, 12, 1048592, 1441792, 12, 1048593, 1245184, 16, 458753, 1048576, 12, 458754, 1114112, 12, 458755, 1179648, 12, 458756, 1245184, 12, 458757, 1310720, 12, 458758, 1376256, 12, 458759, 1441792, 12, 458760, 1245184, 16, 917526, 1048576, 12, 917527, 1114112, 16, 917528, 1179648, 16, 917529, 1245184, 16, 720923, 1048576, 12, 720924, 1114112, 16, 720925, 1179648, 16, 720926, 1245184, 16, 1441792, 0, 0, 1441794, 131072, 0, 1441796, 262144, 0, 1441798, 393216, 0, 1441800, 524288, 0, 1441802, 655360, 0, 1441806, 0, 0, 1441808, 131072, 0, 1441810, 262144, 0, 1441812, 0, 0, 1441814, 131072, 0, 1441816, 262144, 0, 1441818, 393216, 0, 1441820, 524288, 0, 1441822, 655360, 0, 1441824, 393216, 0, 1441826, 524288, 0, 1441828, 655360, 0)
 metadata/_edit_group_ = true
 
-[node name="Area2D" type="Area2D" parent="."]
-texture_filter = 1
-position = Vector2(499, 185)
-scale = Vector2(3, 3)
-script = ExtResource("4_qmec3")
+[node name="TileMap2" type="TileMap" parent="."]
+visible = false
+scale = Vector2(2, 2)
+tile_set = SubResource("TileSet_wrdpj")
+cell_quadrant_size = 64
+format = 2
+layer_0/tile_data = PackedInt32Array(655372, 1310720, 16, 655373, 1376256, 16, 655374, 1441792, 16, 655375, 1507328, 16, 524308, 1048576, 12, 524309, 1114112, 12, 524310, 1179648, 12, 524311, 1245184, 16)
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_i1v2g")
-
-[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
-texture_filter = 1
-texture = ExtResource("5_qcwnh")
-
-[node name="Area2D2" type="Area2D" parent="."]
-position = Vector2(522, 711)
+[node name="ResetArea" type="Area2D" parent="."]
+position = Vector2(527, 774)
 scale = Vector2(2, 5)
-script = ExtResource("4_qmec3")
+script = ExtResource("5_ui2jf")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ResetArea"]
 position = Vector2(17.75, 0)
-shape = SubResource("RectangleShape2D_v7gxm")
+shape = SubResource("RectangleShape2D_25nhu")
+
+[node name="Tomato" type="Area2D" parent="."]
+texture_filter = 1
+position = Vector2(75, 194)
+scale = Vector2(3, 3)
+script = ExtResource("2_4ciyt")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tomato"]
+shape = SubResource("RectangleShape2D_l1wi4")
+
+[node name="Tomato" type="Sprite2D" parent="Tomato"]
+texture_filter = 1
+texture = ExtResource("3_ty227")
+
+[node name="CatchedTomato" type="Sprite2D" parent="Tomato"]
+visible = false
+texture_filter = 1
+position = Vector2(-13.6667, -52)
+texture = ExtResource("3_ty227")
+
+[node name="ClosedDoor" type="Area2D" parent="."]
+texture_filter = 1
+position = Vector2(1013, 629)
+scale = Vector2(7, 7)
+script = ExtResource("6_irafq")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClosedDoor"]
+position = Vector2(0.166687, 0.166656)
+shape = SubResource("RectangleShape2D_l1wi4")
+
+[node name="Sprite2D" type="Sprite2D" parent="ClosedDoor"]
+texture_filter = 1
+position = Vector2(0.333435, 0.166664)
+scale = Vector2(0.179487, 0.177083)
+texture = ExtResource("5_vd7w1")
+
+[node name="OpenDoor" type="Area2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(1013, 629)
+scale = Vector2(7, 7)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OpenDoor"]
+position = Vector2(0.166687, 0.166664)
+shape = SubResource("RectangleShape2D_l1wi4")
+
+[node name="Sprite2D" type="Sprite2D" parent="OpenDoor"]
+texture_filter = 1
+position = Vector2(0.333435, 0.166664)
+scale = Vector2(0.179487, 0.177083)
+texture = ExtResource("6_gv8sx")
+
+[node name="CajaCantidad" parent="." groups=["CajaCantidad"] instance=ExtResource("11_3xvh8")]
+position = Vector2(564, 636)
+collision_mask = 1
 
 [node name="Players" type="Node2D" parent="."]
 
 [node name="Markers" type="Node2D" parent="."]
 
 [node name="Marker2D" type="Marker2D" parent="Markers"]
-position = Vector2(988, 464)
+position = Vector2(163, 635)
 gizmo_extents = 50.0
 
 [node name="Marker2D2" type="Marker2D" parent="Markers"]
-position = Vector2(70, 377)
+position = Vector2(50, 634)
 gizmo_extents = 50.0
 
-[node name="Marker2D3" type="Marker2D" parent="Markers"]
-position = Vector2(70, 377)
-gizmo_extents = 50.0
+[node name="Boton" parent="." instance=ExtResource("11_fxiba")]
+position = Vector2(684, 680)
 
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
-[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
-[connection signal="body_entered" from="Area2D2" to="Area2D" method="_on_area_2d_2_body_entered"]
+[node name="Boton2" parent="." instance=ExtResource("11_fxiba")]
+position = Vector2(795, 679)
+
+[connection signal="body_entered" from="ResetArea" to="ResetArea" method="_on_area_2d_2_body_entered"]
+[connection signal="body_entered" from="Tomato" to="Tomato" method="_on_body_entered"]
+[connection signal="body_exited" from="Tomato" to="Tomato" method="_on_body_exited"]
+[connection signal="body_entered" from="ClosedDoor" to="ClosedDoor" method="_on_body_entered"]
+[connection signal="body_exited" from="ClosedDoor" to="ClosedDoor" method="_on_body_exited"]

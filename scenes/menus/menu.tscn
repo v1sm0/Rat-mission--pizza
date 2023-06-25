@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dgk5camcssikm"]
+[gd_scene load_steps=8 format=3 uid="uid://dgk5camcssikm"]
 
 [ext_resource type="Script" path="res://scripts/Menu/menu.gd" id="1_4tcqw"]
 [ext_resource type="Theme" uid="uid://5ccxd10jvfld" path="res://MenuTheme.tres" id="2_7t54k"]
+[ext_resource type="Texture2D" uid="uid://ch83parrqxh5o" path="res://resources/bgnd.png" id="2_b5v16"]
 [ext_resource type="Texture2D" uid="uid://dbo7kh6xv5l4s" path="res://Textures/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Cheese.png" id="2_ygkod"]
 [ext_resource type="Texture2D" uid="uid://etineyfsipw2" path="res://Textures/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Tomato.png" id="3_81wgt"]
 [ext_resource type="Texture2D" uid="uid://cdml8ieny6iva" path="res://Textures/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Pepperoni.png" id="4_kqeo8"]
@@ -31,6 +32,21 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 script = ExtResource("1_4tcqw")
+
+[node name="background2" type="Sprite2D" parent="."]
+position = Vector2(540, 461)
+scale = Vector2(0.464653, 0.59261)
+texture = ExtResource("2_b5v16")
+
+[node name="background3" type="Sprite2D" parent="."]
+position = Vector2(540, 768)
+scale = Vector2(0.464653, 0.59261)
+texture = ExtResource("2_b5v16")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(541.5, 154.625)
+scale = Vector2(0.463153, 0.59261)
+texture = ExtResource("2_b5v16")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 texture_filter = 1

@@ -3,8 +3,23 @@ extends Node
 # [ id ]
 var players: Array = []
 
+# Level
+var level_Number = 1
+
 # Number of players in a game
 var N_players = 0
+
+# Condition to open the doors
+var win_condition = false
+
+# Contador de botones activados
+var buttton_counter = 0
+
+# Máximo de botones
+var button_max = 0
+
+# Door condition
+var door_condition = 0
 
 # Emitted when UPnP port mapping setup is completed (regardless of success or failure).
 signal upnp_completed(error)
@@ -31,7 +46,6 @@ func _upnp_setup(server_port):
 		upnp.add_port_mapping(server_port, server_port, ProjectSettings.get_setting("application/config/name"), "UDP")
 		upnp.add_port_mapping(server_port, server_port, ProjectSettings.get_setting("application/config/name"), "TCP")
 		print("signal2")
-		
 		emit_signal("upnp_completed", OK)
 
 func _ready():
