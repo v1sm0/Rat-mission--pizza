@@ -19,10 +19,11 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
 		
-	if is_in_area:
-		velocity.x = move_toward(velocity.x,SPEED*move_input,ACELERATION*delta)
-	else:
-		velocity.x = move_toward(0, 0, 0)
+	if is_multiplayer_authority():
+		if is_in_area:
+			velocity.x = move_toward(velocity.x,SPEED*move_input,ACELERATION*delta)
+		else:
+			velocity.x = move_toward(0, 0, 0)
 		
 	#send_data.rpc(global_position, velocity)
 	move_and_slide()
@@ -50,7 +51,7 @@ func _on_lado_derecho_body_exited(body):
 		move_input = 0
 		is_in_area = 0
 		
-#@rpc("unreliable_ordered")
-#func send_data(pos: Vector2, vel: Vector2, mi: float) -> void:
-	#global_position = lerp(global_position, pos, 0.5)
-	#velocity = lerp(velocity, vel, 0.5)
+@rpc("unreliable_ordered")
+func send_data(pos: Vector2, vel: Vector2, mi: float) -> void:
+	global_position = lerp(global_position, pos, 0.5)
+	velocity = lerp(velocity, vel, 0.5)
