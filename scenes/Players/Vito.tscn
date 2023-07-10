@@ -229,51 +229,63 @@ _data = {
 "Saltar": SubResource("Animation_725gj")
 }
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_c7wdc"]
-animation = &"Caminar"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0gigu"]
-animation = &"IDLE"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5ui4a"]
-animation = &"Saltar"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_n50q3"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_hedad"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4sxra"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_j0qpm"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_siusb"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wlr8a"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_v5ht4"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_cyoht"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_s6w35"]
-switch_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_44egk"]
-switch_mode = 2
-
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_isi0d"]
-states/Caminar/node = SubResource("AnimationNodeAnimation_c7wdc")
-states/Caminar/position = Vector2(540, 46)
-states/IDLE/node = SubResource("AnimationNodeAnimation_0gigu")
-states/IDLE/position = Vector2(315, 89)
-states/Saltar/node = SubResource("AnimationNodeAnimation_5ui4a")
-states/Saltar/position = Vector2(496, 198)
-transitions = ["Start", "IDLE", SubResource("AnimationNodeStateMachineTransition_n50q3"), "IDLE", "Caminar", SubResource("AnimationNodeStateMachineTransition_hedad"), "Caminar", "IDLE", SubResource("AnimationNodeStateMachineTransition_4sxra"), "IDLE", "Saltar", SubResource("AnimationNodeStateMachineTransition_j0qpm"), "Caminar", "Saltar", SubResource("AnimationNodeStateMachineTransition_siusb"), "IDLE", "End", SubResource("AnimationNodeStateMachineTransition_wlr8a"), "Caminar", "End", SubResource("AnimationNodeStateMachineTransition_v5ht4"), "Saltar", "End", SubResource("AnimationNodeStateMachineTransition_cyoht"), "Saltar", "Caminar", SubResource("AnimationNodeStateMachineTransition_s6w35"), "Saltar", "IDLE", SubResource("AnimationNodeStateMachineTransition_44egk")]
-
-[sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_ho886"]
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mvuxy"]
 radius = 3.23232
 height = 12.5
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hk8cs"]
+animation = &"Caminar"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_a3ut1"]
+animation = &"IDLE"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_c6xc4"]
+animation = &"Saltar"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0qulh"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ym8rr"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_pltr5"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_aer5n"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_nwapa"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_srcpf"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5xcx4"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tl3ur"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2k8u0"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4nvwc"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_uh83k"]
+states/Caminar/node = SubResource("AnimationNodeAnimation_hk8cs")
+states/Caminar/position = Vector2(434, 219.448)
+states/End/position = Vector2(1107, 100)
+states/IDLE/node = SubResource("AnimationNodeAnimation_a3ut1")
+states/IDLE/position = Vector2(503, -24.5522)
+states/Saltar/node = SubResource("AnimationNodeAnimation_c6xc4")
+states/Saltar/position = Vector2(839, 87.4478)
+transitions = ["Start", "IDLE", SubResource("AnimationNodeStateMachineTransition_0qulh"), "IDLE", "Saltar", SubResource("AnimationNodeStateMachineTransition_ym8rr"), "Caminar", "Saltar", SubResource("AnimationNodeStateMachineTransition_pltr5"), "IDLE", "Caminar", SubResource("AnimationNodeStateMachineTransition_aer5n"), "Caminar", "IDLE", SubResource("AnimationNodeStateMachineTransition_nwapa"), "IDLE", "End", SubResource("AnimationNodeStateMachineTransition_srcpf"), "Saltar", "End", SubResource("AnimationNodeStateMachineTransition_5xcx4"), "Caminar", "End", SubResource("AnimationNodeStateMachineTransition_tl3ur"), "Saltar", "IDLE", SubResource("AnimationNodeStateMachineTransition_2k8u0"), "Saltar", "Caminar", SubResource("AnimationNodeStateMachineTransition_4nvwc")]
+graph_offset = Vector2(0, -98.5522)
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_rnxu8"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["Azul", "Player"]]
 position = Vector2(2, -1)
@@ -295,17 +307,18 @@ libraries = {
 "": SubResource("AnimationLibrary_w2prx")
 }
 
-[node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource("AnimationNodeStateMachine_isi0d")
-anim_player = NodePath("../AnimationPlayer")
-parameters/playback = SubResource("AnimationNodeStateMachinePlayback_ho886")
-
 [node name="AreaRata" type="Area2D" parent="."]
 
 [node name="ColisionRata" type="CollisionShape2D" parent="AreaRata"]
 position = Vector2(-2, 1)
 scale = Vector2(-2.475, 2.08)
 shape = SubResource("CapsuleShape2D_mvuxy")
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_uh83k")
+anim_player = NodePath("../AnimationPlayer")
+process_callback = 2
+parameters/playback = SubResource("AnimationNodeStateMachinePlayback_rnxu8")
 
 [connection signal="body_entered" from="AreaRata" to="." method="_on_area_rata_body_entered"]
 [connection signal="body_exited" from="AreaRata" to="." method="_on_area_rata_body_exited"]

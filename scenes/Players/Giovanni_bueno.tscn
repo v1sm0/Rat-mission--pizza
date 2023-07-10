@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://b4ip1utf0olap"]
+[gd_scene load_steps=26 format=3 uid="uid://b4ip1utf0olap"]
 
 [ext_resource type="Script" path="res://scripts/Player/player.gd" id="1_nih8t"]
 [ext_resource type="Texture2D" uid="uid://dfqyc70gt7spi" path="res://resources/assets/Ratas/Caminata/rata-caminando-1.png" id="2_7nfes"]
@@ -229,39 +229,61 @@ _data = {
 "Saltar": SubResource("Animation_725gj")
 }
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ng76w"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cm6au"]
 animation = &"Caminar"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pdfi5"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tcmof"]
 animation = &"IDLE"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_w7c8m"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_s1fs5"]
 animation = &"Saltar"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_36qux"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_yj80m"]
 advance_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_005l6"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wbgm1"]
+advance_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_cvhg5"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vop02"]
+advance_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_bgunv"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_h081n"]
+advance_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_yjh0l"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_sbb77"]
+advance_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qd7a3"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_e13es"]
+switch_mode = 2
+advance_mode = 2
 
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_2uy7d"]
-states/Caminar/node = SubResource("AnimationNodeAnimation_ng76w")
-states/Caminar/position = Vector2(453, 34)
-"states/IDLE 2/node" = SubResource("AnimationNodeAnimation_pdfi5")
-"states/IDLE 2/position" = Vector2(193, 100)
-states/Saltar/node = SubResource("AnimationNodeAnimation_w7c8m")
-states/Saltar/position = Vector2(466, 144)
-states/Start/position = Vector2(28, 27)
-transitions = ["Start", "IDLE 2", SubResource("AnimationNodeStateMachineTransition_36qux"), "IDLE 2", "Caminar", SubResource("AnimationNodeStateMachineTransition_005l6"), "Caminar", "IDLE 2", SubResource("AnimationNodeStateMachineTransition_cvhg5"), "Caminar", "End", SubResource("AnimationNodeStateMachineTransition_bgunv"), "IDLE 2", "Saltar", SubResource("AnimationNodeStateMachineTransition_yjh0l"), "Saltar", "IDLE 2", SubResource("AnimationNodeStateMachineTransition_qd7a3")]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4w55d"]
+switch_mode = 2
+advance_mode = 2
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_njsk4"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7t1mw"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_oxnpn"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4yx0d"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_toeae"]
+allow_transition_to_self = true
+states/Caminar/node = SubResource("AnimationNodeAnimation_cm6au")
+states/Caminar/position = Vector2(470, 225)
+states/IDLE/node = SubResource("AnimationNodeAnimation_tcmof")
+states/IDLE/position = Vector2(441, 48)
+states/Saltar/node = SubResource("AnimationNodeAnimation_s1fs5")
+states/Saltar/position = Vector2(769, 48)
+transitions = ["Start", "IDLE", SubResource("AnimationNodeStateMachineTransition_yj80m"), "IDLE", "Caminar", SubResource("AnimationNodeStateMachineTransition_wbgm1"), "IDLE", "Saltar", SubResource("AnimationNodeStateMachineTransition_vop02"), "Caminar", "Saltar", SubResource("AnimationNodeStateMachineTransition_h081n"), "IDLE", "End", SubResource("AnimationNodeStateMachineTransition_sbb77"), "Saltar", "End", SubResource("AnimationNodeStateMachineTransition_e13es"), "Caminar", "End", SubResource("AnimationNodeStateMachineTransition_4w55d"), "Saltar", "Caminar", SubResource("AnimationNodeStateMachineTransition_7t1mw"), "Saltar", "IDLE", SubResource("AnimationNodeStateMachineTransition_oxnpn"), "Caminar", "IDLE", SubResource("AnimationNodeStateMachineTransition_4yx0d")]
+graph_offset = Vector2(0, -122.984)
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_6t3yj"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["Gris", "Player"]]
 position = Vector2(2, -1)
@@ -284,6 +306,7 @@ libraries = {
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource("AnimationNodeStateMachine_2uy7d")
+tree_root = SubResource("AnimationNodeStateMachine_toeae")
 anim_player = NodePath("../AnimationPlayer")
-parameters/playback = SubResource("AnimationNodeStateMachinePlayback_njsk4")
+process_callback = 2
+parameters/playback = SubResource("AnimationNodeStateMachinePlayback_6t3yj")

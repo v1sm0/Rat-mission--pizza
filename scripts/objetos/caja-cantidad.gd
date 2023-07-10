@@ -32,8 +32,6 @@ func _physics_process(delta):
 		elif len(bodys_moviendose) == 0:
 			velocity.x = move_toward(0, 0, 0)
 		
-		print('cuerpos que se mueven', bodys_moviendose)
-		print(velocity.x)
 		
 		send_data.rpc(global_position, velocity)
 	move_and_slide()

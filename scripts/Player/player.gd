@@ -33,6 +33,8 @@ func _ready():
 	set_multiplayer_authority(name.to_int())
 	
 	animation_tree.active = true
+	animation_player.play('IDLE')
+	print('Se correo la animación')
 
 
 func _physics_process(delta):
