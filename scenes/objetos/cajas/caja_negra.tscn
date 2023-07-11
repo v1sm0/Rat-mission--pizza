@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://b12slnv3dhl74"]
+
+[ext_resource type="Texture2D" uid="uid://c1sk3ydpon1vg" path="res://resources/Sprites/cajas/Sprite-caja-negra32X32.png" id="1_gbmfy"]
+[ext_resource type="Script" path="res://scripts/objetos/caja_negra.gd" id="1_vuy26"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1yav6"]
+size = Vector2(26, 32)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ixs6b"]
+b = Vector2(0, 32)
+
+[node name="caja-negra" type="CharacterBody2D"]
+script = ExtResource("1_vuy26")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1yav6")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+texture_filter = 1
+position = Vector2(7.7486e-07, 1.90735e-06)
+scale = Vector2(0.75, 1)
+texture = ExtResource("1_gbmfy")
+
+[node name="LadoIzquierdo" type="Area2D" parent="CollisionShape2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionShape2D/LadoIzquierdo"]
+position = Vector2(-14, -16)
+shape = SubResource("SegmentShape2D_ixs6b")
+
+[node name="LadoDerecho" type="Area2D" parent="CollisionShape2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionShape2D/LadoDerecho"]
+position = Vector2(14, -16)
+shape = SubResource("SegmentShape2D_ixs6b")
+
+[connection signal="body_entered" from="CollisionShape2D/LadoIzquierdo" to="." method="_on_lado_izquierdo_body_entered" flags=18]
+[connection signal="body_exited" from="CollisionShape2D/LadoIzquierdo" to="." method="_on_lado_izquierdo_body_exited" flags=18]
+[connection signal="body_entered" from="CollisionShape2D/LadoDerecho" to="." method="_on_lado_derecho_body_entered" flags=18]
+[connection signal="body_exited" from="CollisionShape2D/LadoDerecho" to="." method="_on_lado_derecho_body_exited" flags=18]

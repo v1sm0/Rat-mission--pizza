@@ -290,6 +290,8 @@ graph_offset = Vector2(0, -98.5522)
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["Azul", "Player"]]
 position = Vector2(2, -1)
 scale = Vector2(-1, 1)
+collision_layer = 5
+collision_mask = 5
 script = ExtResource("1_cbegn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
