@@ -1,7 +1,12 @@
 extends Node
 
-# [ id ]
-var players: Array = []
+signal players_updated
+signal player_updated(id)
+
+# [ {id: int, name: string, color: string} ]
+var players: Array[PlayerData] = []
+
+@export var characters : Dictionary = {}
 
 # [player character]
 var player_character: Array = []
@@ -31,6 +36,42 @@ signal upnp_completed(error)
 const SERVER_PORT = 5409
 var thread = null
 
+func add_player(player: PlayerData) -> void:
+	players.append(player)
+	players_updated.emit()
+
+
+func remove_player(id: int) -> void:
+	for i in players.size():
+		if players[i].id == id:
+			players.remove_at(i)
+			break
+	players_updated.emit()
+
+
+func get_player(id: int) -> PlayerData:
+	for player in players:
+		if player.id == id:
+			return player
+	return null
+
+func get_player_scene(character: String) -> PackedScene:
+	return characters[character]
+
+func get_current_player() -> PlayerData:
+	return get_player(multiplayer.get_unique_id())
+
+
+@rpc("any_peer", "reliable", "call_local")
+func set_player_color(id: int, color: String) -> void:
+	var player = get_player(id)
+	player.color = color
+	player_updated.emit(id)
+
+
+func set_current_player_color(color: String) -> void:
+	set_player_color.rpc(multiplayer.get_unique_id(), color)
+
 func _upnp_setup(server_port):
 	# UPNP queries take some time.
 	var upnp = UPNP.new()
@@ -59,3 +100,21 @@ func _ready():
 func _exit_tree():
 	# Wait for thread finish here to handle game exit while the thread is running.
 	thread.wait_to_finish()
+
+
+class PlayerData:
+	var id: int
+	var name: String
+	var color: String
+
+	func _init(new_id: int, new_name: String, new_color: String = "") -> void:
+		id = new_id
+		name = new_name
+		color = new_color
+
+	func to_dict() -> Dictionary:
+		return {
+			"id": id,
+			"name": name,
+			"color": color
+		}

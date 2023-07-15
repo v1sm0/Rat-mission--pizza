@@ -64,24 +64,17 @@ func _ready():
 	Game.upnp_completed.connect(_on_upunp_completed)
 
 func _on_giovanni_selected() -> void:
-	print("escogí a giovanni")
-	var new_giovanni: Player = giovanni_scene.instantiate()
-	Game.player_character.append(new_giovanni)
-	
-	print(Game.player_character)
-	
+	Game.set_current_player_color("giovanni")
+
 func _on_giuseppe_selected() -> void:
-	var new_giuseppe: Player = giovanni_scene.instantiate()
-	Game.player_character.append(new_giuseppe)
+	Game.set_current_player_color("giuseppe")
 
 func _on_salvatore_selected() -> void:
-	var new_salvatore: Player = salvatore_scene.instantiate()
-	Game.player_character.append(new_salvatore)
+	Game.set_current_player_color("salvatore")
 
 func _on_vito_selected() -> void:
-	var new_vito: Player = vito_scene.instantiate()
-	Game.player_character.append(new_vito)
-	
+	Game.set_current_player_color("vito")
+
 func _on_upunp_completed(status) -> void:
 	print(status)
 	if status == OK:
@@ -97,7 +90,8 @@ func _on_host_pressed() -> void:
 	print(err)
 	multiplayer.multiplayer_peer = peer
 	lobby.hide()
-	_add_player(nameInput.text, multiplayer.get_unique_id())
+	var player = Game.PlayerData.new(multiplayer.get_unique_id(),nameInput.text)
+	_add_player(player)
 	readyScreen.show()
 	
 func _on_join_pressed() -> void:
@@ -107,22 +101,24 @@ func _on_join_pressed() -> void:
 	print(err)
 	multiplayer.multiplayer_peer = peer
 	lobby.hide()
-	_add_player(nameInput.text, multiplayer.get_unique_id())
+	var player = Game.PlayerData.new(multiplayer.get_unique_id(),nameInput.text)
+	_add_player(player)
 	readyScreen.show()
 
-func _add_player(name: String, id: int):
+func _add_player(player):
 	var label = Label.new()
-	label.name = str(id)
-	label.text = name
+	label.name = str(player.id)
+	label.text = player.name
 	players.add_child(label)
-	Game.players.append(id)
+	Game.add_player(player)  
 	Game.N_players += 1
+
+
 
 @rpc("any_peer", "reliable")
 func send_info(info: Dictionary) -> void:
-	var name = info.name
-	var id = multiplayer.get_remote_sender_id()
-	_add_player(name, id)
+	var player = Game.PlayerData.new(info.id, info.name, info.color)
+	_add_player(player)
 
 func _on_connected_to_server() -> void:
 	Debug.print("connected_to_server")
@@ -132,7 +128,7 @@ func _on_connection_failed() -> void:
 
 func _on_peer_connected(id: int) -> void:
 	Debug.print("peer_connected %d" % id)
-	rpc_id(id, "send_info", { "name": nameInput.text })
+	rpc_id(id, "send_info", Game.get_current_player().to_dict())
 	if multiplayer.is_server():
 		status[id] = false
 	
@@ -160,7 +156,7 @@ func player_ready():
 		var all_ok = true
 		for ok in status.values():
 			all_ok = all_ok and ok
-		if all_ok and (Game.player_character.size() == Game.players.size()):
+		if all_ok:
 			rpc("start_game")
 
 @rpc("any_peer", "call_local", "reliable")
