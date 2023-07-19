@@ -9,6 +9,8 @@ extends Node2D
 @onready var bacon = $Bacon/Bacon
 
 func _physics_process(delta):
+	var time_left = int($Timer.time_left)
+	$Labeltimer.set_text(str(time_left))
 	if Game.win_condition == true:
 		open_door.show()
 		closed_door.hide()
@@ -16,6 +18,7 @@ func _physics_process(delta):
 		bacon_catched.show()
 
 func _ready():
+	$Timer.start()
 	Game.door_condition = 0
 	Game.win_condition = false
 	open_door.hide()
@@ -32,3 +35,7 @@ func _ready():
 		player.scale.x = -2
 		player.scale.y = 2
 		player.init(id)
+
+
+func _on_timer_timeout():
+	get_tree().reload_current_scene()

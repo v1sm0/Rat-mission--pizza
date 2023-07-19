@@ -1,9 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://by3hdp1sirauf"]
+[gd_scene load_steps=20 format=3 uid="uid://by3hdp1sirauf"]
 
 [ext_resource type="PackedScene" uid="uid://b4ip1utf0olap" path="res://scenes/Players/Giovanni_bueno.tscn" id="2_0yrp8"]
+[ext_resource type="PackedScene" uid="uid://bj41irehtkyj8" path="res://scenes/niveles/timer.tscn" id="2_7akar"]
 [ext_resource type="Texture2D" uid="uid://ch83parrqxh5o" path="res://resources/bgnd.png" id="2_lle44"]
 [ext_resource type="Texture2D" uid="uid://bvj70grhld2xd" path="res://resources/Sprites/8-Tile-Sets/Tile-Sets (64-64).png" id="3_1ypjs"]
-[ext_resource type="PackedScene" uid="uid://b4t2i54mvekqj" path="res://scenes/objetos/caja-cantidad.tscn" id="4_fbwyp"]
+[ext_resource type="PackedScene" uid="uid://b4t2i54mvekqj" path="res://scenes/objetos/cajas/caja-cantidad.tscn" id="4_fbwyp"]
 [ext_resource type="Texture2D" uid="uid://dsi1ial8s80p8" path="res://resources/Sprites/2-Door/2-Opening/2.png" id="5_o0qm0"]
 [ext_resource type="Script" path="res://scenes/niveles/Door.gd" id="6_q86cf"]
 [ext_resource type="Texture2D" uid="uid://cdml8ieny6iva" path="res://Textures/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Pepperoni.png" id="6_tr04h"]
@@ -63,6 +64,10 @@ func _ready():
 		player.scale.y = 2
 		player.init(id)
 	
+
+
+func _on_timer_timeout():
+	get_tree().reload_current_scene()
 "
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qsacf"]
@@ -209,6 +214,8 @@ size = Vector2(867.5, 20)
 script = SubResource("GDScript_0waf1")
 player_scene = ExtResource("2_0yrp8")
 
+[node name="Timer" parent="." instance=ExtResource("2_7akar")]
+
 [node name="background" type="Sprite2D" parent="."]
 position = Vector2(541.5, 154.625)
 scale = Vector2(0.463153, 0.59261)
@@ -354,6 +361,13 @@ metadata/_edit_group_ = true
 position = Vector2(17.75, 0)
 shape = SubResource("RectangleShape2D_fe1iq")
 
+[node name="Labeltimer" type="Label" parent="."]
+offset_left = 939.0
+offset_top = 74.0
+offset_right = 993.0
+offset_bottom = 97.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="TileMap4/Pepperoni" to="TileMap4/Pepperoni" method="_on_body_entered"]
 [connection signal="body_exited" from="TileMap4/Pepperoni" to="TileMap4/Pepperoni" method="_on_body_exited"]
 [connection signal="body_entered" from="ClosedDoor" to="ClosedDoor" method="_on_body_entered"]

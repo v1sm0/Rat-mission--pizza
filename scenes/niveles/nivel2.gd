@@ -10,6 +10,8 @@ extends Node2D
 @onready var tomato = $Tomato/Tomato
 
 func _physics_process(delta):
+	var time_left = int($Timer.time_left)
+	$Labeltimer.set_text(str(time_left))
 	if Game.buttton_counter == Game.button_max:
 		tile_map_2.show()
 	if Game.buttton_counter != Game.button_max:
@@ -21,6 +23,7 @@ func _physics_process(delta):
 		closed_door.hide()
 
 func _ready():
+	$Timer.start()
 	Game.win_condition = false
 	Game.buttton_counter = 0
 	Game.button_max = 2
@@ -39,3 +42,7 @@ func _ready():
 		player.scale.y = 2
 		player.init(id)
 
+
+
+func _on_timer_timeout():
+	get_tree().reload_current_scene()

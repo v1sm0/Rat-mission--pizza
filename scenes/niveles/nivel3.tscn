@@ -1,10 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://bift3qc0ud16s"]
+[gd_scene load_steps=19 format=3 uid="uid://bift3qc0ud16s"]
 
 [ext_resource type="Script" path="res://scenes/niveles/nivel3.gd" id="1_0rqg1"]
 [ext_resource type="PackedScene" uid="uid://b4ip1utf0olap" path="res://scenes/Players/Giovanni_bueno.tscn" id="2_6jjtm"]
 [ext_resource type="Script" path="res://scripts/Niveles/Food.gd" id="2_e74ey"]
 [ext_resource type="Texture2D" uid="uid://ch83parrqxh5o" path="res://resources/bgnd.png" id="3_5ontk"]
 [ext_resource type="Texture2D" uid="uid://bvj70grhld2xd" path="res://resources/Sprites/8-Tile-Sets/Tile-Sets (64-64).png" id="3_1546s"]
+[ext_resource type="PackedScene" uid="uid://bj41irehtkyj8" path="res://scenes/niveles/timer.tscn" id="3_qp6bs"]
 [ext_resource type="Texture2D" uid="uid://be1nc88yb2i2n" path="res://resources/Sprites/2-Door/1-Closed/1.png" id="4_lqn1p"]
 [ext_resource type="PackedScene" uid="uid://ny7ijx46elep" path="res://scenes/objetos/cajas/caja-gris.tscn" id="5_fuh0g"]
 [ext_resource type="Texture2D" uid="uid://dsi1ial8s80p8" path="res://resources/Sprites/2-Door/2-Opening/2.png" id="5_g7v11"]
@@ -319,6 +320,8 @@ size = Vector2(867.5, 20)
 script = ExtResource("1_0rqg1")
 player_scene = ExtResource("2_6jjtm")
 
+[node name="Timer" parent="." instance=ExtResource("3_qp6bs")]
+
 [node name="background" type="Sprite2D" parent="."]
 position = Vector2(540, 151)
 scale = Vector2(0.463153, 0.59261)
@@ -425,6 +428,13 @@ gizmo_extents = 50.0
 position = Vector2(49, 461)
 gizmo_extents = 50.0
 
+[node name="Labeltimer" type="Label" parent="."]
+offset_left = 1009.0
+offset_top = 22.0
+offset_right = 1047.0
+offset_bottom = 45.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="ClosedDoor" to="ClosedDoor" method="_on_body_entered"]
 [connection signal="body_exited" from="ClosedDoor" to="ClosedDoor" method="_on_body_exited"]
 [connection signal="body_entered" from="Bacon" to="Bacon" method="_on_body_entered"]
