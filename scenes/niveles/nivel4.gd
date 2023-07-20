@@ -15,6 +15,8 @@ extends Node2D
 
 
 func _physics_process(delta):
+	var time_left = int($Timer.time_left)
+	$Labeltimer.set_text(str(time_left))
 	if Game.buttton_counter == Game.button_max:
 		tile_map_4.show()
 	if drop_box_button.drop_box_condition == true:
@@ -29,6 +31,7 @@ func _physics_process(delta):
 		
 		
 func _ready():
+	$Timer.start()
 	tile_map_4.hide()
 	Game.buttton_counter = 0
 	Game.button_max = 4
@@ -47,3 +50,7 @@ func _ready():
 		player.scale.y = 2
 		player.init(id)
 	
+
+
+func _on_timer_timeout():
+	get_tree().reload_current_scene()

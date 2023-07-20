@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://cacoxw1qe8t3b"]
+[gd_scene load_steps=17 format=3 uid="uid://cacoxw1qe8t3b"]
 
 [ext_resource type="Script" path="res://scenes/niveles/nivel1.gd" id="1_q1fmk"]
 [ext_resource type="PackedScene" uid="uid://b4ip1utf0olap" path="res://scenes/Players/Giovanni_bueno.tscn" id="2_uxrv1"]
 [ext_resource type="Texture2D" uid="uid://ch83parrqxh5o" path="res://resources/bgnd.png" id="3_dk8vs"]
 [ext_resource type="Texture2D" uid="uid://bvj70grhld2xd" path="res://resources/Sprites/8-Tile-Sets/Tile-Sets (64-64).png" id="3_o6ysv"]
+[ext_resource type="PackedScene" uid="uid://bj41irehtkyj8" path="res://scenes/niveles/timer.tscn" id="3_x5bvh"]
 [ext_resource type="Script" path="res://scripts/Niveles/Food.gd" id="4_4vaue"]
 [ext_resource type="Texture2D" uid="uid://dbo7kh6xv5l4s" path="res://Textures/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Cheese.png" id="5_spo2y"]
 [ext_resource type="Script" path="res://scenes/niveles/Door.gd" id="6_0oint"]
@@ -317,6 +318,8 @@ size = Vector2(867.5, 20)
 script = ExtResource("1_q1fmk")
 player_scene = ExtResource("2_uxrv1")
 
+[node name="Timer" parent="." instance=ExtResource("3_x5bvh")]
+
 [node name="background" type="Sprite2D" parent="."]
 position = Vector2(540, 151)
 scale = Vector2(0.463153, 0.59261)
@@ -415,6 +418,13 @@ gizmo_extents = 50.0
 position = Vector2(70, 377)
 gizmo_extents = 50.0
 
+[node name="Labeltimer" type="Label" parent="."]
+offset_left = 1035.0
+offset_top = 5.0
+offset_right = 1075.0
+offset_bottom = 28.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="ClosedDoor" to="ClosedDoor" method="_on_body_entered"]
 [connection signal="body_exited" from="ClosedDoor" to="ClosedDoor" method="_on_body_exited"]
 [connection signal="body_entered" from="Cheese" to="Cheese" method="_on_body_entered"]
