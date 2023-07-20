@@ -14,8 +14,9 @@ signal chocan_rata(quien)
 signal ya_no_chocan_rata(quien)
 
 @onready var animation_tree = $AnimationTree
-@onready var character = $"."
 @onready var animation_player = $AnimationPlayer
+@onready var character = $pivot
+@onready var colision = $CollisionShape2D
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -53,10 +54,16 @@ func _physics_process(delta):
 		move_input = Input.get_axis("Left", "Right")
 		# Get the input direction and handle the movement/deceleration.
 		# As good practice, you should replace UI actions with custom gameplay actions.
-		if Input.is_action_just_pressed("Left") or Input.is_action_just_pressed("Right"):
-			if (FACING_RIGHT and move_input<0) or ((not FACING_RIGHT) and move_input>0):
-				character.scale.x = -1 * abs(character.scale.x)
-				FACING_RIGHT = not FACING_RIGHT
+		if Input.is_action_pressed("Left") and FACING_RIGHT:
+			character.scale.x = -1
+			colision.position = - colision.position
+			FACING_RIGHT = false
+			
+		elif Input.is_action_pressed("Right") and not FACING_RIGHT:
+			character.scale.x = 1
+			colision.position = - colision.position
+			FACING_RIGHT = true
+			
 				
 		if Input.is_action_just_pressed("Left") or Input.is_action_just_pressed("Right") or Input.is_action_pressed("Left") or Input.is_action_pressed("Right"):
 			emit_signal("empujando", self, move_input)
