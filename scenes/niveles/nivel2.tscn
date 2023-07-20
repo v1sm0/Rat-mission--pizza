@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://qsdprouxd7yi"]
+[gd_scene load_steps=19 format=3 uid="uid://qsdprouxd7yi"]
 
 [ext_resource type="Texture2D" uid="uid://bvj70grhld2xd" path="res://resources/Sprites/8-Tile-Sets/Tile-Sets (64-64).png" id="1_55n03"]
 [ext_resource type="Script" path="res://scenes/niveles/nivel2.gd" id="1_064ph"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" path="res://scenes/niveles/Door.gd" id="6_irafq"]
 [ext_resource type="PackedScene" uid="uid://b4t2i54mvekqj" path="res://scenes/objetos/cajas/caja-cantidad.tscn" id="11_3xvh8"]
 [ext_resource type="PackedScene" uid="uid://csgjga35r2h6" path="res://scenes/niveles/boton.tscn" id="11_fxiba"]
+[ext_resource type="Theme" uid="uid://c84mn77777ynu" path="res://timer.tres" id="14_sql2w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qsacf"]
 texture = ExtResource("1_55n03")
@@ -278,10 +279,11 @@ position = Vector2(684, 680)
 position = Vector2(795, 679)
 
 [node name="Labeltimer" type="Label" parent="."]
-offset_left = 1022.0
-offset_top = 20.0
-offset_right = 1062.0
-offset_bottom = 43.0
+offset_left = 488.0
+offset_top = 24.0
+offset_right = 536.0
+offset_bottom = 51.0
+theme = ExtResource("14_sql2w")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="ResetArea" to="ResetArea" method="_on_area_2d_2_body_entered"]

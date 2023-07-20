@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bift3qc0ud16s"]
+[gd_scene load_steps=20 format=3 uid="uid://bift3qc0ud16s"]
 
 [ext_resource type="Script" path="res://scenes/niveles/nivel3.gd" id="1_0rqg1"]
 [ext_resource type="PackedScene" uid="uid://b4ip1utf0olap" path="res://scenes/Players/Giovanni_bueno.tscn" id="2_6jjtm"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" path="res://scenes/niveles/Door.gd" id="6_b5r82"]
 [ext_resource type="Texture2D" uid="uid://djvo0notkcbrg" path="res://Textures/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Bacon.png" id="10_a1um8"]
 [ext_resource type="Script" path="res://scenes/niveles/ResetArea.gd" id="13_qyjit"]
+[ext_resource type="Theme" uid="uid://c84mn77777ynu" path="res://timer.tres" id="14_h53wy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qsacf"]
 texture = ExtResource("3_1546s")
@@ -429,10 +430,11 @@ position = Vector2(49, 461)
 gizmo_extents = 50.0
 
 [node name="Labeltimer" type="Label" parent="."]
-offset_left = 1009.0
-offset_top = 22.0
-offset_right = 1047.0
-offset_bottom = 45.0
+offset_left = 480.0
+offset_top = 32.0
+offset_right = 536.0
+offset_bottom = 67.0
+theme = ExtResource("14_h53wy")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="ClosedDoor" to="ClosedDoor" method="_on_body_entered"]

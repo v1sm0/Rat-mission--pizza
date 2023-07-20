@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://by3hdp1sirauf"]
+[gd_scene load_steps=21 format=3 uid="uid://by3hdp1sirauf"]
 
 [ext_resource type="Script" path="res://scenes/niveles/nivel4.gd" id="1_hmndx"]
 [ext_resource type="PackedScene" uid="uid://b4ip1utf0olap" path="res://scenes/Players/Giovanni_bueno.tscn" id="2_0yrp8"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://csgjga35r2h6" path="res://scenes/niveles/boton.tscn" id="10_jb2v5"]
 [ext_resource type="Script" path="res://scenes/niveles/ResetArea.gd" id="10_yvk3q"]
 [ext_resource type="Script" path="res://scenes/niveles/DropBoxButton.gd" id="11_ow5gg"]
+[ext_resource type="Theme" uid="uid://c84mn77777ynu" path="res://timer.tres" id="15_yjg8f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qsacf"]
 texture = ExtResource("3_1ypjs")
@@ -307,10 +308,12 @@ position = Vector2(17.75, 0)
 shape = SubResource("RectangleShape2D_fe1iq")
 
 [node name="Labeltimer" type="Label" parent="."]
-offset_left = 939.0
-offset_top = 74.0
-offset_right = 993.0
-offset_bottom = 97.0
+offset_left = 480.0
+offset_top = 32.0
+offset_right = 544.0
+offset_bottom = 64.0
+size_flags_vertical = 1
+theme = ExtResource("15_yjg8f")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="TileMap4/Pepperoni" to="TileMap4/Pepperoni" method="_on_body_entered"]
