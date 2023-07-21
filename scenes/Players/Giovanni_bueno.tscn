@@ -286,25 +286,23 @@ graph_offset = Vector2(0, -122.984)
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_6t3yj"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["Gris", "Player"]]
-position = Vector2(2, -1)
 scale = Vector2(-1, 1)
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_nih8t")
-metadata/_edit_group_ = true
 
 [node name="pivot" type="Node2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="pivot"]
 texture_filter = 1
+position = Vector2(2, -1)
 texture = ExtResource("3_717yr")
 hframes = 4
 
 [node name="ray" type="RayCast2D" parent="pivot"]
-target_position = Vector2(-25, 0)
+target_position = Vector2(-10, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, 1)
 shape = SubResource("CapsuleShape2D_3ga5l")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

@@ -287,7 +287,6 @@ graph_offset = Vector2(0, -98.5522)
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_rnxu8"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["Azul", "Player"]]
-position = Vector2(2, -1)
 scale = Vector2(-1, 1)
 collision_layer = 5
 collision_mask = 5
@@ -297,15 +296,14 @@ script = ExtResource("1_cbegn")
 
 [node name="Sprite2D" type="Sprite2D" parent="pivot"]
 texture_filter = 1
-texture = ExtResource("4_ipw1b")
+position = Vector2(2, -1)
+texture = ExtResource("2_c08vm")
 hframes = 4
 
 [node name="ray" type="RayCast2D" parent="pivot"]
-target_position = Vector2(-25, 0)
+target_position = Vector2(-10, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(-2, 1)
 shape = SubResource("CapsuleShape2D_3ga5l")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." groups=["Azul", "Player"]]
@@ -313,18 +311,7 @@ libraries = {
 "": SubResource("AnimationLibrary_ter06")
 }
 
-[node name="AreaRata" type="Area2D" parent="."]
-
-[node name="ColisionRata" type="CollisionShape2D" parent="AreaRata"]
-position = Vector2(-2, 1)
-scale = Vector2(-2.475, 2.08)
-shape = SubResource("CapsuleShape2D_mvuxy")
-
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource("AnimationNodeStateMachine_uh83k")
+tree_root = SubResource("AnimationNodeStateMachine_isi0d")
 anim_player = NodePath("../AnimationPlayer")
-process_callback = 2
-parameters/playback = SubResource("AnimationNodeStateMachinePlayback_rnxu8")
-
-[connection signal="body_entered" from="AreaRata" to="." method="_on_area_rata_body_entered"]
-[connection signal="body_exited" from="AreaRata" to="." method="_on_area_rata_body_exited"]
+parameters/playback = SubResource("AnimationNodeStateMachinePlayback_ho886")
