@@ -38,17 +38,20 @@ func _ready():
 	Game.win_condition = false
 	open_door.hide()
 	closed_door.show()
-	Game.players.sort()
+	Game.players.sort_custom(func(a, b): return a.id > b.id)
+
 	for i in Game.players.size():
-		var id = Game.players[i]
-		var player: Player = player_scene.instantiate()
+		var id = Game.players[i].id
+		Debug.print(Game.players[i].color)
+		var player = Game.get_player_scene(Game.players[i].color).instantiate()
 		players.add_child(player)
-		#player.name = str(id)
+		player.name = str(id)
 		var marker = markers.get_child(i)
 		player.global_position = marker.global_position
 		player.scale.x = -2
 		player.scale.y = 2
 		player.init(id)
+	
 	
 
 
