@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://b4t2i54mvekqj"]
 
-[ext_resource type="Texture2D" uid="uid://bitmw1m5kcy8v" path="res://icon.svg" id="1_7qwj5"]
 [ext_resource type="Script" path="res://scripts/objetos/caja-cantidad.gd" id="1_m7dhg"]
+[ext_resource type="Texture2D" uid="uid://bkefrp8rp6rei" path="res://resources/Sprites/cajas/Sprite-caja-normal32X32.png" id="2_ww7t1"]
 [ext_resource type="Theme" uid="uid://5ccxd10jvfld" path="res://MenuTheme.tres" id="3_fhhlb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t13lh"]
@@ -29,9 +29,10 @@ shape = SubResource("RectangleShape2D_t13lh")
 shape = SubResource("CapsuleShape2D_8up07")
 
 [node name="SpriteCaja" type="Sprite2D" parent="Caja"]
+texture_filter = 1
 position = Vector2(2.86102e-06, 1.90735e-06)
-scale = Vector2(0.53125, 0.671875)
-texture = ExtResource("1_7qwj5")
+scale = Vector2(2.1, 2.658)
+texture = ExtResource("2_ww7t1")
 
 [node name="LadoIzquierdo" type="Area2D" parent="Caja"]
 

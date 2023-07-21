@@ -23,17 +23,19 @@ func _ready():
 	
 
 func _physics_process(delta):
+	if not is_on_floor():
+		velocity.y += gravity * delta
+	
 	if is_multiplayer_authority():
-		if not is_on_floor():
-			velocity.y += gravity * delta
-		
 		if len(bodys_moviendose) >= cant_actual:
 			velocity.x = move_toward(velocity.x, move_input * SPEED , ACCELERATION * delta)
 		elif len(bodys_moviendose) == 0:
 			velocity.x = move_toward(0, 0, 0)
-		
+			
 		print('cuerpos que se mueven', bodys_moviendose)
 		print(velocity.x)
+			
+		
 		
 		send_data.rpc(global_position, velocity)
 	move_and_slide()

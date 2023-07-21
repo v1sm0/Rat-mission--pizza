@@ -9,6 +9,8 @@ extends Node2D
 @onready var cheese = $Cheese/Cheese
 
 func _physics_process(delta):
+	var time_left = int($Timer.time_left)
+	$Labeltimer.set_text(str(time_left))
 	if Game.win_condition == true:
 		open_door.show()
 		closed_door.hide()
@@ -17,6 +19,7 @@ func _physics_process(delta):
 
 
 func _ready():
+	$Timer.start()
 	Game.win_condition = false
 	open_door.hide()
 	closed_door.show()
@@ -35,3 +38,9 @@ func _ready():
 		player.scale.x = -2
 		player.scale.y = 2
 		player.init(id)
+
+		
+func _on_timer_timeout():
+	print("hola")
+	get_tree().reload_current_scene()
+

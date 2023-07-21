@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bj41irehtkyj8"]
+
+[ext_resource type="Script" path="res://scripts/Niveles/Timer.gd" id="1_ic0y6"]
+
+[node name="Timer" type="Timer"]
+process_callback = 0
+one_shot = true
+script = ExtResource("1_ic0y6")
