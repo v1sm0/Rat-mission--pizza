@@ -31,23 +31,23 @@ func _physics_process(delta):
 	
 
 func _on_lado_izquierdo_body_entered(body):
-	if body.is_in_group("Gris"):
+	if body.is_in_group(get_parent().grupo):
 		print("1")
 		move_input = 1
 		is_in_area = 1
 		
 func _on_lado_izquierdo_body_exited(body):
-	if body.is_in_group("Gris"):
+	if body.is_in_group(get_parent().grupo):
 		move_input = 0
 		is_in_area = 0
 	
 func _on_lado_derecho_body_entered(body):
-	if body.is_in_group("Gris"):
+	if body.is_in_group(get_parent().grupo):
 		move_input = -1
 		is_in_area = 1
 	
 func _on_lado_derecho_body_exited(body):
-	if body.is_in_group("Gris"):
+	if body.is_in_group(get_parent().grupo):
 		move_input = 0
 		is_in_area = 0
 		

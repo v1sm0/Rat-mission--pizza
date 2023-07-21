@@ -1,6 +1,7 @@
 extends Node2D
 
 @export var player_scene: PackedScene
+@export var level_int = 1
 @onready var players = $Players
 @onready var markers = $Markers
 @onready var closed_door = $ClosedDoor
@@ -27,6 +28,8 @@ func _physics_process(delta):
 		pepperoni.hide()
 		open_door.show()
 		closed_door.hide()
+		if level_int >= Game.current_level:
+			Game.current_level += 1
 		
 		
 		
