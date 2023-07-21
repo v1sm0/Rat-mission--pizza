@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bift3qc0ud16s"]
+[gd_scene load_steps=24 format=3 uid="uid://bift3qc0ud16s"]
 
 [ext_resource type="Script" path="res://scenes/niveles/nivel3.gd" id="1_0rqg1"]
 [ext_resource type="PackedScene" uid="uid://b4ip1utf0olap" path="res://scenes/Players/Giovanni_bueno.tscn" id="2_6jjtm"]
@@ -14,6 +14,10 @@
 [ext_resource type="Texture2D" uid="uid://djvo0notkcbrg" path="res://Textures/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Bacon.png" id="10_a1um8"]
 [ext_resource type="Script" path="res://scenes/niveles/ResetArea.gd" id="13_qyjit"]
 [ext_resource type="Theme" uid="uid://c84mn77777ynu" path="res://timer.tres" id="14_h53wy"]
+[ext_resource type="Texture2D" uid="uid://ccpga6mqi4a31" path="res://resources/Sprites/cajas/Sprite-caja-azul32X32.png" id="15_1rr2b"]
+[ext_resource type="Texture2D" uid="uid://dc70opi65cmc3" path="res://resources/Sprites/cajas/Sprite-caja-gris32X32.png" id="16_rdbh7"]
+[ext_resource type="Texture2D" uid="uid://c1sk3ydpon1vg" path="res://resources/Sprites/cajas/Sprite-caja-negra32X32.png" id="17_sevnk"]
+[ext_resource type="Texture2D" uid="uid://dhstq5dcy4lo" path="res://resources/Sprites/cajas/Sprite-caja-cafe32X32.png" id="18_3abrt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qsacf"]
 texture = ExtResource("3_1546s")
@@ -435,6 +439,22 @@ offset_top = 32.0
 offset_right = 536.0
 offset_bottom = 67.0
 theme = ExtResource("14_h53wy")
+
+[node name="Azul" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("15_1rr2b")
+
+[node name="Gris" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("16_rdbh7")
+
+[node name="Negro" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("17_sevnk")
+
+[node name="Cafe" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("18_3abrt")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="ClosedDoor" to="ClosedDoor" method="_on_body_entered"]

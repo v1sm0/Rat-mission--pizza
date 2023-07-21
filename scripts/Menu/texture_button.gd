@@ -20,3 +20,4 @@ func _ready():
 func _on_pressed():
 	if level_proyect_dir != '':
 		get_tree().change_scene_to_file(level_proyect_dir)
+		

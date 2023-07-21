@@ -19,7 +19,7 @@ func _physics_process(delta):
 	if Game.door_condition == Game.N_players && Game.win_condition == true:
 		Game.level_Number += 1 
 		var level_directory = "res://scenes/niveles/nivel%d.tscn" % Game.level_Number
-		if Game.level_Number == 5:
+		if Game.level_Number == 4:
 			get_tree().change_scene_to_file("res://scenes/menus/selector_niveles.tscn")
 		else:
 			get_tree().change_scene_to_file(level_directory) 
