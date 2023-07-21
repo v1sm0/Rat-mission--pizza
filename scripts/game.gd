@@ -29,6 +29,13 @@ var button_max = 0
 # Door condition
 var door_condition = 0
 
+# current_level usado para el menu de seleccion
+var current_level = 1:
+	get:
+		return current_level
+	set(value):
+		current_level = value
+
 # Emitted when UPnP port mapping setup is completed (regardless of success or failure).
 signal upnp_completed(error)
 
@@ -100,8 +107,7 @@ func _ready():
 func _exit_tree():
 	# Wait for thread finish here to handle game exit while the thread is running.
 	thread.wait_to_finish()
-
-
+	
 class PlayerData:
 	var id: int
 	var name: String
