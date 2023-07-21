@@ -3,10 +3,19 @@ extends Node2D
 @export var player_scene: PackedScene
 @onready var players = $Players
 @onready var markers = $Markers
+@onready var olive = $Olive
+@onready var olive_sprite = $Olive/Olive
 
 func _physics_process(delta):
 	var time_left = int($Timer.time_left)
 	$Labeltimer.set_text(str(time_left))
+	
+	if Game.win_condition == true:
+		$Olive/CatchedOlive.show()
+		olive_sprite.hide()
+		$OpenDoor.show()
+		$OpenDoor/Sprite2D.show()
+		$ClosedDoor.hide()
 		
 		
 		
@@ -16,16 +25,11 @@ func _ready():
 	
 	$TileMap2.hide()
 	$TileMap3.hide()
+	$TileMap4.hide()
+	$TileMap5.hide()
 	
 	$Timer.start()
-	#$TileMap2.set_collision_layer_bit(0b00000000000000000010, true)
-	#var player1 = Game.players[0]
-	#var layer_bit = player_scene.get_collision_layer_value(3)
-	#-bits con solo 1 al fianl
-	#$TileMap2.set_collision_layer_value(layer_bit, true)
 	
-	Game.buttton_counter = 0
-	Game.button_max = 4
 	Game.win_condition = false
 	Game.players.sort()
 	
@@ -40,6 +44,15 @@ func _ready():
 		player.scale.x = -2
 		player.scale.y = 2
 		player.init(id)
+		
+		if i>0:
+			var v = 0
+			if i == 1 || i == 3:
+				v = olive.get_position() + Vector2(-256,-192)
+			if i == 2:
+				v = olive.get_position() + Vector2(256,-192)
+			olive.set_position(v)
+			olive_sprite.set_position(v)
 		
 		for k in range(2,5):
 			#if numero de jugador pasa a la leyer que le corresponde
