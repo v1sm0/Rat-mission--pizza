@@ -102,10 +102,10 @@ theme = ExtResource("2_7t54k")
 text = "Play"
 flat = true
 
-[node name="options" type="Button" parent="VBoxButtons"]
+[node name="Options" type="Button" parent="VBoxButtons"]
 layout_mode = 2
 theme = ExtResource("2_7t54k")
-text = "options"
+text = "Options"
 flat = true
 
 [node name="credits" type="Button" parent="VBoxButtons"]

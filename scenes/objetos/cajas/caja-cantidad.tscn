@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b4t2i54mvekqj"]
+[gd_scene load_steps=7 format=3 uid="uid://b4t2i54mvekqj"]
 
 [ext_resource type="Script" path="res://scripts/objetos/caja-cantidad.gd" id="1_m7dhg"]
 [ext_resource type="Texture2D" uid="uid://bkefrp8rp6rei" path="res://resources/Sprites/cajas/Sprite-caja-normal32X32.png" id="2_ww7t1"]
@@ -11,11 +11,8 @@ size = Vector2(67, 20)
 radius = 29.0
 height = 86.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0rn07"]
-size = Vector2(10, 74)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m2i4i"]
-size = Vector2(10, 74)
+size = Vector2(79, 74)
 
 [node name="CajaCantidad" type="CharacterBody2D"]
 collision_mask = 3
@@ -34,16 +31,10 @@ position = Vector2(2.86102e-06, 1.90735e-06)
 scale = Vector2(2.1, 2.658)
 texture = ExtResource("2_ww7t1")
 
-[node name="LadoIzquierdo" type="Area2D" parent="Caja"]
-
-[node name="ColisionIzquierda" type="CollisionShape2D" parent="Caja/LadoIzquierdo"]
-position = Vector2(-34, 0)
-shape = SubResource("RectangleShape2D_0rn07")
-
 [node name="LadoDerecho" type="Area2D" parent="Caja"]
 
 [node name="ColisionDerecha" type="CollisionShape2D" parent="Caja/LadoDerecho"]
-position = Vector2(34, 0)
+position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_m2i4i")
 one_way_collision_margin = 2.0
 
@@ -57,7 +48,5 @@ theme_override_font_sizes/font_size = 40
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="body_entered" from="Caja/LadoIzquierdo" to="." method="_on_lado_izquierdo_body_entered"]
-[connection signal="body_exited" from="Caja/LadoIzquierdo" to="." method="_on_lado_izquierdo_body_exited"]
 [connection signal="body_entered" from="Caja/LadoDerecho" to="." method="_on_lado_derecho_body_entered"]
 [connection signal="body_exited" from="Caja/LadoDerecho" to="." method="_on_lado_derecho_body_exited"]
