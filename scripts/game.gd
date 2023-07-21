@@ -113,7 +113,7 @@ class PlayerData:
 	var name: String
 	var color: String
 
-	func _init(new_id: int, new_name: String, new_color: String = "") -> void:
+	func _init(new_id: int, new_name: String, new_color: String = "giuseppe") -> void:
 		id = new_id
 		name = new_name
 		color = new_color

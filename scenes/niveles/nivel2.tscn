@@ -164,12 +164,12 @@ scale = Vector2(0.463153, 0.59261)
 texture = ExtResource("3_0xsf5")
 
 [node name="background2" type="Sprite2D" parent="."]
-position = Vector2(540.25, 464)
+position = Vector2(540.25, 463)
 scale = Vector2(0.464653, 0.59261)
 texture = ExtResource("3_0xsf5")
 
 [node name="background3" type="Sprite2D" parent="."]
-position = Vector2(540.25, 772)
+position = Vector2(540.25, 771)
 scale = Vector2(0.464653, 0.59261)
 texture = ExtResource("3_0xsf5")
 

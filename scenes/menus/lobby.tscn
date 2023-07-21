@@ -933,6 +933,11 @@ layout_mode = 2
 text = "Players:
 "
 
+[node name="PlayerNeeded" type="Label" parent="PanelContainer/MarginContainer/ReadyScreen"]
+visible = false
+layout_mode = 2
+text = "Se necesitan al menos dos jugadores"
+
 [node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/ReadyScreen"]
 layout_mode = 2
 

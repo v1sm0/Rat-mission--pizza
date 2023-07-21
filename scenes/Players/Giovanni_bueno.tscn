@@ -300,6 +300,7 @@ texture = ExtResource("3_717yr")
 hframes = 4
 
 [node name="ray" type="RayCast2D" parent="pivot"]
+scale = Vector2(1.01638, 1.0122)
 target_position = Vector2(-10, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

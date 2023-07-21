@@ -1,7 +1,7 @@
 extends Control
 
 func  _on_play_pressed():
-	get_tree().change_scene_to_file("res://scenes/lobby.tscn")
+	get_tree().change_scene_to_file("res://scenes/menus/lobby.tscn")
 
 func _on_options_pressed():
 	pass # Replace with function body.

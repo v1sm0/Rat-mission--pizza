@@ -26,6 +26,7 @@ const PORT = 5409
 @onready var vito_animation= $PanelContainer/MarginContainer/ReadyScreen/HBoxContainer2/Vito/AnimationPlayer
 @onready var cancel = $PanelContainer/MarginContainer/ReadyScreen/HBoxContainer/Cancel
 @onready var go = $PanelContainer/MarginContainer/ReadyScreen/HBoxContainer/Go
+@onready var player_needed = $PanelContainer/MarginContainer/ReadyScreen/PlayerNeeded
 
 @onready var giovanni = $PanelContainer/MarginContainer/ReadyScreen/HBoxContainer2/Giovanni
 @onready var giuseppe = $PanelContainer/MarginContainer/ReadyScreen/HBoxContainer2/Giuseppe
@@ -169,12 +170,16 @@ func player_ready():
 	var id = multiplayer.get_remote_sender_id()
 	_paint_ready(id)
 	if multiplayer.is_server():
-		status[id] = true
 		var all_ok = true
-		for ok in status.values():
-			all_ok = all_ok and ok
-		if all_ok:
-			rpc("start_game")
+		if !(Game.N_players >= 2):
+			all_ok = false
+			player_needed.show()
+		else:
+			status[id] = true
+			for ok in status.values():
+				all_ok = all_ok and ok
+			if all_ok:
+				rpc("start_game")
 
 @rpc("any_peer", "call_local", "reliable")
 func start_game() -> void:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://pqxr0o5flhe0"]
+[gd_scene load_steps=26 format=3 uid="uid://pqxr0o5flhe0"]
 
 [ext_resource type="Script" path="res://scripts/Player/player.gd" id="1_jxb7r"]
 [ext_resource type="Texture2D" uid="uid://cw34ogcslrv" path="res://resources/assets/Ratas/Caminata/rata-caminando-2.png" id="3_efvb8"]
@@ -121,7 +121,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("pivot/Sprite2D:texture")
+tracks/0/path = NodePath("pivot/Sprite2D:hframes")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -133,7 +133,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("pivot/Sprite2D:hframes")
+tracks/1/path = NodePath("pivot/Sprite2D:vframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -145,7 +145,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("pivot/Sprite2D:vframes")
+tracks/2/path = NodePath("pivot/Sprite2D:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -157,7 +157,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("pivot/Sprite2D:frame")
+tracks/3/path = NodePath("pivot/Sprite2D:texture")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -282,8 +282,6 @@ graph_offset = Vector2(0, -103.36)
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_nohvx"]
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_kkjtv"]
-
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["Cafe", "Player"]]
 scale = Vector2(-1, 1)
 collision_layer = 17
@@ -295,7 +293,7 @@ script = ExtResource("1_jxb7r")
 [node name="Sprite2D" type="Sprite2D" parent="pivot"]
 texture_filter = 1
 position = Vector2(2, -1)
-texture = ExtResource("2_xxyur")
+texture = ExtResource("4_v2372")
 hframes = 4
 
 [node name="ray" type="RayCast2D" parent="pivot"]
