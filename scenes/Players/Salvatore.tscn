@@ -1,16 +1,15 @@
-[gd_scene load_steps=28 format=3 uid="uid://djeh4dlhmjqm1"]
+[gd_scene load_steps=27 format=3 uid="uid://djeh4dlhmjqm1"]
 
 [ext_resource type="Script" path="res://scripts/Player/player.gd" id="1_p1flo"]
 [ext_resource type="Texture2D" uid="uid://cmjiyr1dss0us" path="res://resources/assets/Ratas/Caminata/rata-caminando-4.png" id="2_naryk"]
 [ext_resource type="Texture2D" uid="uid://cwfv7is28rcho" path="res://resources/assets/Ratas/Idle/rata-parada-4.png" id="3_lg68p"]
-[ext_resource type="Texture2D" uid="uid://djn3kudctiw1x" path="res://resources/assets/Ratas/Idle/rata-parada-1.png" id="4_tqslp"]
 [ext_resource type="Texture2D" uid="uid://do1j6k42d3qo3" path="res://resources/assets/Ratas/Salto/rata-salto-4.png" id="5_rdgrj"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3ga5l"]
 radius = 7.0
 height = 26.0
 
-[sub_resource type="Animation" id="Animation_rfx48"]
+[sub_resource type="Animation" id="Animation_qpp43"]
 resource_name = "Caminar"
 length = 0.5
 loop_mode = 1
@@ -63,7 +62,7 @@ tracks/3/keys = {
 "values": [0, 1, 2, 3, 4]
 }
 
-[sub_resource type="Animation" id="Animation_5f8km"]
+[sub_resource type="Animation" id="Animation_4pxvb"]
 resource_name = "IDLE"
 length = 0.8
 loop_mode = 1
@@ -117,58 +116,58 @@ tracks/3/keys = {
 "values": [0, 1, 2, 3]
 }
 
-[sub_resource type="Animation" id="Animation_xlkut"]
+[sub_resource type="Animation" id="Animation_gimrp"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/path = NodePath("Sprite2D:hframes")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("4_tqslp")]
+"values": [4]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/path = NodePath("Sprite2D:vframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [4]
+"values": [1]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D:vframes")
+tracks/2/path = NodePath("Sprite2D:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [1]
+"values": [0]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Sprite2D:frame")
+tracks/3/path = NodePath("Sprite2D:texture")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0]
+"values": [ExtResource("3_lg68p")]
 }
 
-[sub_resource type="Animation" id="Animation_725gj"]
+[sub_resource type="Animation" id="Animation_huojq"]
 resource_name = "Saltar"
 length = 0.55
 step = 0.15
@@ -221,12 +220,12 @@ tracks/3/keys = {
 "values": [0, 2, 3]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_w2prx"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bjs1y"]
 _data = {
-"Caminar": SubResource("Animation_rfx48"),
-"IDLE": SubResource("Animation_5f8km"),
-"RESET": SubResource("Animation_xlkut"),
-"Saltar": SubResource("Animation_725gj")
+"Caminar": SubResource("Animation_qpp43"),
+"IDLE": SubResource("Animation_4pxvb"),
+"RESET": SubResource("Animation_gimrp"),
+"Saltar": SubResource("Animation_huojq")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mjc0a"]
@@ -296,7 +295,7 @@ metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("4_tqslp")
+texture = ExtResource("3_lg68p")
 hframes = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -306,7 +305,7 @@ shape = SubResource("CapsuleShape2D_3ga5l")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." groups=["Negro", "Player"]]
 libraries = {
-"": SubResource("AnimationLibrary_w2prx")
+"": SubResource("AnimationLibrary_bjs1y")
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="."]

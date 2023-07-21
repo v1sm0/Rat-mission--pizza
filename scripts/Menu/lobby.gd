@@ -7,6 +7,11 @@ const PORT = 5409
 
 @onready var info = $PanelContainer/MarginContainer/Lobby/Info
 
+@export var giovanni_scene: PackedScene
+@export var giuseppe_scene: PackedScene
+@export var salvatore_scene: PackedScene
+@export var vito_scene: PackedScene
+
 @onready var nameInput = %NameInput
 @onready var ipInput = %IPInput
 @onready var host = %Host
@@ -15,12 +20,19 @@ const PORT = 5409
 
 @onready var lobby = %Lobby
 @onready var readyScreen = %ReadyScreen
-
+@onready var giovanni_animation = $PanelContainer/MarginContainer/ReadyScreen/HBoxContainer2/Giovanni/AnimationPlayer
+@onready var giuseppe_animation = $PanelContainer/MarginContainer/ReadyScreen/HBoxContainer2/Giuseppe/AnimationPlayer
+@onready var salvatore_animation = $PanelContainer/MarginContainer/ReadyScreen/HBoxContainer2/salvatore/AnimationPlayer	
+@onready var vito_animation= $PanelContainer/MarginContainer/ReadyScreen/HBoxContainer2/Vito/AnimationPlayer
 @onready var cancel = $PanelContainer/MarginContainer/ReadyScreen/HBoxContainer/Cancel
 @onready var go = $PanelContainer/MarginContainer/ReadyScreen/HBoxContainer/Go
 
-var status = { 1 : false }
+@onready var giovanni = $PanelContainer/MarginContainer/ReadyScreen/HBoxContainer2/Giovanni
+@onready var giuseppe = $PanelContainer/MarginContainer/ReadyScreen/HBoxContainer2/Giuseppe
+@onready var salvatore = $PanelContainer/MarginContainer/ReadyScreen/HBoxContainer2/salvatore
+@onready var vito = $PanelContainer/MarginContainer/ReadyScreen/HBoxContainer2/Vito
 
+var status = { 1 : false }
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# nameInput.text
@@ -31,17 +43,54 @@ func _ready():
 	multiplayer.peer_connected.connect(_on_peer_connected)
 	multiplayer.peer_disconnected.connect(_on_peer_disconnected)
 	multiplayer.server_disconnected.connect(_on_server_disconnected)
+	giovanni.pressed.connect(_on_giovanni_selected)
+	giuseppe.pressed.connect(_on_giuseppe_selected)
+	salvatore.pressed.connect(_on_salvatore_selected)
+	vito.pressed.connect(_on_vito_selected)
+	
+	
 	lobby.show()
 	readyScreen.hide()
-	
+	giovanni_animation.play("IDLE")
+	giuseppe_animation.play("IDLE")
+	salvatore_animation.play("IDLE")
+	vito_animation.play("IDLE")
 	nameInput.text = OS.get_environment("USERNAME")
 	
 	go.pressed.connect(_on_go_pressed)
 	
-	info.hide()
+#	info.hide()
 	
 	Game.upnp_completed.connect(_on_upunp_completed)
 
+func _on_giovanni_selected() -> void:
+	Game.set_current_player_color("giovanni")
+	giovanni_animation.play("Saltar")
+	giuseppe_animation.play("IDLE")
+	salvatore_animation.play("IDLE")
+	vito_animation.play("IDLE")
+
+func _on_giuseppe_selected() -> void:
+	Game.set_current_player_color("giuseppe")
+	giovanni_animation.play("IDLE")
+	giuseppe_animation.play("Saltar")
+	salvatore_animation.play("IDLE")
+	vito_animation.play("IDLE")
+
+func _on_salvatore_selected() -> void:
+	Game.set_current_player_color("salvatore")
+	giovanni_animation.play("IDLE")
+	giuseppe_animation.play("IDLE")
+	salvatore_animation.play("Saltar")
+	vito_animation.play("IDLE")
+
+func _on_vito_selected() -> void:
+	Game.set_current_player_color("vito")
+	giovanni_animation.play("IDLE")
+	giuseppe_animation.play("IDLE")
+	salvatore_animation.play("IDLE")
+	vito_animation.play("Saltar")
+	
 
 func _on_upunp_completed(status) -> void:
 	print(status)
@@ -51,8 +100,6 @@ func _on_upunp_completed(status) -> void:
 		info.text = "Error"
 	info.show()
 
-
-
 func _on_host_pressed() -> void:
 	Debug.print("host")
 	var peer = ENetMultiplayerPeer.new()
@@ -60,7 +107,8 @@ func _on_host_pressed() -> void:
 	print(err)
 	multiplayer.multiplayer_peer = peer
 	lobby.hide()
-	_add_player(nameInput.text, multiplayer.get_unique_id())
+	var player = Game.PlayerData.new(multiplayer.get_unique_id(),nameInput.text)
+	_add_player(player)
 	readyScreen.show()
 	
 func _on_join_pressed() -> void:
@@ -70,25 +118,24 @@ func _on_join_pressed() -> void:
 	print(err)
 	multiplayer.multiplayer_peer = peer
 	lobby.hide()
-	_add_player(nameInput.text, multiplayer.get_unique_id())
+	var player = Game.PlayerData.new(multiplayer.get_unique_id(),nameInput.text)
+	_add_player(player)
 	readyScreen.show()
 
-func _add_player(name: String, id: int):
+func _add_player(player):
 	var label = Label.new()
-	label.name = str(id)
-	label.text = name
+	label.name = str(player.id)
+	label.text = player.name
 	players.add_child(label)
-	Game.players.append(id)
+	Game.add_player(player)  
 	Game.N_players += 1
+
 
 
 @rpc("any_peer", "reliable")
 func send_info(info: Dictionary) -> void:
-	var name = info.name
-	var id = multiplayer.get_remote_sender_id()
-	_add_player(name, id)
-
-
+	var player = Game.PlayerData.new(info.id, info.name, info.color)
+	_add_player(player)
 
 func _on_connected_to_server() -> void:
 	Debug.print("connected_to_server")
@@ -96,10 +143,9 @@ func _on_connected_to_server() -> void:
 func _on_connection_failed() -> void:
 	Debug.print("connection_failed")
 
-
 func _on_peer_connected(id: int) -> void:
 	Debug.print("peer_connected %d" % id)
-	rpc_id(id, "send_info", { "name": nameInput.text })
+	rpc_id(id, "send_info", Game.get_current_player().to_dict())
 	if multiplayer.is_server():
 		status[id] = false
 	
@@ -109,17 +155,14 @@ func _on_peer_disconnected(id: int) -> void:
 func _on_server_disconnected() -> void:
 	print("server_disconnected")
 
-
 func _paint_ready(id: int) -> void:
 	for child in players.get_children():
 		if child.name == str(id):
 			child.modulate = Color.GREEN_YELLOW
 
-
 func _on_go_pressed() -> void:
 	rpc("player_ready")
 	_paint_ready(multiplayer.get_unique_id())
-
 
 @rpc("reliable", "any_peer", "call_local")
 func player_ready():
@@ -132,7 +175,6 @@ func player_ready():
 			all_ok = all_ok and ok
 		if all_ok:
 			rpc("start_game")
-
 
 @rpc("any_peer", "call_local", "reliable")
 func start_game() -> void:
