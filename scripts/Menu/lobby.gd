@@ -23,7 +23,7 @@ const PORT = 5409
 @onready var giovanni_animation = $PanelContainer/MarginContainer/ReadyScreen/HBoxContainer2/Giovanni/AnimationPlayer
 @onready var giuseppe_animation = $PanelContainer/MarginContainer/ReadyScreen/HBoxContainer2/Giuseppe/AnimationPlayer
 @onready var salvatore_animation = $PanelContainer/MarginContainer/ReadyScreen/HBoxContainer2/salvatore/AnimationPlayer	
-@onready var vitoa_animation= $PanelContainer/MarginContainer/ReadyScreen/HBoxContainer2/Vito/AnimationPlayer
+@onready var vito_animation= $PanelContainer/MarginContainer/ReadyScreen/HBoxContainer2/Vito/AnimationPlayer
 @onready var cancel = $PanelContainer/MarginContainer/ReadyScreen/HBoxContainer/Cancel
 @onready var go = $PanelContainer/MarginContainer/ReadyScreen/HBoxContainer/Go
 
@@ -54,7 +54,7 @@ func _ready():
 	giovanni_animation.play("IDLE")
 	giuseppe_animation.play("IDLE")
 	salvatore_animation.play("IDLE")
-	vitoa_animation.play("IDLE")
+	vito_animation.play("IDLE")
 	nameInput.text = OS.get_environment("USERNAME")
 	
 	go.pressed.connect(_on_go_pressed)
@@ -65,15 +65,32 @@ func _ready():
 
 func _on_giovanni_selected() -> void:
 	Game.set_current_player_color("giovanni")
+	giovanni_animation.play("Saltar")
+	giuseppe_animation.play("IDLE")
+	salvatore_animation.play("IDLE")
+	vito_animation.play("IDLE")
 
 func _on_giuseppe_selected() -> void:
 	Game.set_current_player_color("giuseppe")
+	giovanni_animation.play("IDLE")
+	giuseppe_animation.play("Saltar")
+	salvatore_animation.play("IDLE")
+	vito_animation.play("IDLE")
 
 func _on_salvatore_selected() -> void:
 	Game.set_current_player_color("salvatore")
+	giovanni_animation.play("IDLE")
+	giuseppe_animation.play("IDLE")
+	salvatore_animation.play("Saltar")
+	vito_animation.play("IDLE")
 
 func _on_vito_selected() -> void:
 	Game.set_current_player_color("vito")
+	giovanni_animation.play("IDLE")
+	giuseppe_animation.play("IDLE")
+	salvatore_animation.play("IDLE")
+	vito_animation.play("Saltar")
+	
 
 func _on_upunp_completed(status) -> void:
 	print(status)
