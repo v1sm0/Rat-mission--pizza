@@ -1,0 +1,162 @@
+[gd_scene load_steps=7 format=3 uid="uid://cuv16td25m0l"]
+
+[ext_resource type="Texture2D" uid="uid://ch83parrqxh5o" path="res://resources/bgnd.png" id="2_xmw6r"]
+[ext_resource type="Texture2D" uid="uid://dbo7kh6xv5l4s" path="res://Textures/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Cheese.png" id="3_a83ve"]
+[ext_resource type="Texture2D" uid="uid://etineyfsipw2" path="res://Textures/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Tomato.png" id="4_omy2g"]
+[ext_resource type="Texture2D" uid="uid://cdml8ieny6iva" path="res://Textures/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Pepperoni.png" id="5_84wij"]
+[ext_resource type="Theme" uid="uid://5ccxd10jvfld" path="res://MenuTheme.tres" id="5_t0bx4"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_0woa8"]
+emission_shape = 3
+emission_box_extents = Vector3(576, 1, 1)
+particle_flag_disable_z = true
+direction = Vector3(0, 1, 0)
+spread = 0.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 200.0
+initial_velocity_max = 200.0
+angular_velocity_min = 25.0
+angular_velocity_max = 25.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 3.0
+scale_max = 5.0
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="background2" type="Sprite2D" parent="."]
+position = Vector2(540, 461)
+scale = Vector2(0.464653, 0.59261)
+texture = ExtResource("2_xmw6r")
+
+[node name="background3" type="Sprite2D" parent="."]
+position = Vector2(540, 768)
+scale = Vector2(0.464653, 0.59261)
+texture = ExtResource("2_xmw6r")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(541.5, 154.625)
+scale = Vector2(0.463153, 0.59261)
+texture = ExtResource("2_xmw6r")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+texture_filter = 1
+position = Vector2(576, 0)
+amount = 4
+process_material = SubResource("ParticleProcessMaterial_0woa8")
+texture = ExtResource("3_a83ve")
+lifetime = 5.0
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="."]
+texture_filter = 1
+position = Vector2(576, 0)
+amount = 4
+process_material = SubResource("ParticleProcessMaterial_0woa8")
+texture = ExtResource("4_omy2g")
+lifetime = 5.0
+
+[node name="GPUParticles2D3" type="GPUParticles2D" parent="."]
+texture_filter = 1
+position = Vector2(576, 0)
+amount = 4
+process_material = SubResource("ParticleProcessMaterial_0woa8")
+texture = ExtResource("5_84wij")
+lifetime = 5.0
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 1079.0
+offset_bottom = 719.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Titulo" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("5_t0bx4")
+text = "
+Credits
+
+"
+horizontal_alignment = 1
+
+[node name="GameDev" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("5_t0bx4")
+theme_override_font_sizes/font_size = 40
+text = " Game Developers:
+
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DevNames" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource("5_t0bx4")
+theme_override_font_sizes/font_size = 28
+text = "Nadia \"narby\" Decar - Vicente \"v1sm0\" Soto - Diego Opazo
+
+
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AssetsAndTilesets" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("5_t0bx4")
+theme_override_font_sizes/font_size = 40
+text = "Assets and Tilesets:
+
+"
+horizontal_alignment = 1
+
+[node name="A&TNames" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource("5_t0bx4")
+theme_override_font_sizes/font_size = 28
+text = "\"Trash Rats\" by narby
+
+\"pixel-food\" by Henry Software
+
+\"Pirate Bomb\" by Pixel Frog
+
+
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Fonts" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("5_t0bx4")
+theme_override_font_sizes/font_size = 40
+text = "Fonts:
+
+"
+horizontal_alignment = 1
+
+[node name="A&TNames2" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource("5_t0bx4")
+theme_override_font_sizes/font_size = 28
+text = "\"Fibberish (7x9px)\" by nathan scott
+
+"
+horizontal_alignment = 1
+vertical_alignment = 1
