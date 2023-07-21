@@ -21,12 +21,12 @@ func _physics_process(delta):
 		
 func _ready():
 	
-	var tileMaps: Array = [$TileMap2, $TileMap3]
+	var tileMaps: Array = [$TileMap2, $TileMap3, $TileMap4, $TileMap5]
 	
-	$TileMap2.hide()
-	$TileMap3.hide()
-	$TileMap4.hide()
-	$TileMap5.hide()
+	#$TileMap2.hide()
+	#$TileMap3.hide()
+	#$TileMap4.hide()
+	#$TileMap5.hide()
 	
 	$Timer.start()
 	
@@ -46,23 +46,28 @@ func _ready():
 		player.scale.y = 2
 		player.init(id)
 		
-		if i>0:
-			var v = 0
-			if i == 1 || i == 3:
-				v = olive.get_position() + Vector2(-256,-192)
-			if i == 2:
-				v = olive.get_position() + Vector2(256,-192)
-			olive.set_position(v)
-			olive_sprite.set_position(v)
-		
-		for k in range(2,5):
+		for k in range(2,6):
 			#if numero de jugador pasa a la leyer que le corresponde
 			if player.get_collision_layer_value(k):
 				var bit = _encontrar_bit(k)
 				var tile_actual = tileMaps[i]
-				tile_actual.show()
 				_color(k,tile_actual)
 				tile_actual.tile_set.set_physics_layer_collision_layer(0,bit)
+				
+				if Game.players.size() == 1:
+					print("hola")
+					for j in range(1,4):
+						tile_actual = tileMaps[j]
+						_color(k,tile_actual)
+						tile_actual.tile_set.set_physics_layer_collision_layer(0,bit)
+				if Game.players.size() == 2:
+					tile_actual = tileMaps[i+2]
+					_color(k,tile_actual)
+					tile_actual.tile_set.set_physics_layer_collision_layer(0,bit)
+				if Game.players.size() == 3 && i == 0:
+					tile_actual = tileMaps[i+3]
+					_color(k,tile_actual)
+					tile_actual.tile_set.set_physics_layer_collision_layer(0,bit)
 
 
 func _on_timer_timeout():
