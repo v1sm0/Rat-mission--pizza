@@ -1,0 +1,16 @@
+[gd_scene load_steps=6 format=3 uid="uid://dk11j2ym6sw1h"]
+
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_03p64"]
+[ext_resource type="PackedScene" uid="uid://b4ip1utf0olap" path="res://scenes/Players/Giovanni_bueno.tscn" id="2_yspnp"]
+[ext_resource type="PackedScene" uid="uid://pqxr0o5flhe0" path="res://scenes/Players/Giuseppe.tscn" id="3_7wxgg"]
+[ext_resource type="PackedScene" uid="uid://djeh4dlhmjqm1" path="res://scenes/Players/Salvatore.tscn" id="4_ouiwx"]
+[ext_resource type="PackedScene" uid="uid://gb7usyqi62c3" path="res://scenes/Players/Vito.tscn" id="5_j5o3w"]
+
+[node name="Game" type="Node"]
+script = ExtResource("1_03p64")
+characters = {
+"giovanni": ExtResource("2_yspnp"),
+"giuseppe": ExtResource("3_7wxgg"),
+"salvatore": ExtResource("4_ouiwx"),
+"vito": ExtResource("5_j5o3w")
+}

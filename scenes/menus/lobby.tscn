@@ -1,23 +1,23 @@
 [gd_scene load_steps=39 format=3 uid="uid://bcm7qu606yio8"]
 
-[ext_resource type="Theme" uid="uid://bcwto7oiak400" path="res://resources/MarginBoxTheme.tres" id="1_748g5"]
-[ext_resource type="Script" path="res://scripts/Menu/lobby.gd" id="2_song4"]
-[ext_resource type="PackedScene" uid="uid://b4ip1utf0olap" path="res://scenes/Players/Giovanni_bueno.tscn" id="3_gm6al"]
-[ext_resource type="Texture2D" uid="uid://djn3kudctiw1x" path="res://resources/assets/Ratas/Idle/rata-parada-1.png" id="3_rd7k3"]
-[ext_resource type="Texture2D" uid="uid://dfqyc70gt7spi" path="res://resources/assets/Ratas/Caminata/rata-caminando-1.png" id="4_iqghw"]
-[ext_resource type="PackedScene" uid="uid://pqxr0o5flhe0" path="res://scenes/Players/Giuseppe.tscn" id="4_xf4r5"]
-[ext_resource type="Texture2D" uid="uid://bfhur8attqs4a" path="res://resources/assets/Ratas/Salto/rata-salto-1.png" id="5_81ajm"]
-[ext_resource type="PackedScene" uid="uid://djeh4dlhmjqm1" path="res://scenes/Players/Salvatore.tscn" id="5_dwgwl"]
-[ext_resource type="Texture2D" uid="uid://flsu5pb08d4k" path="res://resources/assets/Ratas/Idle/rata-parada-2.png" id="6_cu3pw"]
-[ext_resource type="PackedScene" uid="uid://gb7usyqi62c3" path="res://scenes/Players/Vito.tscn" id="6_n4fno"]
-[ext_resource type="Texture2D" uid="uid://cw34ogcslrv" path="res://resources/assets/Ratas/Caminata/rata-caminando-2.png" id="7_wqtlx"]
-[ext_resource type="Texture2D" uid="uid://db6chskc8q1vx" path="res://resources/assets/Ratas/Salto/rata-salto-2.png" id="8_ta3fi"]
-[ext_resource type="Texture2D" uid="uid://cmjiyr1dss0us" path="res://resources/assets/Ratas/Caminata/rata-caminando-4.png" id="9_f2jnj"]
-[ext_resource type="Texture2D" uid="uid://cwfv7is28rcho" path="res://resources/assets/Ratas/Idle/rata-parada-4.png" id="10_6wj3r"]
-[ext_resource type="Texture2D" uid="uid://do1j6k42d3qo3" path="res://resources/assets/Ratas/Salto/rata-salto-4.png" id="11_w30p2"]
-[ext_resource type="Texture2D" uid="uid://cj2y2ptlbkkwv" path="res://resources/assets/Ratas/Caminata/rata-caminando-3.png" id="12_3uol2"]
-[ext_resource type="Texture2D" uid="uid://qbx4khaekjw5" path="res://resources/assets/Ratas/Idle/rata-parada-3.png" id="13_gq12b"]
-[ext_resource type="Texture2D" uid="uid://mq62nclkrpq1" path="res://resources/assets/Ratas/Salto/rata-salto-3.png" id="14_hjy7g"]
+[ext_resource type="Theme" uid="uid://bcwto7oiak400" path="res://resources/MarginBoxTheme.tres" id="1_1mpp3"]
+[ext_resource type="Script" path="res://scripts/Menu/lobby.gd" id="2_lghcy"]
+[ext_resource type="PackedScene" uid="uid://b4ip1utf0olap" path="res://scenes/Players/Giovanni_bueno.tscn" id="3_ah15j"]
+[ext_resource type="PackedScene" uid="uid://pqxr0o5flhe0" path="res://scenes/Players/Giuseppe.tscn" id="4_gfo2x"]
+[ext_resource type="PackedScene" uid="uid://djeh4dlhmjqm1" path="res://scenes/Players/Salvatore.tscn" id="5_02jay"]
+[ext_resource type="PackedScene" uid="uid://gb7usyqi62c3" path="res://scenes/Players/Vito.tscn" id="6_1j6er"]
+[ext_resource type="Texture2D" uid="uid://bfhur8attqs4a" path="res://resources/assets/Ratas/Salto/rata-salto-1.png" id="7_x5qug"]
+[ext_resource type="Texture2D" uid="uid://dfqyc70gt7spi" path="res://resources/assets/Ratas/Caminata/rata-caminando-1.png" id="8_c7hyi"]
+[ext_resource type="Texture2D" uid="uid://djn3kudctiw1x" path="res://resources/assets/Ratas/Idle/rata-parada-1.png" id="9_2sp77"]
+[ext_resource type="Texture2D" uid="uid://db6chskc8q1vx" path="res://resources/assets/Ratas/Salto/rata-salto-2.png" id="10_srypu"]
+[ext_resource type="Texture2D" uid="uid://cw34ogcslrv" path="res://resources/assets/Ratas/Caminata/rata-caminando-2.png" id="11_x36m0"]
+[ext_resource type="Texture2D" uid="uid://flsu5pb08d4k" path="res://resources/assets/Ratas/Idle/rata-parada-2.png" id="12_8dxbl"]
+[ext_resource type="Texture2D" uid="uid://do1j6k42d3qo3" path="res://resources/assets/Ratas/Salto/rata-salto-4.png" id="13_w5cbd"]
+[ext_resource type="Texture2D" uid="uid://cmjiyr1dss0us" path="res://resources/assets/Ratas/Caminata/rata-caminando-4.png" id="14_fbwvl"]
+[ext_resource type="Texture2D" uid="uid://cwfv7is28rcho" path="res://resources/assets/Ratas/Idle/rata-parada-4.png" id="15_m06ok"]
+[ext_resource type="Texture2D" uid="uid://mq62nclkrpq1" path="res://resources/assets/Ratas/Salto/rata-salto-3.png" id="16_ll7bj"]
+[ext_resource type="Texture2D" uid="uid://cj2y2ptlbkkwv" path="res://resources/assets/Ratas/Caminata/rata-caminando-3.png" id="17_e7c0m"]
+[ext_resource type="Texture2D" uid="uid://qbx4khaekjw5" path="res://resources/assets/Ratas/Idle/rata-parada-3.png" id="18_mj7l1"]
 
 [sub_resource type="Animation" id="Animation_rfx48"]
 resource_name = "Caminar"
@@ -69,7 +69,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ExtResource("4_iqghw")]
+"values": [ExtResource("8_c7hyi")]
 }
 
 [sub_resource type="Animation" id="Animation_5f8km"]
@@ -99,7 +99,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ExtResource("3_rd7k3")]
+"values": [ExtResource("9_2sp77")]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -216,7 +216,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ExtResource("5_81ajm")]
+"values": [ExtResource("7_x5qug")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_w2prx"]
@@ -253,7 +253,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("7_wqtlx")]
+"values": [ExtResource("11_x36m0")]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -295,7 +295,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("6_cu3pw")]
+"values": [ExtResource("12_8dxbl")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -400,7 +400,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("8_ta3fi")]
+"values": [ExtResource("10_srypu")]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -461,7 +461,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("9_f2jnj")]
+"values": [ExtResource("14_fbwvl")]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -503,7 +503,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("10_6wj3r")]
+"values": [ExtResource("15_m06ok")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -608,7 +608,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("11_w30p2")]
+"values": [ExtResource("13_w5cbd")]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -669,7 +669,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("12_3uol2")]
+"values": [ExtResource("17_e7c0m")]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -711,7 +711,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("13_gq12b")]
+"values": [ExtResource("18_mj7l1")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -816,7 +816,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("14_hjy7g")]
+"values": [ExtResource("16_ll7bj")]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -857,12 +857,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_748g5")
-script = ExtResource("2_song4")
-giovanni_scene = ExtResource("3_gm6al")
-giuseppe_scene = ExtResource("4_xf4r5")
-salvatore_scene = ExtResource("5_dwgwl")
-vito_scene = ExtResource("6_n4fno")
+theme = ExtResource("1_1mpp3")
+script = ExtResource("2_lghcy")
+giovanni_scene = ExtResource("3_ah15j")
+giuseppe_scene = ExtResource("4_gfo2x")
+salvatore_scene = ExtResource("5_02jay")
+vito_scene = ExtResource("6_1j6er")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 2
@@ -955,7 +955,7 @@ ignore_texture_size = true
 texture_filter = 1
 position = Vector2(-25.3125, 0)
 scale = Vector2(1.5625, 1.625)
-texture = ExtResource("5_81ajm")
+texture = ExtResource("7_x5qug")
 centered = false
 offset = Vector2(45, 0)
 hframes = 4
@@ -975,7 +975,7 @@ ignore_texture_size = true
 texture_filter = 1
 position = Vector2(-23.9063, 0)
 scale = Vector2(1.53125, 1.625)
-texture = ExtResource("8_ta3fi")
+texture = ExtResource("10_srypu")
 centered = false
 offset = Vector2(45, 0)
 hframes = 4
@@ -995,7 +995,7 @@ ignore_texture_size = true
 texture_filter = 1
 position = Vector2(-25.3125, 0)
 scale = Vector2(1.5625, 1.625)
-texture = ExtResource("11_w30p2")
+texture = ExtResource("13_w5cbd")
 centered = false
 offset = Vector2(45, 0)
 hframes = 4
@@ -1015,7 +1015,7 @@ ignore_texture_size = true
 texture_filter = 1
 position = Vector2(-25.3125, 0)
 scale = Vector2(1.5625, 1.625)
-texture = ExtResource("14_hjy7g")
+texture = ExtResource("16_ll7bj")
 centered = false
 offset = Vector2(45, 0)
 hframes = 4

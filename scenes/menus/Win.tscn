@@ -1,0 +1,128 @@
+[gd_scene load_steps=9 format=3 uid="uid://bj1817r54vvej"]
+
+[ext_resource type="Script" path="res://scripts/Lose.gd" id="1_fn4ro"]
+[ext_resource type="Texture2D" uid="uid://ch83parrqxh5o" path="res://resources/bgnd.png" id="2_12sew"]
+[ext_resource type="Texture2D" uid="uid://dbo7kh6xv5l4s" path="res://Textures/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Cheese.png" id="3_ohtng"]
+[ext_resource type="Texture2D" uid="uid://etineyfsipw2" path="res://Textures/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Tomato.png" id="4_j6c1i"]
+[ext_resource type="Texture2D" uid="uid://cdml8ieny6iva" path="res://Textures/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Pepperoni.png" id="5_3ivl6"]
+[ext_resource type="Theme" uid="uid://5ccxd10jvfld" path="res://MenuTheme.tres" id="7_5yhcx"]
+[ext_resource type="Texture2D" uid="uid://d03ujqii3jwg4" path="res://resources/Aseprite Files/601020d459bf5b209806843d.jpg" id="7_k7mbh"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_bmdef"]
+emission_shape = 3
+emission_box_extents = Vector3(576, 1, 1)
+particle_flag_disable_z = true
+direction = Vector3(0, 1, 0)
+spread = 0.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 200.0
+initial_velocity_max = 200.0
+angular_velocity_min = 25.0
+angular_velocity_max = 25.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 3.0
+scale_max = 5.0
+
+[node name="Win" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fn4ro")
+
+[node name="background2" type="Sprite2D" parent="."]
+position = Vector2(540, 461)
+scale = Vector2(0.464653, 0.59261)
+texture = ExtResource("2_12sew")
+
+[node name="background3" type="Sprite2D" parent="."]
+position = Vector2(540, 768)
+scale = Vector2(0.464653, 0.59261)
+texture = ExtResource("2_12sew")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(541.5, 154.625)
+scale = Vector2(0.463153, 0.59261)
+texture = ExtResource("2_12sew")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+texture_filter = 1
+position = Vector2(576, 0)
+amount = 4
+process_material = SubResource("ParticleProcessMaterial_bmdef")
+texture = ExtResource("3_ohtng")
+lifetime = 5.0
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="."]
+texture_filter = 1
+position = Vector2(576, 0)
+amount = 4
+process_material = SubResource("ParticleProcessMaterial_bmdef")
+texture = ExtResource("4_j6c1i")
+lifetime = 5.0
+
+[node name="GPUParticles2D3" type="GPUParticles2D" parent="."]
+texture_filter = 1
+position = Vector2(576, 0)
+amount = 4
+process_material = SubResource("ParticleProcessMaterial_bmdef")
+texture = ExtResource("5_3ivl6")
+lifetime = 5.0
+
+[node name="Tittle" type="Label" parent="."]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 173.0
+offset_right = 605.0
+offset_bottom = 380.0
+scale = Vector2(1.06219, 0.988945)
+theme = ExtResource("7_5yhcx")
+text = "Has ganado,
+rata de dos
+patas"
+horizontal_alignment = 1
+
+[node name="restart" type="Button" parent="."]
+layout_direction = 1
+layout_mode = 0
+offset_left = 298.0
+offset_top = 399.0
+offset_right = 451.0
+offset_bottom = 452.0
+theme = ExtResource("7_5yhcx")
+text = "Restart
+"
+flat = true
+
+[node name="disconnect" type="Button" parent="."]
+layout_direction = 1
+layout_mode = 0
+offset_left = 264.0
+offset_top = 451.0
+offset_right = 480.0
+offset_bottom = 504.0
+theme = ExtResource("7_5yhcx")
+text = "Disconnect
+"
+flat = true
+
+[node name="exit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 331.0
+offset_top = 507.0
+offset_right = 415.0
+offset_bottom = 560.0
+theme = ExtResource("7_5yhcx")
+text = "Exit"
+flat = true
+
+[node name="601020d459Bf5b209806843d" type="Sprite2D" parent="."]
+position = Vector2(841, 385)
+texture = ExtResource("7_k7mbh")
+
+[connection signal="pressed" from="restart" to="." method="_on_win_restart_pressed"]
+[connection signal="pressed" from="disconnect" to="." method="_on_disconnect_pressed"]
+[connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
