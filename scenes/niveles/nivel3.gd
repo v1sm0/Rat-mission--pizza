@@ -46,10 +46,14 @@ func _ready():
 		player.scale.y = 2
 		player.init(id)
 		
-		if i == 0:
+		print(i)
+		print("el valor de i es dasdawdasdasduyfawyudfawud9fa9twddfa9dfaydfgaw0wydgawydgayudgawy0dfaytdyfadywgtadyafd")
+		if i == Game.players.size()-1:
+			print(i)
 			for k in range(2,6):
 			#if numero de jugador pasa a la leyer que le corresponde
 				if player.get_collision_layer_value(k):
+					print(k)
 					var texture
 					if k == 2:
 						texture = $Gris.texture

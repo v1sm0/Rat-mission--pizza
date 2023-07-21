@@ -6,6 +6,8 @@ extends Node2D
 @onready var olive = $Olive
 @onready var olive_sprite = $Olive/Olive
 
+@export var level_int = 1
+
 func _physics_process(delta):
 	var time_left = int($Timer.time_left)
 	$Labeltimer.set_text(str(time_left))
@@ -16,6 +18,9 @@ func _physics_process(delta):
 		$OpenDoor.show()
 		$OpenDoor/Sprite2D.show()
 		$ClosedDoor.hide()
+		
+		if level_int >= Game.current_level:
+			Game.current_level += 1
 		
 		
 		
