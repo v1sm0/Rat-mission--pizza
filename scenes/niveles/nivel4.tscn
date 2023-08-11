@@ -183,11 +183,11 @@ scale = Vector2(2, 2)
 tile_set = SubResource("TileSet_om7r7")
 cell_quadrant_size = 64
 format = 2
-layer_0/tile_data = PackedInt32Array(1441793, 131072, 0, 1441795, 131072, 0, 1441797, 262144, 0, 1441799, 393216, 0, 1441801, 524288, 0, 1441803, 131072, 0, 1441805, 131072, 0, 1441807, 262144, 0, 1441809, 393216, 0, 1441811, 524288, 0, 1441813, 131072, 0, 1441817, 262144, 0, 1441821, 524288, 0, 1441823, 131072, 0, 1441825, 655360, 0, 1507327, 0, 0, 851978, 1048576, 12, 851979, 1114112, 12, 851980, 1179648, 12, 851981, 1245184, 12, 851982, 1310720, 12, 851983, 1376256, 12, 851984, 1441792, 12, 851985, 1507328, 12, 851986, 1048576, 16, 851987, 1114112, 16, 851988, 1179648, 16, 851989, 1245184, 16, 1441815, 131072, 0)
+layer_0/tile_data = PackedInt32Array(1441793, 131072, 0, 1441795, 131072, 0, 1441797, 262144, 0, 1441799, 393216, 0, 1441801, 524288, 0, 1441803, 131072, 0, 1441805, 131072, 0, 1441807, 262144, 0, 1441809, 393216, 0, 1441811, 524288, 0, 1441813, 131072, 0, 1441817, 262144, 0, 1441821, 524288, 0, 1441823, 131072, 0, 1441825, 655360, 0, 1507327, 0, 0, 851978, 1048576, 12, 851979, 1114112, 12, 851980, 1179648, 12, 851981, 1245184, 12, 851982, 1310720, 12, 851983, 1376256, 12, 851984, 1441792, 12, 851985, 1507328, 12, 851986, 1048576, 16, 851987, 1114112, 16, 851988, 1179648, 16, 851989, 1245184, 16, 1441815, 131072, 0, 1048577, 1048576, 12, 1048578, 1114112, 12, 1048579, 1114112, 12, 1048580, 1179648, 16, 1048581, 1245184, 16)
 metadata/_edit_group_ = true
 
 [node name="CajaCantidad2" parent="." groups=["CajaCantidad"] instance=ExtResource("4_fbwyp")]
-position = Vector2(288, 556)
+position = Vector2(114, 467)
 
 [node name="CajaCantidad4" parent="." groups=["CajaCantidad"] instance=ExtResource("4_fbwyp")]
 visible = false
@@ -250,19 +250,16 @@ scale = Vector2(0.179487, 0.177083)
 texture = ExtResource("7_qmga4")
 
 [node name="OpenDoor" type="Area2D" parent="."]
-visible = false
 texture_filter = 1
-position = Vector2(1013, 629)
+position = Vector2(1013, 628)
 scale = Vector2(7, 7)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="OpenDoor"]
-visible = false
 position = Vector2(0.166687, 0.166664)
 shape = SubResource("RectangleShape2D_oqy6n")
 
 [node name="Sprite2D" type="Sprite2D" parent="OpenDoor"]
-visible = false
 texture_filter = 1
 position = Vector2(0.333435, 0.166664)
 scale = Vector2(0.179487, 0.177083)

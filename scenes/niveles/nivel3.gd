@@ -9,7 +9,7 @@ extends Node2D
 @onready var bacon = $Bacon/Bacon
 @onready var grupo : String
 #despues eliminar y mover al nivel 4 cuando este funcione
-@export var level_int = 1
+@export var level_int = 2
 
 func _physics_process(delta):
 	var time_left = int($Timer.time_left)
@@ -19,7 +19,7 @@ func _physics_process(delta):
 		closed_door.hide()
 		bacon.hide()
 		bacon_catched.show()
-		#despues eliminar y mover al nivel 4 cuando este funcione
+#		despues eliminar y mover al nivel 4 cuando este funcione
 		if level_int >= Game.current_level:
 			Game.current_level += 1
 
@@ -35,7 +35,7 @@ func _ready():
 
 	for i in Game.players.size():
 		var id = Game.players[i].id
-		Debug.print(Game.players[i].color)
+#		Debug.print(Game.players[i].color)
 		var player = Game.get_player_scene(Game.players[i].color).instantiate()
 		players.add_child(player)
 		player.name = str(id)
@@ -75,7 +75,7 @@ func _ready():
 
 
 func _on_timer_timeout():
-	get_tree().reload_current_scene()
+	get_tree().change_scene_to_file("res://scenes/menus/Lose.tscn")
 
 
 func _change_texture(texture):

@@ -71,6 +71,10 @@ Jump2={
 ]
 }
 
+[physics]
+
+2d/default_gravity=700.0
+
 [rendering]
 
 textures/decals/filter=0

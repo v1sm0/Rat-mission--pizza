@@ -41,7 +41,7 @@ func _ready():
 
 	for i in Game.players.size():
 		var id = Game.players[i].id
-		Debug.print(Game.players[i].color)
+#		Debug.print(Game.players[i].color)
 		var player = Game.get_player_scene(Game.players[i].color).instantiate()
 		players.add_child(player)
 		player.name = str(id)
@@ -76,6 +76,7 @@ func _ready():
 
 
 func _on_timer_timeout():
+	get_tree().change_scene_to_file("res://scenes/menus/Lose.tscn")
 	pass # Replace with function body.
 	
 

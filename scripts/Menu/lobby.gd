@@ -102,7 +102,7 @@ func _on_upunp_completed(status) -> void:
 	info.show()
 
 func _on_host_pressed() -> void:
-	Debug.print("host")
+#	Debug.print("host")
 	var peer = ENetMultiplayerPeer.new()
 	var err = peer.create_server(PORT, MAX_PLAYERS)
 	print(err)
@@ -113,7 +113,7 @@ func _on_host_pressed() -> void:
 	readyScreen.show()
 	
 func _on_join_pressed() -> void:
-	Debug.print("join")
+#	Debug.print("join")
 	var peer = ENetMultiplayerPeer.new()
 	var err = peer.create_client(ipInput.text, PORT)
 	print(err)
@@ -183,5 +183,5 @@ func player_ready():
 
 @rpc("any_peer", "call_local", "reliable")
 func start_game() -> void:
-	get_tree().change_scene_to_file("res://scenes/niveles/nivel1.tscn")
+	get_tree().change_scene_to_file("res://scenes/menus/selector_niveles.tscn")
 	

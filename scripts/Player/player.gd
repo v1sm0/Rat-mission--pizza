@@ -8,11 +8,8 @@ const ACCELERATION = 1000
 var force = 0
 var pushing_forces = 0: 
 	set(value) : 
-		Debug.print('se sssteta')
 		pushing_forces = value
 		if multiplayer.is_server(): 
-			Debug.print('es server')
-			Debug.print(value)
 			update_pushing_forces.rpc_id(get_multiplayer_authority(), pushing_forces)
 var jumping = false
 var pushers = {}
@@ -72,7 +69,6 @@ func _physics_process(delta):
 			pivot.scale.x = sign(move_input)
 		
 		velocity.x = move_toward(velocity.x, clamp(move_input+pushing_forces,-1,1) * SPEED, ACCELERATION * delta)
-#		Debug.print(pushing_forces)
 		
 		if abs(velocity.x) < 0.5: 
 			animation_player.play("IDLE")
@@ -101,7 +97,6 @@ func send_data(pos: Vector2, vel: Vector2, mi: float) -> void:
 
 @rpc("reliable","any_peer")
 func update_pushing_forces(new_pushing_forces: int):
-	Debug.print('Se updeitea la pushing')
 	pushing_forces = new_pushing_forces
 
 
@@ -110,13 +105,11 @@ func being_pushed(pusher: Node, forces: int):
 		pass
 	else: 
 		if not pushers.has(pusher):
-			Debug.print('nuevo pusher')
 			pushers[pusher] = forces
 			pushing_forces += forces
 			change_pushing_force()
 		else: 
 			if pushers[pusher] != forces:
-				Debug.print('fuerza distinta')
 				pushing_forces += (forces - pushers[pusher])
 				pushers[pusher] = forces
 				change_pushing_force()

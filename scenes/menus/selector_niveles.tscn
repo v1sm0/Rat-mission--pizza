@@ -666,12 +666,13 @@ level_proyect_dir = "res://scenes/niveles/nivel1.tscn"
 [node name="TextureButton2" parent="GridContainer" instance=ExtResource("1_o7tsk")]
 layout_mode = 2
 level_int = 2
-level_proyect_dir = "res://scenes/niveles/nivel5.tscn"
+level_proyect_dir = "res://scenes/niveles/nivel3.tscn"
 
 [node name="TextureButton3" parent="GridContainer" instance=ExtResource("1_o7tsk")]
 layout_mode = 2
 size_flags_horizontal = 0
 level_int = 3
+level_proyect_dir = "res://scenes/niveles/nivel5.tscn"
 
 [node name="TileMap2" type="TileMap" parent="."]
 visible = false

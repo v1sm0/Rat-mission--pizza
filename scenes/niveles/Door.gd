@@ -20,8 +20,10 @@ func _physics_process(delta):
 		Game.level_Number += 1 
 		var level_directory = "res://scenes/niveles/nivel%d.tscn" % Game.level_Number
 		#cambiar el level_Number == 5 por otro numero cuando se agreguen los otros
-		if Game.level_Number == 4 || Game.level_Number == 5:
+		if Game.level_Number == 3 || Game.level_Number == 4:
 			get_tree().change_scene_to_file("res://scenes/menus/selector_niveles.tscn")
+		elif Game.level_Number == 5:
+			get_tree().change_scene_to_file("res://scenes/menus/Win.tscn")
 		else:
 			get_tree().change_scene_to_file(level_directory) 
 			Game.win_condition = false

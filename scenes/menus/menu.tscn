@@ -103,6 +103,7 @@ text = "Play"
 flat = true
 
 [node name="Options" type="Button" parent="VBoxButtons"]
+visible = false
 layout_mode = 2
 theme = ExtResource("2_7t54k")
 text = "Options"
@@ -111,8 +112,7 @@ flat = true
 [node name="credits" type="Button" parent="VBoxButtons"]
 layout_mode = 2
 theme = ExtResource("2_7t54k")
-text = "credits
-"
+text = "Credits"
 flat = true
 
 [node name="exit" type="Button" parent="VBoxButtons"]
